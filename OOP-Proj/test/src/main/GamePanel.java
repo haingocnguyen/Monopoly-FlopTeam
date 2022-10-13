@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements Runnable{
     int FPS = 60;
 
     TileManager tileM = new TileManager(this);
+    Sound sound = new Sound();
     Thread gameThread; // to keep The game running until we stop it
 
     // Set player's default position
@@ -37,6 +38,9 @@ public class GamePanel extends JPanel implements Runnable{
         this.setFocusable(true); // This game panel can be "focused" to received key input
     }
 
+    public void setupGame(){
+        playMusic(0);
+    }
 
     // instantiate this game thread
     public void startGameThread(){
@@ -85,5 +89,20 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2 = (Graphics2D)g;
         tileM.draw(g2);
         g2.dispose();
+    }
+
+    public void playMusic(int i){
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+    }
+
+    public void stopMusic(){
+        sound.stop();
+    }
+
+    public void playSE(int i){
+        sound.setFile(i);
+        sound.play();
     }
 }

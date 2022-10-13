@@ -156,48 +156,37 @@ public class TileManager {
 
         // Left
         g2.drawImage(tile[20].image, 0, 0, gp.CardCornerSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[19].image, 0, 100, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[18].image, 0, 170, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[17].image, 0, 240, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[16].image, 0, 310, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[15].image, 0, 380, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[14].image, 0, 450, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[13].image, 0, 520, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[12].image, 0, 590, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[11].image, 0, 660, gp.CardCornerSize, gp.CardNormalSize, null);
+        int y_left = 100;
+        int i;
+        for (i =0; i < 9; i++ ){
+            g2.drawImage(tile[19 - i].image, 0, y_left, gp.CardCornerSize, gp.CardNormalSize, null);
+            y_left += 70;
+        }
+
         // Bottom
         g2.drawImage(tile[10].image, 0, 730, gp.CardCornerSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[9].image, 100, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[8].image, 170, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[7].image, 240, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[6].image, 310, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[5].image, 380, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[4].image, 450, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[3].image, 520, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[2].image, 590, 730, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[1].image, 660, 730, gp.CardNormalSize, gp.CardCornerSize, null);
+        int x_bottom = 100;
+        for (i = 0; i < 9; i++){
+            g2.drawImage(tile[9 - i].image, x_bottom, 730, gp.CardNormalSize, gp.CardCornerSize, null);
+            x_bottom += 70;
+        }
         g2.drawImage(tile[0].image, 730, 730, gp.CardCornerSize, gp.CardCornerSize, null);
-        // Top
-        g2.drawImage(tile[21].image, 100, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[22].image, 170, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[23].image, 240, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[24].image, 310, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[25].image, 380, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[26].image, 450, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[27].image, 520, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[28].image, 590, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[29].image, 660, 0, gp.CardNormalSize, gp.CardCornerSize, null);
-        g2.drawImage(tile[30].image, 730, 0, gp.CardCornerSize, gp.CardCornerSize, null);
-        // Right
-        g2.drawImage(tile[31].image, 730, 100, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[32].image, 730, 170, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[33].image, 730, 240, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[34].image, 730, 310, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[35].image, 730, 380, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[36].image, 730, 450, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[37].image, 730, 520, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[38].image, 730, 590, gp.CardCornerSize, gp.CardNormalSize, null);
-        g2.drawImage(tile[39].image, 730, 660, gp.CardCornerSize, gp.CardNormalSize, null);
 
+        // Top
+        int x_top = 100;
+        for (i = 0; i < 9; i++){
+            g2.drawImage(tile[21 + i].image, x_top, 0, gp.CardNormalSize, gp.CardCornerSize, null);
+            x_top += 70;
+        }
+        g2.drawImage(tile[30].image, 730, 0, gp.CardCornerSize, gp.CardCornerSize, null);
+
+        // Right
+        int y_right = 100;
+        for (i = 0; i < 9; i++){
+            g2.drawImage(tile[31 + i].image, 730, y_right, gp.CardCornerSize, gp.CardNormalSize, null);
+            y_right += 70;
+        }
     }
+
+
 }
