@@ -17,9 +17,9 @@ public class PlayerPane {
 
         g2.setFont(new Font("Times New Roman",Font.BOLD,25));
         g2.setColor(Color.red);
-        g2.drawString("Player 1",1110,810);
+        g2.drawString("Player 1",1110,800);
         g2.setColor(Color.pink);
-        g2.drawString("Player 2",1520,810);
+        g2.drawString("Player 2",1520,800);
         g2.setColor(Color.magenta);
         g2.drawString("Player 3",1110,960);
         g2.setColor(Color.yellow);
@@ -27,16 +27,16 @@ public class PlayerPane {
 
         g2.setColor(Color.white);
 
-        g2.drawString("Health: ",1110,840);
-        g2.drawString("Mana: ",1110,870);
+        g2.drawString("Galy: ",1110,830);
+        g2.drawString("Mana: ",1110,860);
 
-        g2.drawString("Health: ",1520,840);
-        g2.drawString("Mana: ",1520,870);
+        g2.drawString("Galy: ",1520,830);
+        g2.drawString("Mana: ",1520,860);
 
-        g2.drawString("Health: ",1110,990);
+        g2.drawString("Galy: ",1110,990);
         g2.drawString("Mana: ",1110,1020);
 
-        g2.drawString("Health: ",1520,990);
+        g2.drawString("Galy: ",1520,990);
         g2.drawString("Mana: ",1520,1020);
 
     }
