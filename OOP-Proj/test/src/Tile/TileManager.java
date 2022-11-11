@@ -145,8 +145,8 @@ public class TileManager {
             tile[39] = new Tile();
             tile[39].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/39.png")));
 
-//            tile[40] = new Tile();
-//            tile[40].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/center.png")));
+            tile[40] = new Tile();
+            tile[40].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/center.png")));
 
         }catch(IOException e){
             e.printStackTrace();
@@ -187,7 +187,7 @@ public class TileManager {
             g2.drawImage(tile[31 + i].image, 930, y_right, gp.CardCornerSize, gp.CardNormalSize, null);
             y_right += gp.CardNormalSize;
         }
-        //g2.drawImage(tile[40].image, 120,120,810,810,null);
+        g2.drawImage(tile[40].image, 120,120,810,810,null);
     }
 
 

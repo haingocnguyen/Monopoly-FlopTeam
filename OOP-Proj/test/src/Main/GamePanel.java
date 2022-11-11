@@ -46,6 +46,10 @@ public class GamePanel extends JPanel implements Runnable{
         //playMusic(0);
     }
 
+    private enum STATE{MENU, GAME};
+    private STATE State = STATE.MENU;
+
+
     // instantiate this game thread
     public void startGameThread(){
         gameThread = new Thread(this);
@@ -91,10 +95,12 @@ public class GamePanel extends JPanel implements Runnable{
     public void paintComponent (Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        tileM.draw(g2);
-        opePane.draw(g2);
-        playerPane.draw(g2);
-        g2.dispose();
+        if(State == STATE.GAME){
+            tileM.draw(g2);
+            opePane.draw(g2);
+            playerPane.draw(g2);
+            g2.dispose();
+        }
     }
 
     public void playMusic(int i){
