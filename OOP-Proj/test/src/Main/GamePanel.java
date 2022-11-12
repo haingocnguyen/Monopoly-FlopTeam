@@ -1,10 +1,10 @@
 package Main;
 
+import Input.MouseInput;
 import Tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.nio.file.OpenOption;
 
 public class GamePanel extends JPanel implements Runnable{
     // SCREEN SETTINGS
@@ -26,6 +26,8 @@ public class GamePanel extends JPanel implements Runnable{
     Sound sound = new Sound();
     OperationPane opePane = new OperationPane(this);
     PlayerPane playerPane = new PlayerPane(this);
+    Menu menu = new Menu(this);
+    MouseInput mouseInput = new MouseInput(this);
     Thread gameThread; // to keep The game running until we stop it
 
 
@@ -40,14 +42,15 @@ public class GamePanel extends JPanel implements Runnable{
         this.setBackground(Color.BLACK); // Set the background of the buttons
         this.setDoubleBuffered(true); // Set to true to all drawing from this component will be done in an offscreen painting buffer
         this.setFocusable(true); // This game panel can be "focused" to received key input
+        this.addMouseListener(mouseInput);
     }
 
     public void setupGame(){
         //playMusic(0);
     }
 
-    private enum STATE{MENU, GAME};
-    private STATE State = STATE.MENU;
+    public static enum STATE{MENU, GAME};
+    public static STATE State = STATE.MENU;
 
 
     // instantiate this game thread
@@ -84,7 +87,6 @@ public class GamePanel extends JPanel implements Runnable{
                 drawCount = 0;
                 timer = 0;
             }
-
         }
     }
     public void update(){
@@ -95,12 +97,15 @@ public class GamePanel extends JPanel implements Runnable{
     public void paintComponent (Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
+        // Create a Game Menu
         if(State == STATE.GAME){
             tileM.draw(g2);
             opePane.draw(g2);
             playerPane.draw(g2);
-            g2.dispose();
+        }else if(State == STATE.MENU){
+            menu.draw(g2);
         }
+        g2.dispose();
     }
 
     public void playMusic(int i){
