@@ -25,7 +25,7 @@ public class MouseInput implements MouseListener {
 //        Rectangle quitButton = new Rectangle(gp.screenWidth / 2 - 75, 730, 150, 80);
         // Play Button
         if(mx >= gp.screenWidth / 2 - 75 && mx <= gp.screenWidth / 2 + (75 + 150)){
-            if(my >= 430 && my <= 510){
+            if(my >= 530 && my <= 610){
                 // Press Play Button
                 GamePanel.State = GamePanel.STATE.GAME;
                 gp.playMusic(0);
@@ -33,7 +33,7 @@ public class MouseInput implements MouseListener {
         }
         // Quit Button
         if(mx >= gp.screenWidth / 2 - 75 && mx <= gp.screenWidth / 2 + (75 + 150)){
-            if(my >= 730 && my <= 810){
+            if(my >= 830 && my <= 910){
                 // Press Quit Button
                 System.exit(1);
             }
