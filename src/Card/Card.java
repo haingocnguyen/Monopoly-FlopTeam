@@ -1,3 +1,4 @@
+package Card;
 public abstract class Card {
     int id;
 
