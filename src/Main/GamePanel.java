@@ -27,6 +27,7 @@ public class GamePanel extends JPanel implements Runnable{
     OperationPane opePane = new OperationPane(this);
     PlayerPane playerPane = new PlayerPane(this);
     Menu menu = new Menu(this);
+    DicePane rollDice = new DicePane(this);
     MouseInput mouseInput = new MouseInput(this);
     Thread gameThread; // to keep The game running until we stop it
 
@@ -43,6 +44,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true); // Set to true to all drawing from this component will be done in an offscreen painting buffer
         this.setFocusable(true); // This game panel can be "focused" to received key input
         this.addMouseListener(mouseInput);
+        rollDice.buildPanel();
     }
 
     public void setupGame(){
