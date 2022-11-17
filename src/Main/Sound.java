@@ -12,7 +12,7 @@ public class Sound {
 
     public Sound() {
 
-        soundURL[0] = getClass().getResource("/Sounds/Sounds_Background.wav");
+        soundURL[0] = getClass().getResource("/Resources/Sounds_Background.wav");
     }
 
     public void setFile(int i){
