@@ -35,7 +35,7 @@ public class Menu {
         Rectangle playButton = new Rectangle(gp.screenWidth / 2 - 75, 530, 150, 80);
         Rectangle helpButton = new Rectangle(gp.screenWidth / 2 - 75, 680, 150, 80);
         Rectangle quitButton = new Rectangle(gp.screenWidth / 2 - 75, 830, 150, 80);
-        Font fnt1 = new Font("arial", Font.BOLD, 50);
+        Font fnt1 = new Font("Times New Roman", Font.BOLD, 50);
         g2.setFont(fnt1);
         g2.drawString("Play", playButton.x + 22, playButton.y + 55);
         g2.draw(playButton);
