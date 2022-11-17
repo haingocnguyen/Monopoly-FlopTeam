@@ -26,127 +26,127 @@ public class TileManager {
     public void getTileImage(){
         try {
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/0.png")));
+            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/0.png")));
 
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/1.png")));
+            tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/1.png")));
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/2.png")));
+            tile[2].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/2.png")));
 
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/3.png")));
+            tile[3].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/3.png")));
 
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/4.png")));
+            tile[4].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/4.png")));
 
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/5.png")));
+            tile[5].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/5.png")));
 
             tile[6] = new Tile();
-            tile[6].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/6.png")));
+            tile[6].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/6.png")));
 
             tile[7] = new Tile();
-            tile[7].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/7.png")));
+            tile[7].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/7.png")));
 
             tile[8] = new Tile();
-            tile[8].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/8.png")));
+            tile[8].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/8.png")));
 
             tile[9] = new Tile();
-            tile[9].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/9.png")));
+            tile[9].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/9.png")));
 
             tile[10] = new Tile();
-            tile[10].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/10.png")));
+            tile[10].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/10.png")));
 
             tile[11] = new Tile();
-            tile[11].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/11.png")));
+            tile[11].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/11.png")));
 
             tile[12] = new Tile();
-            tile[12].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/12.png")));
+            tile[12].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/12.png")));
 
             tile[13] = new Tile();
-            tile[13].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/13.png")));
+            tile[13].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/13.png")));
 
             tile[14] = new Tile();
-            tile[14].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/14.png")));
+            tile[14].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/14.png")));
 
             tile[15] = new Tile();
-            tile[15].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/15.png")));
+            tile[15].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/15.png")));
 
             tile[16] = new Tile();
-            tile[16].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/16.png")));
+            tile[16].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/16.png")));
 
             tile[17] = new Tile();
-            tile[17].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/17.png")));
+            tile[17].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/17.png")));
 
             tile[18] = new Tile();
-            tile[18].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/18.png")));
+            tile[18].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/18.png")));
 
             tile[19] = new Tile();
-            tile[19].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/19.png")));
+            tile[19].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/19.png")));
 
             tile[20] = new Tile();
-            tile[20].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/20.png")));
+            tile[20].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/20.png")));
 
             tile[21] = new Tile();
-            tile[21].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/21.png")));
+            tile[21].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/21.png")));
 
             tile[22] = new Tile();
-            tile[22].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/22.png")));
+            tile[22].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/22.png")));
 
             tile[23] = new Tile();
-            tile[23].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/23.png")));
+            tile[23].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/23.png")));
 
             tile[24] = new Tile();
-            tile[24].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/24.png")));
+            tile[24].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/24.png")));
 
             tile[25] = new Tile();
-            tile[25].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/25.png")));
+            tile[25].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/25.png")));
 
             tile[26] = new Tile();
-            tile[26].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/26.png")));
+            tile[26].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/26.png")));
 
             tile[27] = new Tile();
-            tile[27].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/27.png")));
+            tile[27].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/27.png")));
 
             tile[28] = new Tile();
-            tile[28].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/28.png")));
+            tile[28].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/28.png")));
 
             tile[29] = new Tile();
-            tile[29].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/29.png")));
+            tile[29].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/29.png")));
 
             tile[30] = new Tile();
-            tile[30].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/30.png")));
+            tile[30].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/30.png")));
 
             tile[31] = new Tile();
-            tile[31].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/31.png")));
+            tile[31].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/31.png")));
 
             tile[32] = new Tile();
-            tile[32].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/32.png")));
+            tile[32].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/32.png")));
 
             tile[33] = new Tile();
-            tile[33].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/33.png")));
+            tile[33].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/33.png")));
 
             tile[34] = new Tile();
-            tile[34].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/34.png")));
+            tile[34].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/34.png")));
 
             tile[35] = new Tile();
-            tile[35].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/35.png")));
+            tile[35].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/35.png")));
 
             tile[36] = new Tile();
-            tile[36].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/36.png")));
+            tile[36].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/36.png")));
 
             tile[37] = new Tile();
-            tile[37].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/37.png")));
+            tile[37].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/37.png")));
 
             tile[38] = new Tile();
-            tile[38].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/38.png")));
+            tile[38].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/38.png")));
 
             tile[39] = new Tile();
-            tile[39].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/39.png")));
+            tile[39].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/39.png")));
 
             tile[40] = new Tile();
-            tile[40].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/center.png")));
+            tile[40].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/center.png")));
 
         }catch(IOException e){
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class Menu {
     public void getTileImage(){
         try {
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/imageMap/BackgroundMenu.png")));
+            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Resource/BackgroundMenu.png")));
 
         }catch(IOException e){
             e.printStackTrace();
