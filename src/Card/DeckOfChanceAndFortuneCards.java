@@ -14,7 +14,6 @@ public class DeckOfChanceAndFortuneCards {
     private Random random = new Random();
 
     public DeckOfChanceAndFortuneCards() {
-        this.chanceCards.add(new ChanceCard(0));
         this.chanceCards.add(new ChanceCard(1));
         this.chanceCards.add(new ChanceCard(2));
         this.chanceCards.add(new ChanceCard(3));
@@ -30,7 +29,12 @@ public class DeckOfChanceAndFortuneCards {
         this.chanceCards.add(new ChanceCard(13));
         this.chanceCards.add(new ChanceCard(14));
         this.chanceCards.add(new ChanceCard(15));
-        this.fortuneCards.add(new FortuneCard(0));
+        this.chanceCards.add(new ChanceCard(16));
+        this.chanceCards.add(new ChanceCard(17));
+        this.chanceCards.add(new ChanceCard(18));
+        this.chanceCards.add(new ChanceCard(19));
+        this.chanceCards.add(new ChanceCard(20));
+
         this.fortuneCards.add(new FortuneCard(1));
         this.fortuneCards.add(new FortuneCard(2));
         this.fortuneCards.add(new FortuneCard(3));
@@ -47,6 +51,10 @@ public class DeckOfChanceAndFortuneCards {
         this.fortuneCards.add(new FortuneCard(14));
         this.fortuneCards.add(new FortuneCard(15));
         this.fortuneCards.add(new FortuneCard(16));
+        this.fortuneCards.add(new FortuneCard(17));
+        this.fortuneCards.add(new FortuneCard(18));
+        this.fortuneCards.add(new FortuneCard(19));
+        this.fortuneCards.add(new FortuneCard(20));
     }
 
     public int dealChanceCard() {
@@ -57,7 +65,7 @@ public class DeckOfChanceAndFortuneCards {
 
         int position = this.random.nextInt(this.chanceCards.size());
         int id = ((ChanceCard)this.chanceCards.get(position)).getId();
-        if (id == 6) {
+        if (id == 7) {
             this.setGetOutOfJailChance((ChanceCard)this.chanceCards.get(position));
         } else {
             this.dealtChanceCards.add((ChanceCard)this.chanceCards.get(position));
@@ -75,7 +83,7 @@ public class DeckOfChanceAndFortuneCards {
 
         int position = this.random.nextInt(this.fortuneCards.size());
         int id = ((FortuneCard)this.fortuneCards.get(position)).getId();
-        if (id == 3) {
+        if (id ==14) {
             this.setGetOutOfJailCommunity((FortuneCard)this.fortuneCards.get(position));
         } else {
             this.dealtFortuneCards.add((FortuneCard)this.fortuneCards.get(position));
@@ -133,7 +141,6 @@ public class DeckOfChanceAndFortuneCards {
                 return card;
             }
         }
-
         return null;
     }
 }
