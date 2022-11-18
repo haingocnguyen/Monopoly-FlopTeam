@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
         import java.util.Iterator;
 
 public class FortuneCard extends Card {
-    private boolean communityCardPicked;
+    private boolean fortuneCardPicked;
     private JButton communityChest;
     private DeckOfChanceAndFortuneCards deck;
     public FortuneCard(int id) {
@@ -45,7 +45,7 @@ public class FortuneCard extends Card {
 
     // dealCommunityCard == FortuneCardActive
     private void FortuneCardActive() {
-        this.communityCardPicked = true;
+        this.fortuneCardPicked = true;
         int counter;
         BufferedImage img;
         int i;
