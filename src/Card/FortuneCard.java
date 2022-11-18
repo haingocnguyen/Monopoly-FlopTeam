@@ -239,7 +239,7 @@ public class FortuneCard extends Card {
 //                this.generateSellGetOutOfJailCardComboBox();
 //                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received get out of Jail card \n";
 //                this.logText.append(this.log);
-                //((Player)this.players.get(this.playerIndex)).setManaHeld(+this.manaDueAmount);
+                //((Player)this.players.get(this.playerIndex)).setManaHeld(+500.0);
 //                 ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
 //                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
 //                this.logText.append(this.log);
