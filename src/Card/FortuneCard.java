@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
         import java.util.Iterator;
 
 public class FortuneCard extends Card {
-    private boolean communityCardPicked;
+    private boolean fortuneCardPicked;
     private JButton communityChest;
     private DeckOfChanceAndFortuneCards deck;
     public FortuneCard(int id) {
@@ -36,19 +36,6 @@ public class FortuneCard extends Card {
 //        this.logText.append(this.log);
 //    }
 
-    //    private void followCommunityCard17() {
-//        ((Player)this.players.get(this.playerIndex)).setManaHeld(+this.manaDueAmount);
-//        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-//        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 100 mana due to charging solar energy" + "\n";
-//        this.logText.append(this.log);
-//    }
-    //    private void followCommunityCard18() {
-//        ((Player)this.players.get(this.playerIndex)).setManaHeld(+this.manaDueAmount);
-//        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-//        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 100 mana due to charging RTGs" + "\n";
-//        this.logText.append(this.log);
-//    }
-
     //    private void followCommunityCard20() {
 //        ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
 //        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
@@ -58,7 +45,7 @@ public class FortuneCard extends Card {
 
     // dealCommunityCard == FortuneCardActive
     private void FortuneCardActive() {
-        this.communityCardPicked = true;
+        this.fortuneCardPicked = true;
         int counter;
         BufferedImage img;
         int i;
@@ -67,7 +54,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune1.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var9) {
+                } catch (IOException var20) {
                 }
 //                this.paymentDueAmount = 0.0;
 //                Iterator var4 = ((Player)this.players.get(this.playerIndex)).getOwnedProperties().iterator();
@@ -94,7 +81,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune2.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var14) {
+                } catch (IOException var19) {
                 }
 
 //                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(10.0);
@@ -118,7 +105,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune4.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var17) {
                 }
 //              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
 //              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
@@ -129,7 +116,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune5.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var12) {
+                } catch (IOException var16) {
                 }
 
 //                this.paymentDueAmount = 50.0;
@@ -144,7 +131,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune6.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var12) {
+                } catch (IOException var15) {
                 }
 
 //                this.paymentDueAmount = 100.0;
@@ -159,30 +146,33 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune7.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var14) {
                 }
 //              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
 //              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
 //              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Galy from the alien gift" + "\n";
 //              this.logText.append(this.log);
                 break;
-            case 8:
+            case 8:         // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/community08.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune8.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
                 } catch (IOException var13) {
                 }
-
-//                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
-//                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
-//                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received M100 from insurance company" + "\n";
-//                this.logText.append(this.log);
+                // paymentDue = manaDue
+//                this.manaDueAmount = 150.0;
+//                if (((Player)this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+//                    this.followCommunityCard8();
+//                } else {
+//                    this.manaDue = true;
+//                    this.arrearsIndex = 109;
+//                }
                 break;
             case 9:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune9.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var12) {
                 }
 //              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(25.0);
 //              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
@@ -193,7 +183,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune10.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var21) {
+                } catch (IOException var11) {
                 }
 //                ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(40 - ((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard());
 //                this.adjustPlayerPosition();
@@ -206,7 +196,7 @@ public class FortuneCard extends Card {
                     try {
                         img = ImageIO.read(this.getClass().getResource("resources/fortune11.jpg"));
                         this.communityChest.setIcon(new ImageIcon(img));
-                    } catch (IOException var16) {
+                    } catch (IOException var10) {
                     }
 
                     counter = 0;
@@ -228,7 +218,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune12.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var9) {
                 }
 //              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
 //              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
@@ -240,7 +230,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune13.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var8) {
                 }
 
 //                ((Player)this.players.get(this.playerIndex)).addGetOutOfJailCard(this.deck.getFortuneCard(3));
@@ -249,7 +239,7 @@ public class FortuneCard extends Card {
 //                this.generateSellGetOutOfJailCardComboBox();
 //                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received get out of Jail card \n";
 //                this.logText.append(this.log);
-                //((Player)this.players.get(this.playerIndex)).setManaHeld(+this.manaDueAmount);
+                //((Player)this.players.get(this.playerIndex)).setManaHeld(+500.0);
 //                 ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
 //                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
 //                this.logText.append(this.log);
@@ -258,7 +248,7 @@ public class FortuneCard extends Card {
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune14.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var17) {
+                } catch (IOException var7) {
                 }
 
 //                int position = ((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard();
@@ -283,30 +273,76 @@ public class FortuneCard extends Card {
 //               this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
 //              this.logText.append(this.log);
                 break;
-            case 15:
+            case 15:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune15.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var6) {
                 }
 //              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(50.0);
 //              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
 //              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 50 Galy from lucky money" + "\n";
 //              this.logText.append(this.log);
                 break;
-            case 16:
+            case 16:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/fortune16.jpg"));
                     this.communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException var18) {
+                } catch (IOException var5) {
                 }
 //              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(20.0);
 //              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
 //              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 20 Galy for doing overtime discovery" + "\n";
 //              this.logText.append(this.log);
                 break;
+            case 17:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune17.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var4) {
+                }
+//              ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
+//              ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+//              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from solar energy charging" + "\n";
+//              this.logText.append(this.log);
+                break;
+            case 18:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune18.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var3) {
+                }
+//              ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
+//              ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+//              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from radioisotope thermoelectric generators" + "\n";
+//              this.logText.append(this.log);
+                break;
+            case 19:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune19.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var2) {
+                }
+//              ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
+//              ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+//              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from fuel cells" + "\n";
+//              this.logText.append(this.log);
+                break;
+            case 20:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune20.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var1) {
+                }
+//                this.manaDueAmount = 100.0;
+//                if (((Player)this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+//                    this.followCommunityCard20();
+//                } else {
+//                    this.manaDue = true;
+//                    this.arrearsIndex = 109;
+//                }
+                break;
         }
-
     }
 }
 
