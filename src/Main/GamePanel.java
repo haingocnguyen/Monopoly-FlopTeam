@@ -26,8 +26,9 @@ public class GamePanel extends JPanel implements Runnable{
     Sound sound = new Sound();
     OperationPane opePane = new OperationPane(this);
     PlayerPane playerPane = new PlayerPane(this);
-    DicePane rollDice = new DicePane(this);
+
     Menu menu = new Menu(this);
+    DicePane rollDice = new DicePane(this);
 
     MouseInput mouseInput = new MouseInput(this);
     Thread gameThread; // to keep The game running until we stop it
