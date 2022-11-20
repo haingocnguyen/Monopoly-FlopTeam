@@ -1,6 +1,6 @@
 package Input;
 
-import Main.GamePanel;
+import main.GamePanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

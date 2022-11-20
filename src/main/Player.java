@@ -1,5 +1,5 @@
-package Main;
-import java.util.ArrayList;
+package main;
+
 public class Player {
     private int Galy;
     private int Mana;

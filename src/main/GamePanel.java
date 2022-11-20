@@ -1,7 +1,7 @@
-package Main;
+package main;
 
 import Input.MouseInput;
-import Tile.TileManager;
+import tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
