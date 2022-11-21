@@ -26,8 +26,6 @@ public class MouseInput implements MouseListener {
         int mx = e.getX();
         int my = e.getY();
 
-//        Rectangle helpButton = new Rectangle(gp.screenWidth / 2 - 75, 580, 150, 80);
-//        Rectangle quitButton = new Rectangle(gp.screenWidth / 2 - 75, 730, 150, 80);
         // Play Button
         if(mx >= gp.screenWidth / 2 - 75 && mx <= gp.screenWidth / 2 + (75 + 150)){
             if(my >= 530 && my <= 610){

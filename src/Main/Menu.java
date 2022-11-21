@@ -42,7 +42,6 @@ public class Menu {
         g2.drawString("Help", helpButton.x + 22, helpButton.y + 55);
         g2.draw(helpButton);
         g2.drawString("Quit", quitButton.x + 22, quitButton.y + 55);
-
         g2.draw(quitButton);
     }
 }

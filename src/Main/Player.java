@@ -5,8 +5,8 @@ import Entities.PlanetProperties;
 import java.util.ArrayList;
 
 public class Player {
-    private int Galy;
-    private int Mana;
+    private double moneyHeld;
+    private int manaHeld;
     private String name;
     private boolean passedGo;
     private int positionOnGameBoard;
@@ -18,23 +18,23 @@ public class Player {
     
     public Player(String name){
         // Default galy and mana values
-        this.Galy = 1000;
-        this.Mana = 200;
+        this.moneyHeld = 1000;
+        this.manaHeld = 200;
         this.name = name;
         ownedProperties = new ArrayList<PlanetProperties>();
         outOfJailCards = new ArrayList<>();
     }
-    public int Galy(){
-        return Galy;
+    public double getMoneyHeld(){
+        return moneyHeld;
     }
-    public void setGaly(int update){
-        this.Galy += update;
+    public void setMoneyHeld(int update){
+        this.moneyHeld += update;
     }
-    public int Mana(){
-        return Mana;
+    public int getManaHeld(){
+        return manaHeld;
     }
-    public void setMana(int update){
-        this.Mana += update;
+    public void setManaHeld(int update){
+        this.manaHeld += update;
     }
     public String getName(){
         return name;
@@ -51,7 +51,7 @@ public class Player {
     public void positionOnBoard(int positionOnGameBoard){
         this.positionOnGameBoard += positionOnGameBoard;
         if (this.positionOnGameBoard >= 40) {
-            setGaly(200);
+            setMoneyHeld(200);
             setPassedGo(true);
             this.positionOnGameBoard = this.positionOnGameBoard % 40;
         }
