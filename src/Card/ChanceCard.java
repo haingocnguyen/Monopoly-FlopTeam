@@ -106,21 +106,17 @@ public class ChanceCard extends Card {
 //                    this.arrearsIndex = 109;
 //                }
                 break;
-            case 4:
+            case 4:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/chance04.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("resources/chance4.jpg"));
                     this.chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException var15) {
+                } catch (IOException var12) {
                 }
 
-//                if (position == 7) {
-//                    position = 4;
-//                } else {
-//                    position = 51 - position;
-//                }
-//
-//                ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(position);
+//                ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(-3);
 //                this.adjustPlayerPosition();
+//                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has turned 3 steps back to avoid asteroid hit\n";
+//                this.logText.append(this.log);
                 break;
             case 5:
                 try {
@@ -135,19 +131,35 @@ public class ChanceCard extends Card {
 //                this.logText.append(this.log);
                 break;
             case 6:
-                try {
-                    img = ImageIO.read(this.getClass().getResource("resources/chance06.jpg"));
-                    this.chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException var13) {
-                }
-
-//                ((Player)this.players.get(this.playerIndex)).addGetOutOfJailCard(this.deck.getChanceCard(6));
-//                ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setText("get out of jail cards : " + ((Player)this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards());
-//                ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setVisible(true);
-//                this.generateSellGetOutOfJailCardComboBox();
-//                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " received get out of Jail card \n";
-//                this.logText.append(this.log);
-                break;
+//                try {
+//                    img = ImageIO.read(this.getClass().getResource("resources/chance6.jpg"));
+//                    this.chanceButton.setIcon(new ImageIcon(img));
+//                } catch (IOException var10) {
+//                }
+//
+//                this.paymentDueAmount = 0.0;
+//                Iterator var23 = ((Player)this.players.get(this.playerIndex)).getOwnedProperties().iterator();
+//
+//                while(var23.hasNext()) {
+//                    Entity entity = (Entity)var23.next();
+//                    if (entity.getNumberOfHouses() > 0) {
+//                        this.paymentDueAmount += (double)(entity.getNumberOfHouses() * 25);
+//                    }
+//
+//                    if (entity.getNumberOfHotels() > 0) {
+//                        this.paymentDueAmount += 100.0;
+//                    }
+//                }
+//
+//                if (this.paymentDueAmount > 0.0) {
+//                    if (this.paymentDueAmount <= ((Player)this.players.get(this.playerIndex)).getMoneyHeld()) {
+//                        this.followChanceCard9();
+//                    } else {
+//                        this.paymentDue = true;
+//                        this.arrearsIndex = 9;
+//                    }
+//                }
+//                break;
             case 7:     // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/chance07.jpg"));
@@ -177,29 +189,17 @@ public class ChanceCard extends Card {
 ////               this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
 ////              this.logText.append(this.log);
 //                break;
-            case 8:
+            case 8:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/chance08.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("resources/chance8.jpg"));
                     this.chanceButton.setIcon(new ImageIcon(img));
                 } catch (IOException var11) {
                 }
 
-//                if (((Player)this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards() == 0) {
-//                    position = 10 - position;
-//                    ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(position);
-//                    this.finishTurn.setEnabled(true);
-//                    this.rollTheDice.setEnabled(false);
-//                    ((Player)this.players.get(this.playerIndex)).setInJail(true);
-//                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " went to Jail" + "\n";
-//                    this.logText.append(this.log);
-//                    this.adjustPlayerPosition();
-//                } else {
-//                    this.gamePrompt.setText("Do you want to use your get out of jail card?");
-//                    this.useGetOutOfJailCard.setVisible(true);
-//                    this.dontUseGetOutOfJailCard.setVisible(true);
-//                    this.rollTheDice.setEnabled(false);
-//                    this.finishTurn.setEnabled(false);
-                //}
+//              ((Player)this.players.get(this.playerIndex)).setMoneyHeld(150.0);
+//              ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+//              this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 150 Galy from meeting peer-to-peer spacecraft" + "\n";
+//              this.logText.append(this.log);
                 break;
             case 9:     // DONE
                 try {
@@ -219,21 +219,26 @@ public class ChanceCard extends Card {
 //                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
 //                this.logText.append(this.log);
                 break;
-            case 10:
+            case 10:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/chance10.jpg"));
                     this.chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException var9) {
+                } catch (IOException var17) {
                 }
 
-//                this.paymentDueAmount = 15.0;
-//                if (this.paymentDueAmount <= ((Player)this.players.get(this.playerIndex)).getMoneyHeld()) {
-//                    this.followChanceCard10();
+//                if (position < 12) {
+//                    position = 12 - position;
+//                } else if (position < 28) {
+//                    position = 28 - position;
 //                } else {
-//                    this.paymentDue = true;
-//                    this.arrearsIndex = 10;
+//                    position = 52 - position;
 //                }
+//
+//                ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(position);
+//                this.sentByChanceCard = true;
+//                this.adjustPlayerPosition();
                 break;
+
             case 11:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/chance11.jpg"));
@@ -282,30 +287,41 @@ public class ChanceCard extends Card {
 //                    this.followChanceCard13();
 //                }
                 break;
-            case 14:
+            case 14:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/chance14.jpg"));
                     this.chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException var5) {
+                } catch (IOException var8) {
                 }
 
-//                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(150.0);
-//                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
-//                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " received M150 from the bank" + "\n";
-//                this.logText.append(this.log);
+//                position = 45 - position;
+//                ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(position);
+//                this.adjustPlayerPosition();
                 break;
-            case 15:
+
+            case 15:        // DONE
                 try {
                     img = ImageIO.read(this.getClass().getResource("resources/chance15.jpg"));
                     this.chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException var4) {
+                } catch (IOException var16) {
                 }
 
-//                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
-//                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
-//                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " received M100 from the bank" + "\n";
-//                this.logText.append(this.log);
+//                byte position;
+//                if (position == 7) {
+//                    position = 8;
+//                } else if (position == 22) {
+//                    position = 3;
+//                } else {
+//                    position = 9;
+//                }
+//
+//                ((Player)this.players.get(this.playerIndex)).setPositionOnGameBoard(position);
+//                if (((Entity)this.entities.getEntities().get(((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner() != null && ((Entity)this.entities.getEntities().get(((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner().getName() != ((Player)this.players.get(this.playerIndex)).getName()) {
+//                    this.sentByChanceCard = true;
+//                }
+//                this.adjustPlayerPosition();
                 break;
+
         }
     }
 }
