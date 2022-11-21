@@ -18,6 +18,7 @@ public class Main {
 
         GamePanel gamePanel = new GamePanel();
         window.add(gamePanel);
+
         window.pack(); // Causes this window to be sized to fit the preferred size and layouts of its subcomponents (GamePanels)
 
         // Displayed at the center of the screen due to null parameter.
