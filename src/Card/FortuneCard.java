@@ -60,11 +60,11 @@ public class FortuneCard extends Card {
 //                Iterator var4 = ((Player)this.players.get(this.playerIndex)).getOwnedProperties().iterator();
 
 //                while(var4.hasNext()) {
-//                    Entity entity = (Entity)var4.next();
-//                    if (entity.getNumberOfHouses() > 0) {
-//                        this.paymentDueAmount += (double)(entity.getNumberOfHouses() * 40);
+//                    PlanetProperties PlanetProperties = (PlanetProperties)var4.next();
+//                    if (PlanetProperties.getNumberOfHouses() > 0) {
+//                        this.paymentDueAmount += (double)(PlanetProperties.getNumberOfHouses() * 40);
 //                    }
-//                    if (entity.getNumberOfHotels() > 0) {
+//                    if (PlanetProperties.getNumberOfHotels() > 0) {
 //                        this.paymentDueAmount += 115.0;
 //                    }
 //                }
