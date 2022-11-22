@@ -1,6 +1,6 @@
-package Main;
+package main;
 
-import Tile.Tile;
+import tile.Tile;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
