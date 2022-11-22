@@ -60,11 +60,11 @@ public class FortuneCard extends Card {
 //                Iterator var4 = ((Player)this.players.get(this.playerIndex)).getOwnedProperties().iterator();
 
 //                while(var4.hasNext()) {
-//                    Entity entity = (Entity)var4.next();
-//                    if (entity.getNumberOfHouses() > 0) {
-//                        this.paymentDueAmount += (double)(entity.getNumberOfHouses() * 40);
+//                    PlanetProperties PlanetProperties = (PlanetProperties)var4.next();
+//                    if (PlanetProperties.getNumberOfHouses() > 0) {
+//                        this.paymentDueAmount += (double)(PlanetProperties.getNumberOfHouses() * 40);
 //                    }
-//                    if (entity.getNumberOfHotels() > 0) {
+//                    if (PlanetProperties.getNumberOfHotels() > 0) {
 //                        this.paymentDueAmount += 115.0;
 //                    }
 //                }
@@ -239,10 +239,6 @@ public class FortuneCard extends Card {
 //                this.generateSellGetOutOfJailCardComboBox();
 //                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received get out of Jail card \n";
 //                this.logText.append(this.log);
-                //((Player)this.players.get(this.playerIndex)).setManaHeld(+500.0);
-//                 ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-//                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
-//                this.logText.append(this.log);
                 break;
             case 14:        // DONE
                 try {
@@ -261,17 +257,21 @@ public class FortuneCard extends Card {
 //                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " went to Jail" + "\n";
 //                    this.logText.append(this.log);
 //                    this.adjustPlayerPosition();
+                //    ((Player)this.players.get(this.playerIndex)).setManaHeld(-5000);
+//                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+//                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
+//                    this.logText.append(this.log);
 //                } else {
 //                    this.gamePrompt.setText("Do you want to use your get out of jail card?");
 //                    this.useGetOutOfJailCard.setVisible(true);
 //                    this.dontUseGetOutOfJailCard.setVisible(true);
 //                    this.rollTheDice.setEnabled(false);
 //                    this.finishTurn.setEnabled(false);
+                //    ((Player)this.players.get(this.playerIndex)).setManaHeld(+500.0);
+//                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+//                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
+//                    this.logText.append(this.log);
 //                }
-//              ((Player)this.players.get(this.playerIndex)).setManaHeld(0);
-//              ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-//               this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
-//              this.logText.append(this.log);
                 break;
             case 15:        // DONE
                 try {

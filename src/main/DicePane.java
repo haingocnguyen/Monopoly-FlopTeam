@@ -1,12 +1,14 @@
 package main;
 
+import Input.MouseInput;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
 
-public class DicePane extends JFrame {
+public class DicePane extends JFrame implements Runnable {
     private String[] images = {
             "src/DiceImages/ResultFace/Face1.png",
             "src/DiceImages/ResultFace/Face2.png",
@@ -19,6 +21,8 @@ public class DicePane extends JFrame {
     private int num1 = 5;
     private int num2 = 5;
     GamePanel gp;
+    MouseListener mouse = new MouseInput(gp);
+
 
     public DicePane(GamePanel gp) {
         this.gp = gp;
@@ -26,6 +30,7 @@ public class DicePane extends JFrame {
 
     public void draw(Graphics2D g2) {
 
+        g2.setColor(Color.cyan);
         g2.fillRect(400, 400, 250, 250);
         g2.drawImage(new ImageIcon(images[num1]).getImage(), 400, 400, null);
         g2.drawImage(new ImageIcon(images[num2]).getImage(), 550 , 400, null);
@@ -35,7 +40,7 @@ public class DicePane extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                System.out.println(x + y);
+                //System.out.println(x + y);
                 if (x > 400 && x < 650 && y > 400 && y < 650) {
                     Random rand = new Random();
 
@@ -74,6 +79,11 @@ public class DicePane extends JFrame {
             }
         });
 
+
+    }
+
+    @Override
+    public void run() {
 
     }
 }
