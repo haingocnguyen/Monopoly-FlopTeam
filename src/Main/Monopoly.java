@@ -1,3 +1,6 @@
+import Card.DeckOfChanceAndFortuneCards;
+import Main.Player;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -9,11 +12,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -36,7 +37,7 @@ import javax.swing.event.DocumentListener;
 
 public class Monopoly {
 
-    private DeckOfChanceAndCommunityChestCards deck;
+    private DeckOfChanceAndFortuneCards deck;
     private JFrame frame;
     private JLayeredPane topLeft;
     private JLayeredPane bottomLeft;
@@ -82,8 +83,6 @@ public class Monopoly {
     private JLayeredPane player_2;
     private JLayeredPane player_3;
     private JLayeredPane player_4;
-    private JLayeredPane player_5;
-    private JLayeredPane player_6;
     private JScrollPane gameLog;
     private JTextArea logText;
     private String log;
@@ -135,34 +134,24 @@ public class Monopoly {
     private JButton addPlayer2;
     private JButton addPlayer3;
     private JButton addPlayer4;
-    private JButton addPlayer5;
-    private JButton addPlayer6;
     private JButton startGame;
     private JButton finishTurn;
     private JTextField player1name;
     private JTextField player2name;
     private JTextField player3name;
     private JTextField player4name;
-    private JTextField player5name;
-    private JTextField player6name;
     private JButton addPlayer1Name;
     private JButton addPlayer2Name;
     private JButton addPlayer3Name;
     private JButton addPlayer4Name;
-    private JButton addPlayer5Name;
-    private JButton addPlayer6Name;
     private JLabel player1nameLabel;
     private JLabel player2nameLabel;
     private JLabel player3nameLabel;
     private JLabel player4nameLabel;
-    private JLabel player5nameLabel;
-    private JLabel player6nameLabel;
     private JLabel player1balance;
     private JLabel player2balance;
     private JLabel player3balance;
     private JLabel player4balance;
-    private JLabel player5balance;
-    private JLabel player6balance;
     private JButton rollTheDice;
     private JLabel dice1;
     private JLabel dice2;
@@ -178,14 +167,10 @@ public class Monopoly {
     private JLabel player2getOutOfJailLabel;
     private JLabel player3getOutOfJailLabel;
     private JLabel player4getOutOfJailLabel;
-    private JLabel player5getOutOfJailLabel;
-    private JLabel player6getOutOfJailLabel;
     private JLabel player1;
     private JLabel player2;
     private JLabel player3;
     private JLabel player4;
-    private JLabel player5;
-    private JLabel player6;
     private ArrayList<JLabel> playerIndicators;
     private ArrayList<JLabel> balanceLabels;
     private JLabel gamePrompt;
@@ -257,6 +242,8 @@ public class Monopoly {
     private JButton retireFromGame;
     private boolean paymentDue;
     private double paymentDueAmount;
+    private boolean manaDue;
+    private double manaDueAmount;
     private JButton payArrears;
     private int arrearsIndex;
     private JLabel sellGetOutOfJailCard;
@@ -285,19 +272,6 @@ public class Monopoly {
      * Launch the application.
      */
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Monopoly window = new Monopoly();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
     /**
      * Create the main frame. All fields required to start the game without
      * crash are initialised in the constructor. When screen resolution is
@@ -307,8 +281,8 @@ public class Monopoly {
     public Monopoly() {
         double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-        if (((int) width) == 1366 && ((int) height) == 768) {
-            deck = new DeckOfChanceAndCommunityChestCards();
+        if (((int) width) == 1920 && ((int) height) == 1080) {
+            deck = new DeckOfChanceAndFortuneCards();
             players = new ArrayList<Player>();
             entities = new Entities();
             random = new Random();
@@ -1969,37 +1943,13 @@ public class Monopoly {
         player4name.setHorizontalAlignment(SwingConstants.CENTER);
         player4name.setVisible(false);
         player_4.add(player4name);
-
-        player_5 = new JLayeredPane();
-        player_5.setBounds(frameHeight + 42 + (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5) + 2, (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5));
-        player_5.setBorder(BorderFactory.createLineBorder(Color.black, 2));
-        player5name = new JTextField();
-        player5name.setBounds(20, 10, 140, 30);
-        player5name.setFont(new Font("Arial", Font.ITALIC, 14));
-        player5name.setHorizontalAlignment(SwingConstants.CENTER);
-        player5name.setVisible(false);
-        player_5.add(player5name);
-
-        player_6 = new JLayeredPane();
-        player_6.setBounds(frameHeight + 44 + (int) (frameHeight / 2),
-                (int) (frameHeight / 6.5) + 2, (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5));
-        player_6.setBorder(BorderFactory.createLineBorder(Color.black, 2));
-        player6name = new JTextField();
-        player6name.setBounds(20, 10, 140, 30);
-        player6name.setFont(new Font("Arial", Font.ITALIC, 14));
-        player6name.setHorizontalAlignment(SwingConstants.CENTER);
-        player6name.setVisible(false);
-        player_6.add(player6name);
+        
 
         playersPanes.add(player_1);
         playersPanes.add(player_2);
         playersPanes.add(player_3);
         playersPanes.add(player_4);
-        playersPanes.add(player_5);
-        playersPanes.add(player_6);
+
         gameConsole = new JLayeredPane();
         gamePrompt = new JLabel();
         gamePrompt.setBounds(frameHeight + 50, (int) (frameHeight / 2 + 15),
@@ -2246,8 +2196,7 @@ public class Monopoly {
         addPlayer2Name = new JButton("Add player's name");
         addPlayer3Name = new JButton("Add player's name");
         addPlayer4Name = new JButton("Add player's name");
-        addPlayer5Name = new JButton("Add player's name");
-        addPlayer6Name = new JButton("Add player's name");
+
         addPlayer1Name.setBounds(frameHeight + 60, 45, 140, 40);
         addPlayer2Name.setBounds(frameHeight + 62 + (int) (frameHeight / 4),
                 45, 140, 40);
@@ -2255,16 +2204,11 @@ public class Monopoly {
                 45, 140, 40);
         addPlayer4Name.setBounds(frameHeight + 60,
                 (int) (frameHeight / 6.5) + 47, 140, 40);
-        addPlayer5Name.setBounds(frameHeight + 62 + (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5) + 47, 140, 40);
-        addPlayer6Name.setBounds(frameHeight + 64 + (int) (frameHeight / 2),
-                (int) (frameHeight / 6.5) + 47, 140, 40);
+
         addPlayer1Name.setVisible(false);
         addPlayer2Name.setVisible(false);
         addPlayer3Name.setVisible(false);
         addPlayer4Name.setVisible(false);
-        addPlayer5Name.setVisible(false);
-        addPlayer6Name.setVisible(false);
 
         addPlayer1 = new JButton();
         player1getOutOfJailLabel = new JLabel();
@@ -2843,7 +2787,6 @@ public class Monopoly {
                 System.out.println(players.get(3).getName());
                 player4name.setVisible(false);
                 addPlayer4Name.setVisible(false);
-                addPlayer5.setEnabled(true);
 
                 player4getOutOfJailLabel.setText("get out of jail cards : "
                         + players.get(3).getNumberOfGetOutOfJailCards());
@@ -2935,351 +2878,7 @@ public class Monopoly {
 
         });
 
-        addPlayer5 = new JButton();
-        player5nameLabel = new JLabel();
-        player5balance = new JLabel();
-        player5getOutOfJailLabel = new JLabel();
-        balanceLabels.add(player5balance);
-        player5balance.setBounds(frameHeight + 62 + (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5) + 22, 140, 40);
-        player5nameLabel.setBounds(frameHeight + 62 + (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5) + 7, 140, 40);
-        addPlayer5.setBounds(frameHeight + 60 + (int) (frameHeight / 4),
-                (int) (frameHeight / 6.5) + 35, 140, 40);
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/addplayer.jpg"));
-            addPlayer5.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        addPlayer5.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        addPlayer5.setBorderPainted(false);
-        addPlayer5.setContentAreaFilled(false);
-        addPlayer5.setEnabled(false);
-        addPlayer5.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                addPlayer5.setVisible(false);
-                player5name.setVisible(true);
-                addPlayer5Name.setVisible(true);
-                addPlayer5Name.setEnabled(false);
-            }
-        });
-
-        player5name.getDocument().addDocumentListener(new DocumentListener() {
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                checkName();
-            }
-
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                checkName();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                checkName();
-            }
-
-            // names are to be unique
-            public void checkName() {
-                String name = player5name.getText();
-                if (name.length() > 2 && name.length() <= 10
-                        && !name.equals(players.get(0).getName())
-                        && !name.equals(players.get(1).getName())
-                        && !name.equals(players.get(2).getName())
-                        && !name.equals(players.get(3).getName())) {
-                    addPlayer5Name.setEnabled(true);
-                } else {
-                    addPlayer5Name.setEnabled(false);
-                }
-            }
-        });
-
-        addPlayer5Name.addActionListener(new ActionListener() {
-            // adds fifth player to the ArrayList of players
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                players.add(new Player(player5name.getText()));
-                player5nameLabel.setText(player5name.getText());
-                player5nameLabel.setForeground(Color.ORANGE);
-                player5nameLabel.setFont(new Font("Arial", Font.ITALIC, 14));
-                player5balance.setText("E"
-                        + String.valueOf(players.get(4).getMoneyHeld()));
-                player5balance.setFont(new Font("Arial", Font.ITALIC, 14));
-                frame.getContentPane().add(player5nameLabel);
-                frame.getContentPane().add(player5balance);
-                System.out.println(players.get(4).getName());
-                player5name.setVisible(false);
-                addPlayer5Name.setVisible(false);
-                addPlayer6.setEnabled(true);
-
-                player5getOutOfJailLabel.setText("get out of jail cards : "
-                        + players.get(4).getNumberOfGetOutOfJailCards());
-                player5getOutOfJailLabel.setBounds(frameHeight + 62
-                                + (int) (frameHeight / 4),
-                        (int) (frameHeight / 6.5) + 52, 140, 15);
-                player5getOutOfJailLabel.setFont(new Font("Arial", Font.ITALIC,
-                        12));
-                player5getOutOfJailLabel.setVisible(false);
-                getOutOfJailLabels.add(player5getOutOfJailLabel);
-
-                // highlights panels representing owned properties
-                player_5.addMouseListener(new MouseListener() {
-
-                    @Override
-                    public void mouseClicked(MouseEvent arg0) {
-
-                    }
-
-                    @Override
-                    public void mouseEntered(MouseEvent arg0) {
-
-                        for (Entity property : players.get(4)
-                                .getOwnedProperties()) {
-                            if (property.getPosition() < 10) {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(4,
-                                                                0, 0, 0,
-                                                                Color.orange));
-                            } else if (property.getPosition() < 20) {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(0,
-                                                                0, 0, 6,
-                                                                Color.orange));
-                            } else if (property.getPosition() < 30) {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(4,
-                                                                0, 0, 0,
-                                                                Color.orange));
-                            } else {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(0,
-                                                                5, 0, 0,
-                                                                Color.orange));
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(4)
-                                .getOwnedProperties()) {
-                            boardPanels.get(property.getPosition()).setBorder(
-                                    BorderFactory.createEmptyBorder());
-                        }
-                    }
-
-                    @Override
-                    public void mousePressed(MouseEvent arg0) {
-
-                    }
-
-                    @Override
-                    public void mouseReleased(MouseEvent arg0) {
-
-                    }
-
-                });
-
-                player5 = new JLabel();
-                player5.setBounds((int) (frameHeight / 6.5 * 5.5) + 32,
-                        (int) (frameHeight / 6.5 * 5.5) + 32, 35, 35);
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/token5.png"));
-                    player5.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                frame.getContentPane().add(player5, 2);
-                playerIndicators.add(player5);
-            }
-
-        });
-
-        addPlayer6 = new JButton();
-        player6nameLabel = new JLabel();
-        player6balance = new JLabel();
-        player6getOutOfJailLabel = new JLabel();
-        balanceLabels.add(player6balance);
-        player6balance.setBounds(frameHeight + 64 + (int) (frameHeight / 2),
-                (int) (frameHeight / 6.5) + 22, 140, 40);
-        player6nameLabel.setBounds(frameHeight + 64 + (int) (frameHeight / 2),
-                (int) (frameHeight / 6.5) + 7, 140, 40);
-        addPlayer6.setBounds(frameHeight + 60 + (int) (frameHeight / 2),
-                (int) (frameHeight / 6.5) + 35, 140, 40);
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/addplayer.jpg"));
-            addPlayer6.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        addPlayer6.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        addPlayer6.setBorderPainted(false);
-        addPlayer6.setContentAreaFilled(false);
-        addPlayer6.setEnabled(false);
-        addPlayer6.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                addPlayer6.setVisible(false);
-                player6name.setVisible(true);
-                addPlayer6Name.setVisible(true);
-                addPlayer6Name.setEnabled(false);
-            }
-        });
-
-        player6name.getDocument().addDocumentListener(new DocumentListener() {
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                checkName();
-            }
-
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                checkName();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                checkName();
-            }
-
-            // names are to be unique
-            public void checkName() {
-                String name = player6name.getText();
-                if (name.length() > 2 && name.length() <= 10
-                        && !name.equals(players.get(0).getName())
-                        && !name.equals(players.get(1).getName())
-                        && !name.equals(players.get(2).getName())
-                        && !name.equals(players.get(3).getName())
-                        && !name.equals(players.get(4).getName())) {
-                    addPlayer6Name.setEnabled(true);
-                } else {
-                    addPlayer6Name.setEnabled(false);
-                }
-            }
-        });
-
-        addPlayer6Name.addActionListener(new ActionListener() {
-            // adds sixth player to the ArrayList of players
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                players.add(new Player(player6name.getText()));
-                player6nameLabel.setText(player6name.getText());
-                player6nameLabel.setForeground(Color.magenta);
-                player6nameLabel.setFont(new Font("Arial", Font.ITALIC, 14));
-                player6balance.setText("E"
-                        + String.valueOf(players.get(5).getMoneyHeld()));
-                player6balance.setFont(new Font("Arial", Font.ITALIC, 14));
-                frame.getContentPane().add(player6nameLabel);
-                frame.getContentPane().add(player6balance);
-                System.out.println(players.get(5).getName());
-                player6name.setVisible(false);
-                addPlayer6Name.setVisible(false);
-
-                player6getOutOfJailLabel.setText("get out of jail cards : "
-                        + players.get(5).getNumberOfGetOutOfJailCards());
-                player6getOutOfJailLabel.setBounds(frameHeight + 64
-                                + (int) (frameHeight / 2),
-                        (int) (frameHeight / 6.5) + 52, 140, 15);
-                player6getOutOfJailLabel.setFont(new Font("Arial", Font.ITALIC,
-                        12));
-                player6getOutOfJailLabel.setVisible(false);
-                getOutOfJailLabels.add(player6getOutOfJailLabel);
-
-                // highlights panels representing owned properties
-                player_6.addMouseListener(new MouseListener() {
-
-                    @Override
-                    public void mouseClicked(MouseEvent arg0) {
-
-                    }
-
-                    @Override
-                    public void mouseEntered(MouseEvent arg0) {
-
-                        for (Entity property : players.get(5)
-                                .getOwnedProperties()) {
-                            if (property.getPosition() < 10) {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(4,
-                                                                0, 0, 0,
-                                                                Color.magenta));
-                            } else if (property.getPosition() < 20) {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(0,
-                                                                0, 0, 6,
-                                                                Color.magenta));
-                            } else if (property.getPosition() < 30) {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(4,
-                                                                0, 0, 0,
-                                                                Color.magenta));
-                            } else {
-                                boardPanels.get(property.getPosition())
-                                        .setBorder(
-                                                BorderFactory
-                                                        .createMatteBorder(0,
-                                                                5, 0, 0,
-                                                                Color.magenta));
-                            }
-
-                        }
-                    }
-
-                    @Override
-                    public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(5)
-                                .getOwnedProperties()) {
-                            boardPanels.get(property.getPosition()).setBorder(
-                                    BorderFactory.createEmptyBorder());
-                        }
-                    }
-
-                    @Override
-                    public void mousePressed(MouseEvent arg0) {
-
-                    }
-
-                    @Override
-                    public void mouseReleased(MouseEvent arg0) {
-
-                    }
-
-                });
-                player6 = new JLabel();
-                player6.setBounds((int) (frameHeight / 6.5 * 5.5) + 35,
-                        (int) (frameHeight / 6.5 * 5.5) + 35, 35, 35);
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/token6.png"));
-                    player6.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                frame.getContentPane().add(player6, 2);
-                playerIndicators.add(player6);
-            }
-
-        });
+        
 
         startGame = new JButton();
         finishTurn = new JButton();
@@ -3326,12 +2925,6 @@ public class Monopoly {
                 addPlayer4.setVisible(false);
                 player4name.setVisible(false);
                 addPlayer4Name.setVisible(false);
-                addPlayer5.setVisible(false);
-                player5name.setVisible(false);
-                addPlayer5Name.setVisible(false);
-                addPlayer6.setVisible(false);
-                player6name.setVisible(false);
-                addPlayer6Name.setVisible(false);
                 startNewGame();
             }
         });
@@ -3341,8 +2934,6 @@ public class Monopoly {
         frame.getContentPane().add(player_2);
         frame.getContentPane().add(player_3);
         frame.getContentPane().add(player_4);
-        frame.getContentPane().add(player_5);
-        frame.getContentPane().add(player_6);
         frame.getContentPane().add(bottomLeft, -1);
         frame.getContentPane().add(topLeft, -1);
         frame.getContentPane().add(left_1, -1);
@@ -3389,14 +2980,10 @@ public class Monopoly {
         frame.getContentPane().add(addPlayer2);
         frame.getContentPane().add(addPlayer3);
         frame.getContentPane().add(addPlayer4);
-        frame.getContentPane().add(addPlayer5);
-        frame.getContentPane().add(addPlayer6);
         frame.getContentPane().add(addPlayer1Name);
         frame.getContentPane().add(addPlayer2Name);
         frame.getContentPane().add(addPlayer3Name);
         frame.getContentPane().add(addPlayer4Name);
-        frame.getContentPane().add(addPlayer5Name);
-        frame.getContentPane().add(addPlayer6Name);
         frame.getContentPane().add(startGame);
         frame.getContentPane().add(gameLog);
         frame.getContentPane().add(gameConsole);
@@ -3458,8 +3045,6 @@ public class Monopoly {
         frame.getContentPane().add(player2getOutOfJailLabel);
         frame.getContentPane().add(player3getOutOfJailLabel);
         frame.getContentPane().add(player4getOutOfJailLabel);
-        frame.getContentPane().add(player5getOutOfJailLabel);
-        frame.getContentPane().add(player6getOutOfJailLabel);
         frame.getContentPane().add(buyUnwantedProperty);
         frame.getContentPane().add(priceOfUnwantedProperty);
         frame.getContentPane().add(buyUnwantedPropertyButton);
@@ -3640,7 +3225,7 @@ public class Monopoly {
                         gotDouble = false;
                     }
                     if (doubleCounter < 3) {
-                        players.get(playerIndex).setPositionOnGameBoard(
+                        players.get(playerIndex).positionOnBoard(
                                 randomDice1 + randomDice2);
                         finishTurn.setEnabled(false);
                     }
@@ -3666,7 +3251,7 @@ public class Monopoly {
                                         + "\n";
                                 logText.append(log);
                             }
-                            players.get(playerIndex).setPositionOnGameBoard(
+                            players.get(playerIndex).positionOnBoard(
                                     10 - players.get(playerIndex)
                                             .getPositionOnGameBoard());
                             adjustPlayerPosition();
@@ -4035,7 +3620,7 @@ public class Monopoly {
             @Override
             public void actionPerformed(ActionEvent arg0) {
 
-                players.get(playerIndex).setPositionOnGameBoard(
+                players.get(playerIndex).positionOnBoard(
                         10 - players.get(playerIndex).getPositionOnGameBoard());
                 players.get(playerIndex).setInJail(true);
                 adjustPlayerPosition();
@@ -6438,679 +6023,682 @@ public class Monopoly {
      * Chance card is dealt, when this method is called and appropriate action
      * is taken according to the dealt card
      */
-    private void dealChanceCard() {
-        chanceCardPicked = true;
-        int position = players.get(playerIndex).getPositionOnGameBoard();
-        switch (deck.dealChanceCard()) {
-            case 0:
+    private void ChanceCardActive() {
+        this.chanceCardPicked = true;
+        int position = ((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard();
+        BufferedImage img;
+        switch (this.deck.dealChanceCard()) {
+            case 1:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance00.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setPositionOnGameBoard(
-                        40 - players.get(playerIndex).getPositionOnGameBoard());
-                adjustPlayerPosition();
-                break;
-            case 1:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance01.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                if (position > 24) {
-                    position = 24 - position + 40;
-                } else {
-                    position = 24 - position;
-                }
-                players.get(playerIndex).setPositionOnGameBoard(position);
-                adjustPlayerPosition();
-                break;
-            case 2:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance02.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                if (position < 12) {
-                    position = 12 - position;
-                } else if (position < 28) {
-                    position = 28 - position;
-                } else {
-                    position = 40 + 12 - position;
-                }
-                players.get(playerIndex).setPositionOnGameBoard(position);
-                sentByChanceCard = true;
-                adjustPlayerPosition();
-                break;
-            case 3:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance03.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                if (position == 7) {
-                    position = 8;
-                } else if (position == 22) {
-                    position = 3;
-                } else {
-                    position = 9;
-                }
-                players.get(playerIndex).setPositionOnGameBoard(position);
-                if (entities.getEntities()
-                        .get(players.get(playerIndex).getPositionOnGameBoard())
-                        .getOwner() != null
-                        && entities
-                        .getEntities()
-                        .get(players.get(playerIndex)
-                                .getPositionOnGameBoard()).getOwner()
-                        .getName() != players.get(playerIndex).getName()) {
-                    sentByChanceCard = true;
-                }
-                adjustPlayerPosition();
-                break;
-            case 4:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance04.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                if (position == 7) {
-                    position = 4;
-                } else {
-                    position = 40 + 11 - position;
-                }
-                players.get(playerIndex).setPositionOnGameBoard(position);
-                adjustPlayerPosition();
-                break;
-            case 5:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance05.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setMoneyHeld(50);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M50 divident from the bank \n";
-                logText.append(log);
-                break;
-            case 6:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance06.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).addGetOutOfJailCard(deck.getChanceCard(6));
-                getOutOfJailLabels.get(playerIndex).setText(
-                        "get out of jail cards : "
-                                + players.get(playerIndex)
-                                .getNumberOfGetOutOfJailCards());
-                getOutOfJailLabels.get(playerIndex).setVisible(true);
-
-                generateSellGetOutOfJailCardComboBox();
-
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " received get out of Jail card \n";
-                logText.append(log);
-                break;
-            case 7:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance07.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setPositionOnGameBoard(-3);
-                adjustPlayerPosition();
-                break;
-            case 8:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance08.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                if (players.get(playerIndex).getNumberOfGetOutOfJailCards() == 0) {
-                    position = 10 - position;
-                    players.get(playerIndex).setPositionOnGameBoard(position);
-                    finishTurn.setEnabled(true);
-                    rollTheDice.setEnabled(false);
-                    players.get(playerIndex).setInJail(true);
-                    log = "  /> " + players.get(playerIndex).getName()
-                            + " went to Jail" + "\n";
-                    logText.append(log);
-                    adjustPlayerPosition();
-                } else {
-                    gamePrompt
-                            .setText("Do you want to use your get out of jail card?");
-                    useGetOutOfJailCard.setVisible(true);
-                    dontUseGetOutOfJailCard.setVisible(true);
-                    rollTheDice.setEnabled(false);
-                    finishTurn.setEnabled(false);
-                }
-
-                break;
-            case 9:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance09.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                paymentDueAmount = 0;
-                for (Entity entity : players.get(playerIndex).getOwnedProperties()) {
-                    if (entity.getNumberOfHouses() > 0) {
-                        paymentDueAmount += entity.getNumberOfHouses() * 25;
-                    }
-                    if (entity.getNumberOfHotels() > 0) {
-                        paymentDueAmount += 100;
-                    }
-                }
-                if (paymentDueAmount > 0) {
-                    if (paymentDueAmount <= players.get(playerIndex).getMoneyHeld()) {
-                        followChanceCard9();
-                    } else {
-                        paymentDue = true;
-                        arrearsIndex = 9;
-                    }
-                }
-                break;
-            case 10:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance10.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                paymentDueAmount = 15;
-                if (paymentDueAmount <= players.get(playerIndex).getMoneyHeld()) {
-                    followChanceCard10();
-                } else {
-                    paymentDue = true;
-                    arrearsIndex = 10;
-                }
-                break;
-            case 11:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance11.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                position = 40 + 5 - position;
-                players.get(playerIndex).setPositionOnGameBoard(position);
-                adjustPlayerPosition();
-                break;
-            case 12:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance12.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                position = 39 - position;
-                players.get(playerIndex).setPositionOnGameBoard(position);
-                adjustPlayerPosition();
-                break;
-            case 13:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance13.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance01.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var20) {
                 }
                 int counter = 0;
-                for (int i = 0; i < players.size(); i++) {
-                    if (i != playerIndex) {
-                        if (!players.get(i).isBankrupt()) {
-                            counter++;
-                        }
+
+                for (int i = 0; i < this.players.size(); ++i) {
+                    if (i != this.playerIndex && !((Player) this.players.get(i)).isBankrupt()) {
+                        ++counter;
                     }
                 }
-                paymentDueAmount = counter * 50;
-                if (paymentDueAmount > players.get(playerIndex).getMoneyHeld()) {
-                    paymentDue = true;
-                    arrearsIndex = 13;
+                this.paymentDueAmount = (double) (counter * 50);
+                if (this.paymentDueAmount > ((Player) this.players.get(this.playerIndex)).getMoneyHeld()) {
+                    this.paymentDue = true;
+                    this.arrearsIndex = 1;
                 } else {
-                    followChanceCard13();
+                    this.followChanceCard1();
                 }
                 break;
-            case 14:
+            case 2:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance14.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance2.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var19) {
                 }
-                players.get(playerIndex).setMoneyHeld(150);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " received M150 from the bank" + "\n";
-                logText.append(log);
+                ((Player) this.players.get(this.playerIndex)).setMoneyHeld(50.0);
+                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 50 Galy for meeting a gold meteorite" + "\n";
+                this.logText.append(this.log);
                 break;
-            case 15:
+            case 3:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/chance15.jpg"));
-                    chanceButton.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance3.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var18) {
                 }
-                players.get(playerIndex).setMoneyHeld(100);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " received M100 from the bank" + "\n";
-                logText.append(log);
+                this.manaDueAmount = 30.0;
+                if (((Player) this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+                    this.followChanceCard3();
+                } else {
+                    this.manaDue = true;
+                    this.arrearsIndex = 109;
+                }
                 break;
+            case 4:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance4.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var17) {
+                }
+                ((Player) this.players.get(this.playerIndex)).positionOnBoard(-3);
+                this.adjustPlayerPosition();
+                this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has turned 3 steps back to avoid asteroid hit\n";
+                this.logText.append(this.log);
+                break;
+            case 5:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance05.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var16) {
+                }
+                if (position == 7) {
+                    position = 9;
+                } else {
+                    position = 56 - position;
+                }
+                ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                this.adjustPlayerPosition();
+                break;
+            case 6:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance6.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var15) {
+                }
+                this.paymentDueAmount = 0.0;
+                Iterator var23 = ((Player) this.players.get(this.playerIndex)).getOwnedProperties().iterator();
 
+                while (var23.hasNext()) {
+                    Entity entity = (Entity) var23.next();
+                    if (entity.getNumberOfHouses() > 0) {
+                        this.paymentDueAmount += (double) (entity.getNumberOfHouses() * 25);
+                    }
+
+                    if (entity.getNumberOfHotels() > 0) {
+                        this.paymentDueAmount += 100.0;
+                    }
+                }
+                if (this.paymentDueAmount > 0.0) {
+                    if (this.paymentDueAmount <= ((Player) this.players.get(this.playerIndex)).getMoneyHeld()) {
+                        this.followChanceCard9();
+                    } else {
+                        this.paymentDue = true;
+                        this.arrearsIndex = 9;
+                    }
+                }
+                break;
+            case 7:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance07.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var14) {
+                }
+
+                position = ((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard();
+                if (((Player) this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards() == 0) {
+                    position = 10 - position;
+                    ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                    this.finishTurn.setEnabled(true);
+                    this.rollTheDice.setEnabled(false);
+                    ((Player) this.players.get(this.playerIndex)).setInJail(true);
+                    this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " went to Jail" + "\n";
+                    this.logText.append(this.log);
+                    this.adjustPlayerPosition();
+                    ((Player) this.players.get(this.playerIndex)).setManaHeld(0);
+                    ((JLabel) this.energyLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
+                    this.logText.append(this.log);
+                } else {
+                    this.gamePrompt.setText("Do you want to use your get out of jail card?");
+                    this.useGetOutOfJailCard.setVisible(true);
+                    this.dontUseGetOutOfJailCard.setVisible(true);
+                    this.rollTheDice.setEnabled(false);
+                    this.finishTurn.setEnabled(false);
+                    ((Player) this.players.get(this.playerIndex)).setManaHeld(500.0);
+                    ((JLabel) this.energyLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
+                    this.logText.append(this.log);
+                }
+                    break;
+            case 8:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance8.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                } catch (IOException var13) {
+                }
+
+                ((Player) this.players.get(this.playerIndex)).setMoneyHeld(150.0);
+                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 150 Galy from meeting peer-to-peer spacecraft" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 9:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/chance9.jpg"));
+                    this.chanceButton.setIcon(new ImageIcon(img));
+                    } catch (IOException var12) {
+                    }
+
+                        ((Player) this.players.get(this.playerIndex)).addGetOutOfJailCard(this.deck.getFortuneCard(3));
+                        ((JLabel) this.getOutOfJailLabels.get(this.playerIndex)).setText("get out of jail cards : " + ((Player) this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards());
+                        ((JLabel) this.getOutOfJailLabels.get(this.playerIndex)).setVisible(true);
+                        this.generateSellGetOutOfJailCardComboBox();
+                        this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received get out of Jail card \n";
+                        this.logText.append(this.log);
+                        break;
+                    case 10:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance10.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var11) {
+                        }
+
+                        if (position < 12) {
+                            position = 12 - position;
+                        } else if (position < 28) {
+                            position = 28 - position;
+                        } else {
+                            position = 52 - position;
+                        }
+
+                        ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                        this.sentByChanceCard = true;
+                        this.adjustPlayerPosition();
+                        break;
+
+                    case 11:
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance11.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var10) {
+                        }
+
+                        ((Player) this.players.get(this.playerIndex)).positionOnBoard(40 - ((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard());
+                        this.adjustPlayerPosition();
+                        break;
+                    case 12:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance12.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var9) {
+                        }
+
+                        position = 41 - position;
+                        ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                        this.adjustPlayerPosition();
+                        break;
+                    case 13:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance13.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var8) {
+                        }
+                        if (position == 7) {
+                            position = 22;
+                        } else if (position == 22) {
+                            position = 7;
+                        } else {
+                            position = 69 - position;
+                        }
+                        ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                        this.adjustPlayerPosition();
+                        break;
+                    case 14:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance14.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var7) {
+                        }
+
+                        position = 45 - position;
+                        ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                        this.adjustPlayerPosition();
+                        break;
+
+                    case 15:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance15.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var6) {
+                        }
+
+                        byte position;
+                        if (position == 7) {
+                            position = 8;
+                        } else if (position == 22) {
+                            position = 3;
+                        } else {
+                            position = 9;
+                        }
+
+                        ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
+                        if (((Entity) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner() != null && ((Entity) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner().getName() != ((Player) this.players.get(this.playerIndex)).getName()) {
+                            this.sentByChanceCard = true;
+                        }
+                        this.adjustPlayerPosition();
+                        break;
+                    case 16:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance16.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var5) {
+                        }
+                        this.manaDueAmount = 150.0;
+                        if (((Player) this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+                            this.followChanceCard16();
+                        } else {
+                            this.manaDue = true;
+                            this.arrearsIndex = 109;
+                        }
+                        break;
+                    case 17:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance17.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var4) {
+                        }
+                        ((Player) this.players.get(this.playerIndex)).setMoneyHeld(200.0);
+                        ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                        this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 200 Galy from supply ship coming" + "\n";
+                        this.logText.append(this.log);
+                        break;
+                    case 18:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance18.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var3) {
+                        }
+                        ((Player) this.players.get(this.playerIndex)).setMoneyHeld(200.0);
+                        ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                        this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 200 Galy from new matter founding" + "\n";
+                        this.logText.append(this.log);
+                        break;
+                    case 19:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance19.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var2) {
+                        }
+                        this.manaDueAmount = 50.0;
+                        if (((Player) this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+                            this.followChanceCard19();
+                        } else {
+                            this.manaDue = true;
+                            this.arrearsIndex = 109;
+                        }
+                        break;
+                    case 20:        // DONE
+                        try {
+                            img = ImageIO.read(this.getClass().getResource("resources/chance20.jpg"));
+                            this.chanceButton.setIcon(new ImageIcon(img));
+                        } catch (IOException var1) {
+                        }
+                        ((Player) this.players.get(this.playerIndex)).setMoneyHeld(100.0);
+                        ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                        this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 100 Galy from new batteries" + "\n";
+                        this.logText.append(this.log);
+                        break;
+                }
         }
     }
-
-    /**
-     * when player has sufficient funds, action is taken according to the
-     * dealt card
-     */
-    private void followChanceCard9() {
-        players.get(playerIndex).setMoneyHeld(-paymentDueAmount);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName() + " has spent M"
-                + paymentDueAmount + " on general repairs on his properties \n";
-        logText.append(log);
-    }
-
-    /**
-     * when player has sufficient funds, action is taken according to the
-     * dealt card
-     */
-    private void followChanceCard10() {
-        players.get(playerIndex).setMoneyHeld(-15);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName()
-                + " paid poor tax: M15" + "\n";
-        logText.append(log);
-    }
-
-    /**
-     * when player has sufficient funds, action is taken according to the
-     * dealt card
-     */
-    private void followChanceCard13() {
-        for (int i = 0; i < players.size(); i++) {
-            if (i != playerIndex) {
-                if (!players.get(i).isBankrupt()) {
-                    players.get(i).setMoneyHeld(50);
-                    balanceLabels.get(i).setText(
-                            "E" + players.get(i).getMoneyHeld());
-                }
+    private void followChanceCard1() {
+        for(int i = 0; i < this.players.size(); ++i) {
+            if (i != this.playerIndex && !((Player)this.players.get(i)).isBankrupt()) {
+                ((Player)this.players.get(i)).setMoneyHeld(50.0);
+                ((JLabel)this.balanceLabels.get(i)).setText("E" + ((Player)this.players.get(i)).getMoneyHeld());
             }
         }
-        players.get(playerIndex).setMoneyHeld(-paymentDueAmount);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName()
-                + " paid each of other players M50" + "\n";
-        logText.append(log);
+        ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " paid each of other players 50 Galy on success on Alpha-leap" + "\n";
+        this.logText.append(this.log);
+    }
+    private void followChanceCard3() {
+        ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 30 mana due to energy leak" + "\n";
+        this.logText.append(this.log);
+    }
+    private void followChanceCard16() {
+        ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 150 mana due to black hole edge" + "\n";
+        this.logText.append(this.log);
+    }
+    private void followChanceCard19() {
+        ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 50 mana due to gamma ray burst" + "\n";
+        this.logText.append(this.log);
     }
 
     /**
      * when player has sufficient funds, action is taken according to the
      * dealt card
      */
-    private void followCommunityCard2() {
-        players.get(playerIndex).setMoneyHeld(-paymentDueAmount);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName()
-                + " has paid M50 for a doctor fees\n";
-        logText.append(log);
+
+    private void followCommunityCard5() {
+        ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has paid 50 Galy for maintenance fee" + "\n";
+        this.logText.append(this.log);
+    }
+    private void followCommunityCard6() {
+        ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has paid 50 Galy for space garage fee" + "\n";
+        this.logText.append(this.log);
     }
 
-    /**
-     * when player has sufficient funds, action is taken according to the
-     * dealt card
-     */
-    private void followCommunityCard9() {
-        players.get(playerIndex).setMoneyHeld(-paymentDueAmount);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName()
-                + " has paid M100 for hospital fees" + "\n";
-        logText.append(log);
+    private void followCommunityCard8() {
+        ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 150 mana due to letting the sub-spacecraft to explore" + "\n";
+        this.logText.append(this.log);
     }
 
-    /**
-     * when player has sufficient funds, action is taken according to the
-     * dealt card
-     */
-    private void followCommunityCard10() {
-        players.get(playerIndex).setMoneyHeld(-paymentDueAmount);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName()
-                + " has paid M50 for school fees" + "\n";
-        logText.append(log);
+        private void followCommunityCard20() {
+        ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 100 mana due to losing connection" + "\n";
+        this.logText.append(this.log);
     }
+    private void FortuneCardActive() {
+        this.fortuneCardPicked = true;
+        int counter;
+        BufferedImage img;
+        int i;
+        switch (this.deck.dealFortuneCard()) {
+            case 1:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune1.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var20) {
+                }
+                this.paymentDueAmount = 0.0;
+                Iterator var4 = ((Player)this.players.get(this.playerIndex)).getOwnedProperties().iterator();
 
-    /**
-     * when player has sufficient funds, action is taken according to the
-     * dealt card
-     */
-    private void followCommunityCard12() {
-        players.get(playerIndex).setMoneyHeld(-paymentDueAmount);
-        balanceLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getMoneyHeld());
-        log = "  /> " + players.get(playerIndex).getName() + " has spent M"
-                + paymentDueAmount + " on street repairs \n";
-        logText.append(log);
-    }
-
-    /**
-     * Community card is dealt, when this method is called and appropriate
-     * action is taken according to the dealt card
-     */
-    private void dealCommunityCard() {
-        communityCardPicked = true;
-        switch (deck.dealChanceCard()) {
-            case 0:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community00.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setPositionOnGameBoard(
-                        40 - players.get(playerIndex).getPositionOnGameBoard());
-                adjustPlayerPosition();
-                break;
-            case 1:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community01.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setMoneyHeld(75);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M75 from the bank \n";
-                logText.append(log);
-                break;
-            case 2:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community02.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                paymentDueAmount = 50;
-                if (players.get(playerIndex).getMoneyHeld() >= paymentDueAmount) {
-                    followCommunityCard2();
-                } else {
-                    paymentDue = true;
-                    arrearsIndex = 102;
-                }
-                break;
-            case 3:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community03.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).addGetOutOfJailCard(
-                        deck.getCommunityCard(3));
-                getOutOfJailLabels.get(playerIndex).setText(
-                        "get out of jail cards : "
-                                + players.get(playerIndex)
-                                .getNumberOfGetOutOfJailCards());
-                getOutOfJailLabels.get(playerIndex).setVisible(true);
-
-                generateSellGetOutOfJailCardComboBox();
-
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received get out of Jail card \n";
-                logText.append(log);
-                break;
-            case 4:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community04.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                int position = players.get(playerIndex).getPositionOnGameBoard();
-                if (players.get(playerIndex).getNumberOfGetOutOfJailCards() == 0) {
-                    position = 10 - position;
-                    players.get(playerIndex).setPositionOnGameBoard(position);
-                    finishTurn.setEnabled(true);
-                    rollTheDice.setEnabled(false);
-                    players.get(playerIndex).setInJail(true);
-                    log = "  /> " + players.get(playerIndex).getName()
-                            + " went to Jail" + "\n";
-                    logText.append(log);
-                    adjustPlayerPosition();
-                } else {
-                    gamePrompt
-                            .setText("Do you want to use your get out of jail card?");
-                    useGetOutOfJailCard.setVisible(true);
-                    dontUseGetOutOfJailCard.setVisible(true);
-                    rollTheDice.setEnabled(false);
-                    finishTurn.setEnabled(false);
-                }
-                break;
-            case 5:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community05.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                int counter = 0;
-                for (int i = 0; i < players.size(); i++) {
-                    if (i != playerIndex) {
-                        players.get(i).setMoneyHeld(-10);
-                        counter++;
-                        balanceLabels.get(i).setText(
-                                "E" + players.get(i).getMoneyHeld());
+                while(var4.hasNext()) {
+                    PlanetProperties PlanetProperties = (PlanetProperties)var4.next();
+                    if (PlanetProperties.getNumberOfHouses() > 0) {
+                        this.paymentDueAmount += (double)(PlanetProperties.getNumberOfHouses() * 40);
+                    }
+                    if (PlanetProperties.getNumberOfHotels() > 0) {
+                        this.paymentDueAmount += 115.0;
                     }
                 }
-                players.get(playerIndex).setMoneyHeld(counter * 10);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received from each of other players M10" + "\n";
-                logText.append(log);
-                break;
-            case 6:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community06.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                counter = 0;
-                for (int i = 0; i < players.size(); i++) {
-                    if (i != playerIndex) {
-                        if (!players.get(i).isBankrupt()) {
-                            players.get(i).setMoneyHeld(-50);
-                            counter++;
-                            balanceLabels.get(i).setText(
-                                    "E" + players.get(i).getMoneyHeld());
-                        }
-                    }
-                }
-                players.get(playerIndex).setMoneyHeld(counter * 50);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received from each of other players M50" + "\n";
-                logText.append(log);
-                break;
-            case 7:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community07.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setMoneyHeld(20);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M20 tax refund" + "\n";
-                logText.append(log);
-                break;
-            case 8:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community08.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setMoneyHeld(100);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M100 from insurance company" + "\n";
-                logText.append(log);
-                break;
-            case 9:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community09.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                paymentDueAmount = 100;
-                if (players.get(playerIndex).getMoneyHeld() >= paymentDueAmount) {
-                    followCommunityCard9();
-                } else {
-                    paymentDue = true;
-                    arrearsIndex = 109;
-                }
-                break;
-            case 10:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community10.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                paymentDueAmount = 50;
-                if (players.get(playerIndex).getMoneyHeld() >= paymentDueAmount) {
-                    followCommunityCard10();
-                } else {
-                    paymentDue = true;
-                    arrearsIndex = 110;
-                }
-                break;
-            case 11:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community11.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                players.get(playerIndex).setMoneyHeld(25);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M25 consultancy fee" + "\n";
-                logText.append(log);
-                break;
-            case 12:
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community12.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
-                }
-                paymentDueAmount = 0;
-                for (Entity entity : players.get(playerIndex).getOwnedProperties()) {
-                    if (entity.getNumberOfHouses() > 0) {
-                        paymentDueAmount += entity.getNumberOfHouses() * 40;
-                    }
-                    if (entity.getNumberOfHotels() > 0) {
-                        paymentDueAmount += 115;
-                    }
-                }
-                if (paymentDueAmount > 0) {
-                    if (paymentDueAmount <= players.get(playerIndex).getMoneyHeld()) {
-                        followCommunityCard12();
+                if (this.paymentDueAmount > 0.0) {
+                    if (this.paymentDueAmount <= ((Player)this.players.get(this.playerIndex)).getMoneyHeld()) {
+                        this.followCommunityCard1();
                     } else {
-                        paymentDue = true;
-                        arrearsIndex = 112;
+                        this.paymentDue = true;
+                        this.arrearsIndex = 112;
                     }
                 }
                 break;
-            case 13:
+            case 2:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community13.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune2.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var19) {
                 }
-                players.get(playerIndex).setMoneyHeld(10);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M10" + "\n";
-                logText.append(log);
+
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(10.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 10 Galy for being a Miss Universe 2023" + "\n";
+                this.logText.append(this.log);
                 break;
-            case 14:
+            case 3:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community14.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune3.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var18) {
                 }
-                players.get(playerIndex).setMoneyHeld(100);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has inherited M100" + "\n";
-                logText.append(log);
+
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 200 Galy for meeting a diamond meteorite\n";
+                this.logText.append(this.log);
                 break;
-            case 15:
+            case 4:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community15.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune4.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var17) {
                 }
-                players.get(playerIndex).setMoneyHeld(50);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M50 from sale of stock" + "\n";
-                logText.append(log);
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Galy from the bank" + "\n";
+                this.logText.append(this.log);
                 break;
-            case 16:
+            case 5:     // DONE
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/community16.jpg"));
-                    communityChest.setIcon(new ImageIcon(img));
-                } catch (IOException ex) {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune5.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var16) {
                 }
-                players.get(playerIndex).setMoneyHeld(100);
-                balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
-                log = "  /> " + players.get(playerIndex).getName()
-                        + " has received M100 from holiday fund" + "\n";
-                logText.append(log);
+
+                this.paymentDueAmount = 50.0;
+                if (((Player)this.players.get(this.playerIndex)).getMoneyHeld() >= this.paymentDueAmount) {
+                    this.followCommunityCard5();
+                } else {
+                    this.paymentDue = true;
+                    this.arrearsIndex = 109;
+                }
+                break;
+            case 6:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune6.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var15) {
+                }
+
+                this.paymentDueAmount = 100.0;
+                if (((Player)this.players.get(this.playerIndex)).getMoneyHeld() >= this.paymentDueAmount) {
+                    this.followCommunityCard6();
+                } else {
+                    this.paymentDue = true;
+                    this.arrearsIndex = 109;
+                }
+                break;
+            case 7:     // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune7.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var14) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Galy from the alien gift" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 8:         // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune8.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var13) {
+                }
+
+                this.manaDueAmount = 150.0;
+                if (((Player)this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+                    this.followCommunityCard8();
+                } else {
+                    this.manaDue = true;
+                    this.arrearsIndex = 109;
+                }
+                break;
+            case 9:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune9.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var12) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(25.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 25 Galy from Alien's spacecraft" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 10:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune10.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var11) {
+                }
+                ((Player)this.players.get(this.playerIndex)).positionOnBoard(40 - ((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard());
+                this.adjustPlayerPosition();
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 200 Galy from the government" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 11:       // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune11.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var10) {
+                }
+
+                counter = 0;
+                for(i = 0; i < this.players.size(); ++i) {
+                    if (i != this.playerIndex) {
+                        ((Player)this.players.get(i)).setMoneyHeld(-50.0);
+                        ++counter;
+                        ((JLabel)this.balanceLabels.get(i)).setText("E" + ((Player)this.players.get(i)).getMoneyHeld());
+                    }
+                }
+
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld((double)(counter * 50));
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received from each of other players 50 Galy" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 12:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune12.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var9) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 200 Galy for awarding the Universe Oldie Pension" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 13:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune13.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var8) {
+                }
+
+                ((Player)this.players.get(this.playerIndex)).addGetOutOfJailCard(this.deck.getFortuneCard(3));
+                ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setText("get out of jail cards : " + ((Player)this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards());
+                ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setVisible(true);
+                this.generateSellGetOutOfJailCardComboBox();
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received get out of Jail card \n";
+                this.logText.append(this.log);
+                break;
+            case 14:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune14.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var7) {
+                }
+
+                int position = ((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard();
+                if (((Player)this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards() == 0) {
+                    position = 10 - position;
+                    ((Player)this.players.get(this.playerIndex)).positionOnBoard(position);
+                    this.finishTurn.setEnabled(true);
+                    this.rollTheDice.setEnabled(false);
+                    ((Player)this.players.get(this.playerIndex)).setInJail(true);
+                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " went to Jail" + "\n";
+                    this.logText.append(this.log);
+                    this.adjustPlayerPosition();
+                    ((Player)this.players.get(this.playerIndex)).setManaHeld(-5000);
+                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
+                    this.logText.append(this.log);
+                } else {
+                    this.gamePrompt.setText("Do you want to use your get out of jail card?");
+                    this.useGetOutOfJailCard.setVisible(true);
+                    this.dontUseGetOutOfJailCard.setVisible(true);
+                    this.rollTheDice.setEnabled(false);
+                    this.finishTurn.setEnabled(false);
+                    ((Player)this.players.get(this.playerIndex)).setManaHeld(+500.0);
+                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
+                    this.logText.append(this.log);
+                }
+                break;
+            case 15:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune15.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var6) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(50.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 50 Galy from lucky money" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 16:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune16.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var5) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(20.0);
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 20 Galy for doing overtime discovery" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 17:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune17.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var4) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
+                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from solar energy charging" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 18:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune18.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var3) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
+                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from radioisotope thermoelectric generators" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 19:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune19.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var2) {
+                }
+                ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
+                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from fuel cells" + "\n";
+                this.logText.append(this.log);
+                break;
+            case 20:        // DONE
+                try {
+                    img = ImageIO.read(this.getClass().getResource("resources/fortune20.jpg"));
+                    this.communityChest.setIcon(new ImageIcon(img));
+                } catch (IOException var1) {
+                }
+                this.manaDueAmount = 100.0;
+                if (((Player)this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
+                    this.followCommunityCard20();
+                } else {
+                    this.manaDue = true;
+                    this.arrearsIndex = 109;
+                }
+                break;
         }
     }
 
@@ -7126,12 +6714,12 @@ public class Monopoly {
         if (players.get(playerIndex).getPositionOnGameBoard() == 7
                 || players.get(playerIndex).getPositionOnGameBoard() == 22
                 || players.get(playerIndex).getPositionOnGameBoard() == 36) {
-            dealChanceCard();
+            ChanceCardActive();
         }
         if (players.get(playerIndex).getPositionOnGameBoard() == 2
                 || players.get(playerIndex).getPositionOnGameBoard() == 17
                 || players.get(playerIndex).getPositionOnGameBoard() == 33) {
-            dealCommunityCard();
+            FortuneCardActive();
         }
         if (entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())

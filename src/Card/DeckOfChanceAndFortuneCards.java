@@ -132,7 +132,7 @@ public class DeckOfChanceAndFortuneCards {
         this.getOutOfJailCommunity = getOutOfJailCommunity;
     }
 
-    public FortuneCard getCommunityCard(int id) {
+    public FortuneCard getFortuneCard(int id) {
         Iterator var3 = this.fortuneCards.iterator();
 
         while(var3.hasNext()) {

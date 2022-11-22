@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Player {
     private double moneyHeld;
-    private int manaHeld;
+    private double manaHeld;
     private String name;
     private boolean passedGo;
     private int positionOnGameBoard;
@@ -27,13 +27,13 @@ public class Player {
     public double getMoneyHeld(){
         return moneyHeld;
     }
-    public void setMoneyHeld(int update){
+    public void setMoneyHeld(double update){
         this.moneyHeld += update;
     }
-    public int getManaHeld(){
+    public double getManaHeld(){
         return manaHeld;
     }
-    public void setManaHeld(int update){
+    public void setManaHeld(double update){
         this.manaHeld += update;
     }
     public String getName(){
@@ -47,6 +47,9 @@ public class Player {
     }
     public void setPassedGo(boolean passedGo){
         this.passedGo = passedGo;
+    }
+    public int getPositionOnGameBoard() {
+        return this.positionOnGameBoard;
     }
     public void positionOnBoard(int positionOnGameBoard){
         this.positionOnGameBoard += positionOnGameBoard;
