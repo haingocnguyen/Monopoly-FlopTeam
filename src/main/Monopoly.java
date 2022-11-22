@@ -1,3 +1,5 @@
+package main;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -279,7 +281,9 @@ public class Monopoly {
     private double valueOfOwnedProperty;
     private JButton showInstruction;
     private JButton hideInstruction;
-    private int frameWidth;
+    private int frameWidth; 
+    private int cardNormalSize = 90;
+    private int cardCornerSize = 120;
 
     /**
      * Launch the application.
@@ -307,7 +311,7 @@ public class Monopoly {
     public Monopoly() {
         double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-        if (((int) width) == 1366 && ((int) height) == 768) {
+        if (((int) width) == 1920 && ((int) height) == 1080) {
             deck = new DeckOfChanceAndCommunityChestCards();
             players = new ArrayList<Player>();
             entities = new Entities();
@@ -410,148 +414,150 @@ public class Monopoly {
             }
         });
         topLeft = new JLayeredPane();
-        topLeft.setBounds(0, 0, (int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5));
+        topLeft.setBounds(0,0,cardCornerSize,cardCornerSize);
+
         left_1 = new JLayeredPane();
-        left_1.setBounds(0, (int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_1.setBounds(0,cardCornerSize,cardCornerSize,cardNormalSize);
+
         left_2 = new JLayeredPane();
-        left_2.setBounds(0, (int) (frameHeight / 6.5 * 1.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_2.setBounds(0,cardCornerSize*2,cardCornerSize,cardNormalSize);
+
         left_3 = new JLayeredPane();
-        left_3.setBounds(0, (int) (frameHeight / 6.5 * 2),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_3.setBounds(0,cardCornerSize*3,cardCornerSize,cardNormalSize);
+
         left_4 = new JLayeredPane();
-        left_4.setBounds(0, (int) (frameHeight / 6.5 * 2.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_4.setBounds(0,cardCornerSize*4,cardCornerSize,cardNormalSize);
+
         left_5 = new JLayeredPane();
-        left_5.setBounds(0, (int) (frameHeight / 6.5 * 3),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_5.setBounds(0,cardCornerSize*5,cardCornerSize,cardNormalSize);
+
         left_6 = new JLayeredPane();
-        left_6.setBounds(0, (int) (frameHeight / 6.5 * 3.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_6.setBounds(0,cardCornerSize*6,cardCornerSize,cardNormalSize);
+
         left_7 = new JLayeredPane();
-        left_7.setBounds(0, (int) (frameHeight / 6.5 * 4),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_7.setBounds(0,cardCornerSize*7,cardCornerSize,cardNormalSize);
+
         left_8 = new JLayeredPane();
-        left_8.setBounds(0, (int) (frameHeight / 6.5 * 4.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_8.setBounds(0,cardCornerSize*8,cardCornerSize,cardNormalSize);
+
         left_9 = new JLayeredPane();
-        left_9.setBounds(0, (int) (frameHeight / 6.5 * 5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_9.setBounds(0,cardCornerSize*9,cardCornerSize,cardNormalSize);
+
         bottomLeft = new JLayeredPane();
-        bottomLeft.setBounds(0, (int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 6.5));
+        bottomLeft.setBounds(0,930,cardCornerSize,cardCornerSize);
+
         top_1 = new JLayeredPane();
-        top_1.setBounds((int) (frameHeight / 6.5), 0, (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        top_1.setBounds(cardCornerSize,0,cardNormalSize,cardCornerSize);
+
         top_2 = new JLayeredPane();
-        top_2.setBounds((int) (frameHeight / 6.5 * 1.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_2.setBounds(cardCornerSize*2,0,cardNormalSize,cardCornerSize);
+
         top_3 = new JLayeredPane();
-        top_3.setBounds((int) (frameHeight / 6.5 * 2), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_3.setBounds(cardCornerSize*3,0,cardNormalSize,cardCornerSize);
+
         top_4 = new JLayeredPane();
-        top_4.setBounds((int) (frameHeight / 6.5 * 2.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_4.setBounds(cardCornerSize*4,0,cardNormalSize,cardCornerSize);
+
         top_5 = new JLayeredPane();
-        top_5.setBounds((int) (frameHeight / 6.5 * 3), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_5.setBounds(cardCornerSize*5,0,cardNormalSize,cardCornerSize);
+
         top_6 = new JLayeredPane();
-        top_6.setBounds((int) (frameHeight / 6.5 * 3.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_6.setBounds(cardCornerSize*6,0,cardNormalSize,cardCornerSize);
+
         top_7 = new JLayeredPane();
-        top_7.setBounds((int) (frameHeight / 6.5 * 4), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_7.setBounds(cardCornerSize*7,0,cardNormalSize,cardCornerSize);
+
         top_8 = new JLayeredPane();
-        top_8.setBounds((int) (frameHeight / 6.5 * 4.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_8.setBounds(cardCornerSize*8,0,cardNormalSize,cardCornerSize);
+
         top_9 = new JLayeredPane();
-        top_9.setBounds((int) (frameHeight / 6.5 * 5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_9.setBounds(cardCornerSize*9,0,cardNormalSize,cardCornerSize);
+
         topRight = new JLayeredPane();
-        topRight.setBounds((int) (frameHeight / 6.5 * 5.5), 0,
-                (int) (frameHeight / 6.5), (int) (frameHeight / 6.5));
+        topRight.setBounds(930,0,cardCornerSize,cardCornerSize);
+
         right_1 = new JLayeredPane();
-        right_1.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_1.setBounds(930,cardCornerSize,cardCornerSize,cardNormalSize);
+
         right_2 = new JLayeredPane();
-        right_2.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 1.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_2.setBounds(930,cardCornerSize*2,cardCornerSize,cardNormalSize);
+
         right_3 = new JLayeredPane();
-        right_3.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 2), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_3.setBounds(930,cardCornerSize*3,cardCornerSize,cardNormalSize);
+
         right_4 = new JLayeredPane();
-        right_4.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 2.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_4.setBounds(930,cardCornerSize*4,cardCornerSize,cardNormalSize);
+
         right_5 = new JLayeredPane();
-        right_5.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 3), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_5.setBounds(930,cardCornerSize*5,cardCornerSize,cardNormalSize);
+
         right_6 = new JLayeredPane();
-        right_6.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 3.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_6.setBounds(930,cardCornerSize*6,cardCornerSize,cardNormalSize);
+
         right_7 = new JLayeredPane();
-        right_7.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 4), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_7.setBounds(930,cardCornerSize*7,cardCornerSize,cardNormalSize);
+
         right_8 = new JLayeredPane();
-        right_8.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 4.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_8.setBounds(930,cardCornerSize*8,cardCornerSize,cardNormalSize);
+
         right_9 = new JLayeredPane();
-        right_9.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_9.setBounds(930,cardCornerSize*9,cardCornerSize,cardNormalSize);
+
         bottom_1 = new JLayeredPane();
-        bottom_1.setBounds((int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_1.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_2 = new JLayeredPane();
-        bottom_2.setBounds((int) (frameHeight / 6.5 * 1.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_2.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_3 = new JLayeredPane();
-        bottom_3.setBounds((int) (frameHeight / 6.5 * 2),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_3.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_4 = new JLayeredPane();
-        bottom_4.setBounds((int) (frameHeight / 6.5 * 2.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_4.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_5 = new JLayeredPane();
-        bottom_5.setBounds((int) (frameHeight / 6.5 * 3),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_5.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_6 = new JLayeredPane();
-        bottom_6.setBounds((int) (frameHeight / 6.5 * 3.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_6.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_7 = new JLayeredPane();
-        bottom_7.setBounds((int) (frameHeight / 6.5 * 4),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_7.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_8 = new JLayeredPane();
-        bottom_8.setBounds((int) (frameHeight / 6.5 * 4.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_8.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottom_9 = new JLayeredPane();
-        bottom_9.setBounds((int) (frameHeight / 6.5 * 5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_9.setBounds(cardCornerSize,930,cardNormalSize,cardCornerSize);
+
         bottomRight = new JLayeredPane();
-        bottomRight.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5));
+        bottomRight.setBounds(930,930,cardCornerSize,cardCornerSize);
+
+        buildingLabel0 = new JLabel();
+        buildingLabel1 = new JLabel();
+        buildingLabel2 = new JLabel();
+        buildingLabel3 = new JLabel();
+        buildingLabel4 = new JLabel();
+        buildingLabel5 = new JLabel();
+        buildingLabel6 = new JLabel();
+        buildingLabel7 = new JLabel();
+        buildingLabel8 = new JLabel();
+        buildingLabel9 = new JLabel();
+        buildingLabel10 = new JLabel();
+        buildingLabel11 = new JLabel();
+        buildingLabel12 = new JLabel();
+        buildingLabel13 = new JLabel();
+        buildingLabel14 = new JLabel();
+        buildingLabel15 = new JLabel();
+        buildingLabel16 = new JLabel();
+        buildingLabel17 = new JLabel();
+        buildingLabel18 = new JLabel();
+        buildingLabel19 = new JLabel();
+        buildingLabel20 = new JLabel();
+        buildingLabel21 = new JLabel();
+
         deed = new JLabel();
-        deed.setBounds((int) (frameHeight / 6.5 * 1.95),
-                (int) (frameHeight / 6.5 * 1.6), (int) (frameHeight * 0.4),
-                (int) (frameHeight * 0.5));
+        deed.setBounds(750,750,500,750);
         deed.setVisible(true);
         bottom_9.addMouseListener(new MouseListener() {
 
@@ -564,7 +570,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_9.jpg"));
+                            "Resources/1deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -598,8 +604,8 @@ public class Monopoly {
             @Override
             public void mouseEntered(MouseEvent arg0) {
                 try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_7.jpg"));
+                    Image img = ImageIO.read(getClass().getResourcesource(
+                            "Resources/3deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -634,7 +640,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_5.jpg"));
+                            "Resources/5deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -669,7 +675,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_4.jpg"));
+                            "Resources/6deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -704,7 +710,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_2.jpg"));
+                            "Resources/8deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -739,7 +745,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_1.jpg"));
+                            "Resources/9deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -774,7 +780,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_9.jpg"));
+                            "Resources/11deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -809,7 +815,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_8.jpg"));
+                            "Resources/12deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -844,7 +850,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_7.jpg"));
+                            "Resources/13deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -879,7 +885,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_6.jpg"));
+                            "Resources/14deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -914,7 +920,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_5.jpg"));
+                            "Resources/15deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -949,7 +955,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_4.jpg"));
+                            "Resources/16deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -973,40 +979,6 @@ public class Monopoly {
 
         });
 
-        left_2.addMouseListener(new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent arg0) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_2.jpg"));
-                    deed.setIcon(new ImageIcon(img));
-                    deed.setVisible(true);
-                } catch (IOException ex) {
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                deed.setVisible(false);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-        });
 
         left_1.addMouseListener(new MouseListener() {
 
@@ -1019,7 +991,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_1.jpg"));
+                            "Resources/19deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1054,7 +1026,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_1.jpg"));
+                            "Resources/21deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1089,7 +1061,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_3.jpg"));
+                            "Resources/23deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1124,7 +1096,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_4.jpg"));
+                            "Resources/24deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1159,42 +1131,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_5.jpg"));
-                    deed.setIcon(new ImageIcon(img));
-                    deed.setVisible(true);
-                } catch (IOException ex) {
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                deed.setVisible(false);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-        });
-
-        top_6.addMouseListener(new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent arg0) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_6.jpg"));
+                            "Resources/25deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1229,42 +1166,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_7.jpg"));
-                    deed.setIcon(new ImageIcon(img));
-                    deed.setVisible(true);
-                } catch (IOException ex) {
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                deed.setVisible(false);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-        });
-
-        top_8.addMouseListener(new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent arg0) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_8.jpg"));
+                            "Resources/27deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1299,7 +1201,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_9.jpg"));
+                            "Resources/29deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1334,7 +1236,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_1.jpg"));
+                            "Resources/31deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1369,7 +1271,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_2.jpg"));
+                            "Resources/32deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1404,7 +1306,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_4.jpg"));
+                            "Resources/34deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1439,7 +1341,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_5.jpg"));
+                            "Resources/35deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1474,7 +1376,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_7.jpg"));
+                            "Resources/37deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1509,7 +1411,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_9.jpg"));
+                            "Resources/39deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1533,28 +1435,305 @@ public class Monopoly {
 
         });
 
-        buildingLabel0 = new JLabel();
-        buildingLabel1 = new JLabel();
-        buildingLabel2 = new JLabel();
-        buildingLabel3 = new JLabel();
-        buildingLabel4 = new JLabel();
-        buildingLabel5 = new JLabel();
-        buildingLabel6 = new JLabel();
-        buildingLabel7 = new JLabel();
-        buildingLabel8 = new JLabel();
-        buildingLabel9 = new JLabel();
-        buildingLabel10 = new JLabel();
-        buildingLabel11 = new JLabel();
-        buildingLabel12 = new JLabel();
-        buildingLabel13 = new JLabel();
-        buildingLabel14 = new JLabel();
-        buildingLabel15 = new JLabel();
-        buildingLabel16 = new JLabel();
-        buildingLabel17 = new JLabel();
-        buildingLabel18 = new JLabel();
-        buildingLabel19 = new JLabel();
-        buildingLabel20 = new JLabel();
-        buildingLabel21 = new JLabel();
+        boardPanels.add(bottomRight);
+        boardPanels.add(bottom_9);
+        boardPanels.add(bottom_8);
+        boardPanels.add(bottom_7);
+        boardPanels.add(bottom_6);
+        boardPanels.add(bottom_5);
+        boardPanels.add(bottom_4);
+        boardPanels.add(bottom_3);
+        boardPanels.add(bottom_2);
+        boardPanels.add(bottom_1);
+        boardPanels.add(bottomLeft);
+        boardPanels.add(left_9);
+        boardPanels.add(left_8);
+        boardPanels.add(left_7);
+        boardPanels.add(left_6);
+        boardPanels.add(left_5);
+        boardPanels.add(left_4);
+        boardPanels.add(left_3);
+        boardPanels.add(left_2);
+        boardPanels.add(left_1);
+        boardPanels.add(topLeft);
+        boardPanels.add(top_1);
+        boardPanels.add(top_2);
+        boardPanels.add(top_3);
+        boardPanels.add(top_4);
+        boardPanels.add(top_5);
+        boardPanels.add(top_6);
+        boardPanels.add(top_7);
+        boardPanels.add(top_8);
+        boardPanels.add(top_9);
+        boardPanels.add(topRight);
+        boardPanels.add(right_1);
+        boardPanels.add(right_2);
+        boardPanels.add(right_3);
+        boardPanels.add(right_4);
+        boardPanels.add(right_5);
+        boardPanels.add(right_6);
+        boardPanels.add(right_7);
+        boardPanels.add(right_8);
+        boardPanels.add(right_9);
+
+        bottomRightLabel = new JLabel();
+        bottomLeftLabel = new JLabel();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/0.png"));
+            bottomRightLabel.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/10.png"));
+            bottomLeftLabel.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+
+        bottom1Label = new JLabel();
+        bottom2Label = new JLabel();
+        bottom3Label = new JLabel();
+        bottom4Label = new JLabel();
+        bottom5Label = new JLabel();
+        bottom6Label = new JLabel();
+        bottom7Label = new JLabel();
+        bottom8Label = new JLabel();
+        bottom9Label = new JLabel();
+
+        setBottom1Clean();
+        setBottom2Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/7.png"));
+            bottom3Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setBottom4Clean();
+        setBottom5Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/4.png"));
+            bottom6Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setBottom7Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/2.png"));
+            bottom8Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setBottom9Clean();
+        bottom_1.setLayout(flow);
+        bottom_2.setLayout(flow);
+        bottom_3.setLayout(flow);
+        bottom_4.setLayout(flow);
+        bottom_5.setLayout(flow);
+        bottom_6.setLayout(flow);
+        bottom_7.setLayout(flow);
+        bottom_8.setLayout(flow);
+        bottom_9.setLayout(flow);
+        bottomRight.setLayout(flow);
+        bottomLeft.setLayout(flow);
+        bottomRight.add(bottomRightLabel);
+        bottomLeft.add(bottomLeftLabel);
+
+        bottom_1.add(bottom1Label);
+        bottom_2.add(bottom2Label);
+        bottom_3.add(bottom3Label);
+        bottom_4.add(bottom4Label);
+        bottom_5.add(bottom5Label);
+        bottom_6.add(bottom6Label);
+        bottom_7.add(bottom7Label);
+        bottom_8.add(bottom8Label);
+        bottom_9.add(bottom9Label);
+        left1Label = new JLabel();
+        left2Label = new JLabel();
+        left3Label = new JLabel();
+        left4Label = new JLabel();
+        left5Label = new JLabel();
+        left6Label = new JLabel();
+        left7Label = new JLabel();
+        left8Label = new JLabel();
+        left9Label = new JLabel();
+
+        setLeft1Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/18.png"));
+            left2Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/17.png"));
+            left3Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setLeft4Clean();
+        setLeft5Clean();
+        setLeft6Clean();
+        setLeft7Clean();
+        setLeft8Clean();
+        setLeft9Clean();
+
+        left_1.setLayout(flow);
+        left_2.setLayout(flow);
+        left_3.setLayout(flow);
+        left_4.setLayout(flow);
+        left_5.setLayout(flow);
+        left_6.setLayout(flow);
+        left_7.setLayout(flow);
+        left_8.setLayout(flow);
+        left_9.setLayout(flow);
+        left_1.add(left1Label);
+        left_2.add(left2Label);
+        left_3.add(left3Label);
+        left_4.add(left4Label);
+        left_5.add(left5Label);
+        left_6.add(left6Label);
+        left_7.add(left7Label);
+        left_8.add(left8Label);
+        left_9.add(left9Label);
+
+        top1Label = new JLabel();
+        top2Label = new JLabel();
+        top3Label = new JLabel();
+        top4Label = new JLabel();
+        top5Label = new JLabel();
+        top6Label = new JLabel();
+        top7Label = new JLabel();
+        top8Label = new JLabel();
+        top9Label = new JLabel();
+        topLeftLabel = new JLabel();
+
+        topLeft.setLayout(flow);
+        top_1.setLayout(flow);
+        top_2.setLayout(flow);
+        top_3.setLayout(flow);
+        top_4.setLayout(flow);
+        top_5.setLayout(flow);
+        top_6.setLayout(flow);
+        top_7.setLayout(flow);
+        top_8.setLayout(flow);
+        top_9.setLayout(flow);
+        topLeft.add(topLeftLabel);
+        top_1.add(top1Label);
+        top_2.add(top2Label);
+        top_3.add(top3Label);
+        top_4.add(top4Label);
+        top_5.add(top5Label);
+        top_6.add(top6Label);
+        top_7.add(top7Label);
+        top_8.add(top8Label);
+        top_9.add(top9Label);
+
+        setTop1Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/22.pngg"));
+            top2Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/20.png"));
+            topLeftLabel.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setTop3Clean();
+        setTop4Clean();
+        setTop5Clean();
+        setTop7Clean();
+        setTop8Clean();
+        setTop9Clean();
+        topRightLabel = new JLabel();
+        right1Label = new JLabel();
+        right2Label = new JLabel();
+        right3Label = new JLabel();
+        right4Label = new JLabel();
+        right5Label = new JLabel();
+        right6Label = new JLabel();
+        right7Label = new JLabel();
+        right8Label = new JLabel();
+        right9Label = new JLabel();
+
+        topRight.setLayout(flow);
+        right_1.setLayout(flow);
+        right_2.setLayout(flow);
+        right_3.setLayout(flow);
+        right_4.setLayout(flow);
+        right_5.setLayout(flow);
+        right_6.setLayout(flow);
+        right_7.setLayout(flow);
+        right_8.setLayout(flow);
+        right_9.setLayout(flow);
+        topRight.add(topRightLabel);
+        right_1.add(right1Label);
+        right_2.add(right2Label);
+        right_3.add(right3Label);
+        right_4.add(right4Label);
+        right_5.add(right5Label);
+        right_6.add(right6Label);
+        right_7.add(right7Label);
+        right_8.add(right8Label);
+        right_9.add(right9Label);
+
+        setRight1Clean();
+        setRight2Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/33.png"));
+            right3Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setRight4Clean();
+        setRight5Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/36.png"));
+            right6Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setRight7Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/37.png"));
+            right8Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        setRight9Clean();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/30.png"));
+            topRightLabel.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        communityChest = new JButton();
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "resources/chest.jpg"));
+            communityChest.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        communityChest.setBounds((int) (frameHeight / 6.5 * 1.125),
+                (int) (frameHeight / 6.5 * 1.125), (int) (frameHeight / 3.33),
+                (int) (frameHeight / 5));
+        communityChest.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        communityChest.setBorderPainted(false);
+        communityChest.setContentAreaFilled(false);
+        // communityChest.setEnabled(false);
+        chanceButton = new JButton();
+        chanceButton.setBounds((int) (frameHeight / 6.5 * 3.5),
+                (int) (frameHeight / 6.5 * 4), (int) (frameHeight / 3.33),
+                (int) (frameHeight / 5));
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "resources/chance.jpg"));
+            chanceButton.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
 
         buildingLabel0.setBounds((int) (frameHeight / 6.5 * 5) + 1,
                 (int) (frameHeight / 6.5 * 5.5) + 1, 50, 25);
@@ -1625,302 +1804,6 @@ public class Monopoly {
         buildingLabels.add(buildingLabel21);
 
         communityChest = new JButton("?");
-
-        boardPanels.add(bottomRight);
-        boardPanels.add(bottom_9);
-        boardPanels.add(bottom_8);
-        boardPanels.add(bottom_7);
-        boardPanels.add(bottom_6);
-        boardPanels.add(bottom_5);
-        boardPanels.add(bottom_4);
-        boardPanels.add(bottom_3);
-        boardPanels.add(bottom_2);
-        boardPanels.add(bottom_1);
-        boardPanels.add(bottomLeft);
-        boardPanels.add(left_9);
-        boardPanels.add(left_8);
-        boardPanels.add(left_7);
-        boardPanels.add(left_6);
-        boardPanels.add(left_5);
-        boardPanels.add(left_4);
-        boardPanels.add(left_3);
-        boardPanels.add(left_2);
-        boardPanels.add(left_1);
-        boardPanels.add(topLeft);
-        boardPanels.add(top_1);
-        boardPanels.add(top_2);
-        boardPanels.add(top_3);
-        boardPanels.add(top_4);
-        boardPanels.add(top_5);
-        boardPanels.add(top_6);
-        boardPanels.add(top_7);
-        boardPanels.add(top_8);
-        boardPanels.add(top_9);
-        boardPanels.add(topRight);
-        boardPanels.add(right_1);
-        boardPanels.add(right_2);
-        boardPanels.add(right_3);
-        boardPanels.add(right_4);
-        boardPanels.add(right_5);
-        boardPanels.add(right_6);
-        boardPanels.add(right_7);
-        boardPanels.add(right_8);
-        boardPanels.add(right_9);
-
-        bottomRightLabel = new JLabel();
-        bottomLeftLabel = new JLabel();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/start.jpg"));
-            bottomRightLabel.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottomLeft.jpg"));
-            bottomLeftLabel.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        bottom1Label = new JLabel();
-        bottom2Label = new JLabel();
-        bottom3Label = new JLabel();
-        bottom4Label = new JLabel();
-        bottom5Label = new JLabel();
-        bottom6Label = new JLabel();
-        bottom7Label = new JLabel();
-        bottom8Label = new JLabel();
-        bottom9Label = new JLabel();
-
-        setBottom1Clean();
-        setBottom2Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom3.jpg"));
-            bottom3Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setBottom4Clean();
-        setBottom5Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom6.jpg"));
-            bottom6Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setBottom7Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom8.jpg"));
-            bottom8Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setBottom9Clean();
-        bottom_1.setLayout(flow);
-        bottom_2.setLayout(flow);
-        bottom_3.setLayout(flow);
-        bottom_4.setLayout(flow);
-        bottom_5.setLayout(flow);
-        bottom_6.setLayout(flow);
-        bottom_7.setLayout(flow);
-        bottom_8.setLayout(flow);
-        bottom_9.setLayout(flow);
-        bottomRight.setLayout(flow);
-        bottomLeft.setLayout(flow);
-        bottomRight.add(bottomRightLabel);
-        bottomLeft.add(bottomLeftLabel);
-
-        bottom_1.add(bottom1Label);
-        bottom_2.add(bottom2Label);
-        bottom_3.add(bottom3Label);
-        bottom_4.add(bottom4Label);
-        bottom_5.add(bottom5Label);
-        bottom_6.add(bottom6Label);
-        bottom_7.add(bottom7Label);
-        bottom_8.add(bottom8Label);
-        bottom_9.add(bottom9Label);
-
-        left1Label = new JLabel();
-        left2Label = new JLabel();
-        left3Label = new JLabel();
-        left4Label = new JLabel();
-        left5Label = new JLabel();
-        left6Label = new JLabel();
-        left7Label = new JLabel();
-        left8Label = new JLabel();
-        left9Label = new JLabel();
-
-        setLeft1Clean();
-        setLeft2Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/left3.jpg"));
-            left3Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setLeft4Clean();
-        setLeft5Clean();
-        setLeft6Clean();
-        setLeft7Clean();
-        setLeft8Clean();
-        setLeft9Clean();
-
-        left_1.setLayout(flow);
-        left_2.setLayout(flow);
-        left_3.setLayout(flow);
-        left_4.setLayout(flow);
-        left_5.setLayout(flow);
-        left_6.setLayout(flow);
-        left_7.setLayout(flow);
-        left_8.setLayout(flow);
-        left_9.setLayout(flow);
-        left_1.add(left1Label);
-        left_2.add(left2Label);
-        left_3.add(left3Label);
-        left_4.add(left4Label);
-        left_5.add(left5Label);
-        left_6.add(left6Label);
-        left_7.add(left7Label);
-        left_8.add(left8Label);
-        left_9.add(left9Label);
-
-        topLeftLabel = new JLabel();
-        top1Label = new JLabel();
-        top2Label = new JLabel();
-        top3Label = new JLabel();
-        top4Label = new JLabel();
-        top5Label = new JLabel();
-        top6Label = new JLabel();
-        top7Label = new JLabel();
-        top8Label = new JLabel();
-        top9Label = new JLabel();
-
-        topLeft.setLayout(flow);
-        top_1.setLayout(flow);
-        top_2.setLayout(flow);
-        top_3.setLayout(flow);
-        top_4.setLayout(flow);
-        top_5.setLayout(flow);
-        top_6.setLayout(flow);
-        top_7.setLayout(flow);
-        top_8.setLayout(flow);
-        top_9.setLayout(flow);
-        topLeft.add(topLeftLabel);
-        top_1.add(top1Label);
-        top_2.add(top2Label);
-        top_3.add(top3Label);
-        top_4.add(top4Label);
-        top_5.add(top5Label);
-        top_6.add(top6Label);
-        top_7.add(top7Label);
-        top_8.add(top8Label);
-        top_9.add(top9Label);
-
-        setTop1Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/top2.jpg"));
-            top2Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/topLeft.jpg"));
-            topLeftLabel.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setTop3Clean();
-        setTop4Clean();
-        setTop5Clean();
-        setTop6Clean();
-        setTop7Clean();
-        setTop8Clean();
-        setTop9Clean();
-        topRightLabel = new JLabel();
-        right1Label = new JLabel();
-        right2Label = new JLabel();
-        right3Label = new JLabel();
-        right4Label = new JLabel();
-        right5Label = new JLabel();
-        right6Label = new JLabel();
-        right7Label = new JLabel();
-        right8Label = new JLabel();
-        right9Label = new JLabel();
-
-        topRight.setLayout(flow);
-        right_1.setLayout(flow);
-        right_2.setLayout(flow);
-        right_3.setLayout(flow);
-        right_4.setLayout(flow);
-        right_5.setLayout(flow);
-        right_6.setLayout(flow);
-        right_7.setLayout(flow);
-        right_8.setLayout(flow);
-        right_9.setLayout(flow);
-        topRight.add(topRightLabel);
-        right_1.add(right1Label);
-        right_2.add(right2Label);
-        right_3.add(right3Label);
-        right_4.add(right4Label);
-        right_5.add(right5Label);
-        right_6.add(right6Label);
-        right_7.add(right7Label);
-        right_8.add(right8Label);
-        right_9.add(right9Label);
-
-        setRight1Clean();
-        setRight2Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/right3.jpg"));
-            right3Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setRight4Clean();
-        setRight5Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/right6.jpg"));
-            right6Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setRight7Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/right8.jpg"));
-            right8Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        setRight9Clean();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/topRight.jpg"));
-            topRightLabel.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        communityChest = new JButton();
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/chest.jpg"));
-            communityChest.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-        communityChest.setBounds((int) (frameHeight / 6.5 * 1.125),
-                (int) (frameHeight / 6.5 * 1.125), (int) (frameHeight / 3.33),
-                (int) (frameHeight / 5));
-        communityChest.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        communityChest.setBorderPainted(false);
-        communityChest.setContentAreaFilled(false);
-        // communityChest.setEnabled(false);
-        chanceButton = new JButton();
-        chanceButton.setBounds((int) (frameHeight / 6.5 * 3.5),
-                (int) (frameHeight / 6.5 * 4), (int) (frameHeight / 3.33),
-                (int) (frameHeight / 5));
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/chance.jpg"));
-            chanceButton.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
 
         chanceButton.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         chanceButton.setBorderPainted(false);
