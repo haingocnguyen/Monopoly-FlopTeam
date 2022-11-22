@@ -1,7 +1,7 @@
-package Main;
+package main;
 
 import Input.MouseInput;
-import Tile.TileManager;
+import tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,6 +32,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     MouseInput mouseInput = new MouseInput(this);
     Thread gameThread; // to keep The game running until we stop it
+    Board board = new Board(this);
 
 
     // Set player's default position
@@ -107,6 +108,7 @@ public class GamePanel extends JPanel implements Runnable{
             opePane.draw(g2);
             playerPane.draw(g2);
             rollDice.draw(g2);
+
         }else if(State == STATE.MENU){
             menu.draw(g2);
         }
