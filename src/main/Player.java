@@ -86,4 +86,11 @@ public class Player {
     public void setBankrupt(boolean isBankrupt){
         this.isBankrupt = isBankrupt;
     }
+    public ArrayList<PlanetProperties> getOwnedProperties() {
+        return ownedProperties;
+    }
+    public void setOwnedProperties(ArrayList<PlanetProperties> ownedProperties) {
+        this.ownedProperties = ownedProperties;
+    }
+
 }
