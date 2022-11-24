@@ -5669,7 +5669,7 @@ public class Monopoly {
      */
     private void generateMortgageComboBox() {
         mortgageModel = new DefaultComboBoxModel<String>();
-        for (Entity entity : players.get(playerIndex).getOwnedProperties()) {
+        for (PlanetProperties entity : players.get(playerIndex).getOwnedProperties()) {
             if (entity.getNumberOfHouses() == 0
                     && entity.getNumberOfHotels() == 0) {
                 mortgageModel.addElement(entity.getName());
@@ -5678,7 +5678,7 @@ public class Monopoly {
         mortgageComboBox.setModel(mortgageModel);
         mortgageComboBox.setSelectedItem(null);
         sellPropertyModel = new DefaultComboBoxModel<String>();
-        for (Entity entity : players.get(playerIndex).getOwnedProperties()) {
+        for (PlanetProperties entity : players.get(playerIndex).getOwnedProperties()) {
             sellPropertyModel.addElement(entity.getName());
         }
         sellPropertyComboBox.setModel(sellPropertyModel);
