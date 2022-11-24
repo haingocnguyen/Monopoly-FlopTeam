@@ -1,4 +1,8 @@
+package main;
+
 import Card.DeckOfChanceAndFortuneCards;
+import Entities.PlanetProperties;
+import Entities.RentValues;
 import Main.Player;
 
 import java.awt.Color;
@@ -159,7 +163,7 @@ public class Monopoly {
     private int randomDice2;
     private Random random;
     private int doubleCounter;
-    private Entities entities;
+    private RentValues entities;
     private ArrayList<Player> players;
     private ArrayList<JLayeredPane> boardPanels;
     private int playerIndex;
@@ -2057,8 +2061,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
-
-                        for (Entity property : players.get(0)
+                        for (PlanetProperties property : players.get(0)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2095,7 +2098,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(0)
+                        for (PlanetProperties property : players.get(0)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -2226,7 +2229,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(1)
+                        for (PlanetProperties property : players.get(1)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2262,7 +2265,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(1)
+                        for (PlanetProperties property : players.get(1)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -2395,7 +2398,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(2)
+                        for (PlanetProperties property : players.get(2)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2431,7 +2434,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(2)
+                        for (PlanetProperties property : players.get(2)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -2565,7 +2568,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(3)
+                        for (PlanetProperties property : players.get(3)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2601,7 +2604,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(3)
+                        for (PlanetProperties property : players.get(3)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -3575,7 +3578,7 @@ public class Monopoly {
                 payLoan.setEnabled(false);
                 String comboSelection = String.valueOf(mortgageComboBox
                         .getSelectedItem());
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(comboSelection)
                             && entity.isMortgaged()
@@ -3601,7 +3604,7 @@ public class Monopoly {
                 String combo = String.valueOf(sellPropertyComboBox
                         .getSelectedItem());
                 boolean isMortgaged = false;
-                for (Entity entity : entities.getEntities()) {
+                for (PlanetProperties entity : entities.getEntities()) {
                     if (entity.getName().equals(combo)) {
                         if (entity.isMortgaged()) {
                             isMortgaged = true;
@@ -4039,13 +4042,13 @@ public class Monopoly {
                 boolean mortgaged = false;
                 String comboSelection = String.valueOf(mortgageComboBox
                         .getSelectedItem());
-                for (Entity anEntity : entities.getEntities()) {
+                for (PlanetProperties anEntity : entities.getEntities()) {
                     if (anEntity.getName().equals(comboSelection)) {
                         anEntity.setMortgaged(false);
                         position = anEntity.getPosition();
                     }
                 }
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(comboSelection)) {
                         entity.setMortgaged(false);
@@ -4135,7 +4138,7 @@ public class Monopoly {
                     System.out.println("houses: " + getNumberOfHouses());
                     paymentDue = false;
                     if (players.get(playerIndex).getOwnedProperties().size() > 0) {
-                        for (Entity entity : entities.getEntities()) {
+                        for (PlanetProperties entity : entities.getEntities()) {
                             if (entity.getOwner() != null
                                     && entity
                                     .getOwner()
@@ -4145,7 +4148,7 @@ public class Monopoly {
                                 entity.setOwner(null);
                             }
                         }
-                        for (Entity property : players.get(playerIndex)
+                        for (PlanetProperties property : players.get(playerIndex)
                                 .getOwnedProperties()) {
                             if (property.getNumberOfHotels() == 1) {
                                 numberOfHotelsToBeRestored++;
@@ -4391,14 +4394,14 @@ public class Monopoly {
                     int totalNumberOfHotelsInAGroup = 0;
                     boolean canAfford = false;
 
-                    for (Entity entity : entities.getEntities()) {
+                    for (PlanetProperties entity : entities.getEntities()) {
                         if (entity.getName().equals(entityName)) {
                             group = entity.getGroup();
                             entityPosition = entity.getPosition();
                             break;
                         }
                     }
-                    for (Entity anEntity : players.get(playerIndex)
+                    for (PlanetProperties anEntity : players.get(playerIndex)
                             .getOwnedProperties()) {
                         if (anEntity.getGroup().equals(group)) {
                             numberOfTheSameGroup++;
@@ -5703,7 +5706,7 @@ public class Monopoly {
      */
     private void generateAddBuildingComboBox() {
         Set<String> entitiesNames = new HashSet<String>();
-        for (Entity entity : players.get(playerIndex).getOwnedProperties()) {
+        for (PlanetProperties entity : players.get(playerIndex).getOwnedProperties()) {
             if (playerHasAll(entity.getGroup(), players.get(playerIndex)
                     .getName())
                     || entity.getNumberOfHouses() > 0
@@ -6714,7 +6717,7 @@ public class Monopoly {
     private double getRailRoadRent(String name) {
         int counter = 0;
         double rentValue = 0;
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getGroup() != null
                     && entity.getGroup().equals("railroads")) {
                 if (entity.getOwner() != null
@@ -6791,7 +6794,7 @@ public class Monopoly {
      */
     private boolean hasBuildings(String group) {
         for (Player player : players) {
-            for (Entity entity : player.getOwnedProperties()) {
+            for (PlanetProperties entity : player.getOwnedProperties()) {
                 if (entity.getGroup().equals(group)) {
                     if (entity.getNumberOfHouses() > 0
                             || entity.getNumberOfHotels() > 0) {
@@ -6809,7 +6812,7 @@ public class Monopoly {
      * @return position of the entity with specified name
      */
     private int getEntityPosition(String name) {
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getName().equals(name)) {
                 return entity.getPosition();
             }
@@ -6823,7 +6826,7 @@ public class Monopoly {
      * @return the name of the entity owner
      */
     private String getOwner(String entityName) {
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getName().equals(entityName)) {
                 return entity.getOwner().getName();
             }
