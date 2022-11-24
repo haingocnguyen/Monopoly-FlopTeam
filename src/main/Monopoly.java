@@ -1,4 +1,6 @@
 import Card.DeckOfChanceAndFortuneCards;
+import Entities.PlanetProperties;
+import Entities.RentValues;
 import Main.Player;
 
 import java.awt.Color;
@@ -159,7 +161,7 @@ public class Monopoly {
     private int randomDice2;
     private Random random;
     private int doubleCounter;
-    private Entities entities;
+    private RentValues entities;
     private ArrayList<Player> players;
     private ArrayList<JLayeredPane> boardPanels;
     private int playerIndex;
@@ -284,7 +286,7 @@ public class Monopoly {
         if (((int) width) == 1920 && ((int) height) == 1080) {
             deck = new DeckOfChanceAndFortuneCards();
             players = new ArrayList<Player>();
-            entities = new Entities();
+            entities = new RentValues();
             random = new Random();
             boardPanels = new ArrayList<JLayeredPane>();
             playerIndicators = new ArrayList<JLabel>();
@@ -1955,7 +1957,7 @@ public class Monopoly {
         gamePrompt.setBounds(frameHeight + 50, (int) (frameHeight / 2 + 15),
                 (int) (frameHeight / 4) * 3 - 20, 15);
 
-        pay50toGetOutOfJail = new JButton("pay M50 to get out of Jail");
+        pay50toGetOutOfJail = new JButton("Pay 50 Galy to get out of Jail");
         pay50toGetOutOfJail.setBounds(frameHeight + 200,
                 (int) (frameHeight / 2 + 60), 230, 20);
         pay50toGetOutOfJail.setVisible(false);
@@ -1969,15 +1971,15 @@ public class Monopoly {
                 (int) (frameHeight / 2 + 35), 160, 20);
         useGetOutOfJailCard.setVisible(false);
         dontUseGetOutOfJailCard.setVisible(false);
-        buyProperty = new JButton("buy");
-        dontBuyProperty = new JButton("don't buy");
-        payRent = new JButton("pay rent");
-        payArrears = new JButton("pay arrears");
+        buyProperty = new JButton("Buy");
+        dontBuyProperty = new JButton("Don't buy");
+        payRent = new JButton("Pay rent");
+        payArrears = new JButton("Pay arrears");
         payArrears.setBounds(frameHeight + 200, (int) (frameHeight / 2 + 60),
                 230, 20);
-        retireFromGame = new JButton("retire from game");
-        yesButton = new JButton("yes");
-        noButton = new JButton("no");
+        retireFromGame = new JButton("Retire from game");
+        yesButton = new JButton("Yes");
+        noButton = new JButton("No");
         yesButton.setVisible(false);
         noButton.setVisible(false);
         yesButton.setBounds(frameHeight + 180, (int) (frameHeight / 2 + 35),
@@ -2053,8 +2055,8 @@ public class Monopoly {
         mortgageComboBox = new JComboBox<String>();
         mortgageComboBox.setBounds(frameHeight + 205,
                 (int) (frameHeight / 2 + 90), 160, 20);
-        takeLoan = new JButton("take a loan");
-        payLoan = new JButton("pay the loan");
+        takeLoan = new JButton("Take a loan");
+        payLoan = new JButton("Pay the loan");
         takeLoan.setBounds(frameHeight + 370, (int) (frameHeight / 2 + 90),
                 100, 20);
         payLoan.setBounds(frameHeight + 475, (int) (frameHeight / 2 + 90), 105,
@@ -2301,7 +2303,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(0)
+                        for (PlanetProperties property : players.get(0)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2338,7 +2340,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(0)
+                        for (PlanetProperties property : players.get(0)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -2469,7 +2471,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(1)
+                        for (PlanetProperties property : players.get(1)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2505,7 +2507,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(1)
+                        for (PlanetProperties property : players.get(1)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -2638,7 +2640,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(2)
+                        for (PlanetProperties property : players.get(2)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2674,7 +2676,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(2)
+                        for (PlanetProperties property : players.get(2)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -2808,7 +2810,7 @@ public class Monopoly {
                     @Override
                     public void mouseEntered(MouseEvent arg0) {
 
-                        for (Entity property : players.get(3)
+                        for (PlanetProperties property : players.get(3)
                                 .getOwnedProperties()) {
                             if (property.getPosition() < 10) {
                                 boardPanels.get(property.getPosition())
@@ -2844,7 +2846,7 @@ public class Monopoly {
 
                     @Override
                     public void mouseExited(MouseEvent arg0) {
-                        for (Entity property : players.get(3)
+                        for (PlanetProperties property : players.get(3)
                                 .getOwnedProperties()) {
                             boardPanels.get(property.getPosition()).setBorder(
                                     BorderFactory.createEmptyBorder());
@@ -3509,7 +3511,7 @@ public class Monopoly {
                         .getEntities()
                         .get(players.get(playerIndex)
                                 .getPositionOnGameBoard())
-                        .getNumberOfHouses());
+                        .getNumberOfUpgrades());
             }
 
         });
@@ -3677,14 +3679,14 @@ public class Monopoly {
                             && players.get(playerIndex)
                             .getNumberOfGetOutOfJailCards() > 0) {
                         gamePrompt
-                                .setText("Use the card, pay M50 or roll the dice to get out of Jail");
+                                .setText("Use the card, pay 50 galy or roll the dice to get out of Jail");
                         useGetOutOfJailCard.setVisible(true);
                         pay50toGetOutOfJail.setVisible(true);
                         rollTheDice.setEnabled(true);
                         extraRollNeeded = true;
                     } else if (players.get(playerIndex).isInJail()) {
                         gamePrompt
-                                .setText("You need to pay M50 or roll double to get out of Jail");
+                                .setText("You need to pay 50 galy or roll double to get out of Jail");
                         extraRollNeeded = true;
                         rollTheDice.setEnabled(true);
                         pay50toGetOutOfJail.setVisible(true);
@@ -3818,7 +3820,7 @@ public class Monopoly {
                 payLoan.setEnabled(false);
                 String comboSelection = String.valueOf(mortgageComboBox
                         .getSelectedItem());
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(comboSelection)
                             && entity.isMortgaged()
@@ -3844,7 +3846,7 @@ public class Monopoly {
                 String combo = String.valueOf(sellPropertyComboBox
                         .getSelectedItem());
                 boolean isMortgaged = false;
-                for (Entity entity : entities.getEntities()) {
+                for (PlanetProperties entity : entities.getEntities()) {
                     if (entity.getName().equals(combo)) {
                         if (entity.isMortgaged()) {
                             isMortgaged = true;
@@ -4282,13 +4284,13 @@ public class Monopoly {
                 boolean mortgaged = false;
                 String comboSelection = String.valueOf(mortgageComboBox
                         .getSelectedItem());
-                for (Entity anEntity : entities.getEntities()) {
+                for (PlanetProperties anEntity : entities.getEntities()) {
                     if (anEntity.getName().equals(comboSelection)) {
                         anEntity.setMortgaged(false);
                         position = anEntity.getPosition();
                     }
                 }
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(comboSelection)) {
                         entity.setMortgaged(false);
@@ -4378,7 +4380,7 @@ public class Monopoly {
                     System.out.println("houses: " + getNumberOfHouses());
                     paymentDue = false;
                     if (players.get(playerIndex).getOwnedProperties().size() > 0) {
-                        for (Entity entity : entities.getEntities()) {
+                        for (PlanetProperties entity : entities.getEntities()) {
                             if (entity.getOwner() != null
                                     && entity
                                     .getOwner()
@@ -4388,17 +4390,17 @@ public class Monopoly {
                                 entity.setOwner(null);
                             }
                         }
-                        for (Entity property : players.get(playerIndex)
+                        for (PlanetProperties property : players.get(playerIndex)
                                 .getOwnedProperties()) {
-                            if (property.getNumberOfHotels() == 1) {
+                            if (property.getNumberOfPerfectPlanet() == 1) {
                                 numberOfHotelsToBeRestored++;
                             }
-                            if (property.getNumberOfHouses() > 0) {
+                            if (property.getNumberOfUpgrades() > 0) {
                                 numberOfHousesToBeRestored += property
-                                        .getNumberOfHouses();
+                                        .getNumberOfUpgrades();
                             }
-                            if (property.getBuildingIndex() != -1) {
-                                buildingLabels.get(property.getBuildingIndex())
+                            if (property.getUpgradeIndex() != -1) {
+                                buildingLabels.get(property.getUpgradeIndex())
                                         .setIcon(null);
                             }
 
@@ -4428,7 +4430,7 @@ public class Monopoly {
                                 .getMoneyHeld();
                     }
                     if (players.get(playerIndex).getOwnedProperties().size() > 0) {
-                        for (Entity entity : entities.getEntities()) {
+                        for (PlanetProperties entity : entities.getEntities()) {
                             if (entity.getOwner() != null
                                     && entity
                                     .getOwner()
@@ -4503,13 +4505,13 @@ public class Monopoly {
                 boolean mortgaged = true;
                 String comboSelection = String.valueOf(mortgageComboBox
                         .getSelectedItem());
-                for (Entity anEntity : entities.getEntities()) {
+                for (PlanetProperties anEntity : entities.getEntities()) {
                     if (anEntity.getName().equals(comboSelection)) {
                         anEntity.setMortgaged(true);
                         position = anEntity.getPosition();
                     }
                 }
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(comboSelection)) {
                         entity.setMortgaged(true);
@@ -4634,21 +4636,21 @@ public class Monopoly {
                     int totalNumberOfHotelsInAGroup = 0;
                     boolean canAfford = false;
 
-                    for (Entity entity : entities.getEntities()) {
+                    for (PlanetProperties entity : entities.getEntities()) {
                         if (entity.getName().equals(entityName)) {
                             group = entity.getGroup();
                             entityPosition = entity.getPosition();
                             break;
                         }
                     }
-                    for (Entity anEntity : players.get(playerIndex)
+                    for (PlanetProperties anEntity : players.get(playerIndex)
                             .getOwnedProperties()) {
                         if (anEntity.getGroup().equals(group)) {
                             numberOfTheSameGroup++;
                             totalNumberOfHousesInAGroup += anEntity
-                                    .getNumberOfHouses();
+                                    .getNumberOfUpgrades();
                             totalNumberOfHotelsInAGroup += anEntity
-                                    .getNumberOfHotels();
+                                    .getNumberOfPerfectPlanet();
                         }
                     }
                     if (entityPosition < 10) {
@@ -4684,7 +4686,7 @@ public class Monopoly {
                                     .get(getPlayersEntityPosition(String
                                             .valueOf(addBuildingTo
                                                     .getSelectedItem())))
-                                    .getNumberOfHouses() == 4
+                                    .getNumberOfUpgrades() == 4
                                     && getNumberOfHotels() > 0) {
                                 addHotelButton.setEnabled(true);
                             }
@@ -4699,7 +4701,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 0
+                                        .getNumberOfUpgrades() == 0
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
                                 } else if (players
@@ -4708,7 +4710,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 1
+                                        .getNumberOfUpgrades() == 1
                                         && totalNumberOfHousesInAGroup >= 2
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4718,7 +4720,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 2
+                                        .getNumberOfUpgrades() == 2
                                         && totalNumberOfHousesInAGroup >= 4
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4728,7 +4730,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 3
+                                        .getNumberOfUpgrades() == 3
                                         && totalNumberOfHousesInAGroup >= 6
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4738,7 +4740,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 4
+                                        .getNumberOfUpgrades() == 4
                                         && (totalNumberOfHousesInAGroup >= 8 || (totalNumberOfHousesInAGroup >= 4 && totalNumberOfHotelsInAGroup == 1))
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4759,7 +4761,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 0
+                                        .getNumberOfUpgrades() == 0
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
                                 } else if (players
@@ -4768,7 +4770,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 1
+                                        .getNumberOfUpgrades() == 1
                                         && totalNumberOfHousesInAGroup >= 3
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4778,7 +4780,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 2
+                                        .getNumberOfUpgrades() == 2
                                         && totalNumberOfHousesInAGroup >= 6
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4788,7 +4790,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 3
+                                        .getNumberOfUpgrades() == 3
                                         && totalNumberOfHousesInAGroup >= 9
                                         && getNumberOfHouses() > 0) {
                                     addHouseButton.setEnabled(true);
@@ -4798,7 +4800,7 @@ public class Monopoly {
                                         .get(getPlayersEntityPosition(String
                                                 .valueOf(addBuildingTo
                                                         .getSelectedItem())))
-                                        .getNumberOfHouses() == 4
+                                        .getNumberOfUpgrades() == 4
                                         && (totalNumberOfHousesInAGroup >= 12
                                         || (totalNumberOfHousesInAGroup >= 8 && totalNumberOfHotelsInAGroup == 1) || (totalNumberOfHousesInAGroup >= 4 && totalNumberOfHotelsInAGroup == 2))
                                         && getNumberOfHouses() > 0) {
@@ -4834,27 +4836,27 @@ public class Monopoly {
                 if (entities
                         .getEntities()
                         .get(getEntityPosition(String.valueOf(addBuildingTo
-                                .getSelectedItem()))).getBuildingIndex() < 5) {
+                                .getSelectedItem()))).getUpgradeIndex() < 5) {
                     houseCost = 50;
                 } else if (entities
                         .getEntities()
                         .get(getEntityPosition(String.valueOf(addBuildingTo
-                                .getSelectedItem()))).getBuildingIndex() < 11) {
+                                .getSelectedItem()))).getUpgradeIndex() < 11) {
                     houseCost = 100;
                 } else if (entities
                         .getEntities()
                         .get(getEntityPosition(String.valueOf(addBuildingTo
-                                .getSelectedItem()))).getBuildingIndex() < 17) {
+                                .getSelectedItem()))).getUpgradeIndex() < 17) {
                     houseCost = 150;
                 } else {
                     houseCost = 200;
                 }
 
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(
                             String.valueOf(addBuildingTo.getSelectedItem()))) {
-                        entity.setNumberOfHouses(1);
+                        entity.setNumberOfUpgrades(1);
                         break;
                     }
                 }
@@ -4863,7 +4865,7 @@ public class Monopoly {
                         .getOwnedProperties()
                         .get(getPlayersEntityPosition(String
                                 .valueOf(addBuildingTo.getSelectedItem())))
-                        .getNumberOfHouses();
+                        .getNumberOfUpgrades();
                 log = "  /> "
                         + players.get(playerIndex).getName()
                         + " has just bought a house at "
@@ -4884,7 +4886,7 @@ public class Monopoly {
                                 .get(getPlayersEntityPosition(String
                                         .valueOf(addBuildingTo
                                                 .getSelectedItem())))
-                                .getBuildingIndex(), numberOfHouses);
+                                .getNumberOfUpgrades(), numberOfHouses);
                 generateMortgageComboBox();
             }
 
@@ -4901,27 +4903,27 @@ public class Monopoly {
                 if (entities
                         .getEntities()
                         .get(getEntityPosition(String.valueOf(addBuildingTo
-                                .getSelectedItem()))).getBuildingIndex() < 5) {
+                                .getSelectedItem()))).getUpgradeIndex() < 5) {
                     hotelCost = 50;
                 } else if (entities
                         .getEntities()
                         .get(getEntityPosition(String.valueOf(addBuildingTo
-                                .getSelectedItem()))).getBuildingIndex() < 11) {
+                                .getSelectedItem()))).getUpgradeIndex() < 11) {
                     hotelCost = 100;
                 } else if (entities
                         .getEntities()
                         .get(getEntityPosition(String.valueOf(addBuildingTo
-                                .getSelectedItem()))).getBuildingIndex() < 17) {
+                                .getSelectedItem()))).getUpgradeIndex() < 17) {
                     hotelCost = 150;
                 } else {
                     hotelCost = 200;
                 }
-                for (Entity entity : players.get(playerIndex)
+                for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(
                             String.valueOf(addBuildingTo.getSelectedItem()))) {
-                        entity.setNumberOfHouses(-entity.getNumberOfHouses());
-                        entity.setNumberOfHotels(1);
+                        entity.setNumberOfUpgrades(-entity.getNumberOfUpgrades());
+                        entity.setNumberOfPerfectPlanet(1);
                         break;
                     }
                 }
@@ -4946,7 +4948,7 @@ public class Monopoly {
                                 .get(getPlayersEntityPosition(String
                                         .valueOf(addBuildingTo
                                                 .getSelectedItem())))
-                                .getBuildingIndex(), numberOfHouses);
+                                .getUpgradeIndex(), numberOfHouses);
             }
         });
 
@@ -5873,7 +5875,7 @@ public class Monopoly {
     private void generateBuyOwnedPropertyComboBox() {
         int counter = 0;
         ownedPropertiesModel = new DefaultComboBoxModel<String>();
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getOwner() != null
                     && !entity.getOwner().getName()
                     .equals(players.get(playerIndex).getName())) {
@@ -5910,8 +5912,8 @@ public class Monopoly {
     private void generateMortgageComboBox() {
         mortgageModel = new DefaultComboBoxModel<String>();
         for (PlanetProperties entity : players.get(playerIndex).getOwnedProperties()) {
-            if (entity.getNumberOfHouses() == 0
-                    && entity.getNumberOfHotels() == 0) {
+            if (entity.getNumberOfUpgrades() == 0
+                    && entity.getNumberOfPerfectPlanet() == 0) {
                 mortgageModel.addElement(entity.getName());
             }
         }
@@ -5946,15 +5948,15 @@ public class Monopoly {
      */
     private void generateAddBuildingComboBox() {
         Set<String> entitiesNames = new HashSet<String>();
-        for (Entity entity : players.get(playerIndex).getOwnedProperties()) {
+        for (PlanetProperties entity : players.get(playerIndex).getOwnedProperties()) {
             if (playerHasAll(entity.getGroup(), players.get(playerIndex)
                     .getName())
-                    || entity.getNumberOfHouses() > 0
+                    || entity.getNumberOfUpgrades() > 0
                     || hasBuildings(entity.getGroup())) {
                 if (entity.getGroup() != "railroads"
                         && entity.getGroup() != "utilities"
-                        && entity.getNumberOfHouses() < 5
-                        && entity.getNumberOfHotels() < 1) {
+                        && entity.getNumberOfUpgrades() < 5
+                        && entity.getNumberOfPerfectPlanet() < 1) {
                     entitiesNames.add(entity.getName());
                 }
 
@@ -6109,12 +6111,12 @@ public class Monopoly {
                 Iterator var23 = ((Player) this.players.get(this.playerIndex)).getOwnedProperties().iterator();
 
                 while (var23.hasNext()) {
-                    Entity entity = (Entity) var23.next();
-                    if (entity.getNumberOfHouses() > 0) {
-                        this.paymentDueAmount += (double) (entity.getNumberOfHouses() * 25);
+                    PlanetProperties entity = (PlanetProperties) var23.next();
+                    if (entity.getNumberOfUpgrades() > 0) {
+                        this.paymentDueAmount += (double) (entity.getNumberOfUpgrades() * 25);
                     }
 
-                    if (entity.getNumberOfHotels() > 0) {
+                    if (entity.getNumberOfPerfectPlanet() > 0) {
                         this.paymentDueAmount += 100.0;
                     }
                 }
@@ -6272,7 +6274,7 @@ public class Monopoly {
                         }
 
                         ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
-                        if (((Entity) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner() != null && ((Entity) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner().getName() != ((Player) this.players.get(this.playerIndex)).getName()) {
+                        if (((PlanetProperties) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner() != null && ((Entity) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner().getName() != ((Player) this.players.get(this.playerIndex)).getName()) {
                             this.sentByChanceCard = true;
                         }
                         this.adjustPlayerPosition();
@@ -6420,10 +6422,10 @@ public class Monopoly {
 
                 while(var4.hasNext()) {
                     PlanetProperties PlanetProperties = (PlanetProperties)var4.next();
-                    if (PlanetProperties.getNumberOfHouses() > 0) {
-                        this.paymentDueAmount += (double)(PlanetProperties.getNumberOfHouses() * 40);
+                    if (PlanetProperties.getNumberOfUpgrades() > 0) {
+                        this.paymentDueAmount += (double)(PlanetProperties.getNumberOfUpgrades() * 40);
                     }
-                    if (PlanetProperties.getNumberOfHotels() > 0) {
+                    if (PlanetProperties.getNumberOfPerfectPlanet() > 0) {
                         this.paymentDueAmount += 115.0;
                     }
                 }
@@ -6855,7 +6857,7 @@ public class Monopoly {
 
         if (entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
-                .getNumberOfHotels() == 0
+                .getNumberOfPerfectPlanet() == 0
                 && !entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
                 .getGroup().equals("utilities")
@@ -6870,7 +6872,7 @@ public class Monopoly {
                             .getEntities()
                             .get(players.get(playerIndex)
                                     .getPositionOnGameBoard())
-                            .getNumberOfHouses());
+                            .getNumberOfUpgrades());
 
             if (playerHasAll(
                     entities.getEntities()
@@ -6881,17 +6883,17 @@ public class Monopoly {
                     .getEntities()
                     .get(players.get(playerIndex)
                             .getPositionOnGameBoard())
-                    .getNumberOfHotels() == 0
+                    .getNumberOfPerfectPlanet() == 0
                     && entities
                     .getEntities()
                     .get(players.get(playerIndex)
                             .getPositionOnGameBoard())
-                    .getNumberOfHouses() == 0) {
+                    .getNumberOfUpgrades() == 0) {
                 rentValue = rentValue * 2;
             }
         } else if (entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
-                .getNumberOfHotels() == 1) {
+                .getNumberOfPerfectPlanet() == 1) {
             rentValue = entities.getEntities()
                     .get(players.get(playerIndex).getPositionOnGameBoard())
                     .getRentValues().get(5);
@@ -6924,7 +6926,7 @@ public class Monopoly {
      */
     private boolean playerHasAll(String group, String name) {
         int counter = 0;
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.canBePurchased()) {
                 if (entity.getGroup().equals(group)) {
                     if (entity.getOwner() != null
@@ -6957,7 +6959,7 @@ public class Monopoly {
     private double getRailRoadRent(String name) {
         int counter = 0;
         double rentValue = 0;
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getGroup() != null
                     && entity.getGroup().equals("railroads")) {
                 if (entity.getOwner() != null
@@ -7018,7 +7020,7 @@ public class Monopoly {
      * @return cost of that property
      */
     private double getEntityCost(String name) {
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getName().equals(name)) {
                 return entity.getCost();
             }
@@ -7034,10 +7036,10 @@ public class Monopoly {
      */
     private boolean hasBuildings(String group) {
         for (Player player : players) {
-            for (Entity entity : player.getOwnedProperties()) {
+            for (PlanetProperties entity : player.getOwnedProperties()) {
                 if (entity.getGroup().equals(group)) {
-                    if (entity.getNumberOfHouses() > 0
-                            || entity.getNumberOfHotels() > 0) {
+                    if (entity.getNumberOfUpgrades() > 0
+                            || entity.getNumberOfPerfectPlanet() > 0) {
                         return true;
                     }
                 }
@@ -7052,7 +7054,7 @@ public class Monopoly {
      * @return position of the entity with specified name
      */
     private int getEntityPosition(String name) {
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getName().equals(name)) {
                 return entity.getPosition();
             }
@@ -7066,7 +7068,7 @@ public class Monopoly {
      * @return the name of the entity owner
      */
     private String getOwner(String entityName) {
-        for (Entity entity : entities.getEntities()) {
+        for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getName().equals(entityName)) {
                 return entity.getOwner().getName();
             }

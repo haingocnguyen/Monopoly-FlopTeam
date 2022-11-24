@@ -112,11 +112,11 @@ public class PlanetProperties {
         this.numberOfUpgrades += numberOfUpgrades;
     }
 
-    public int getPerfectPlanet() {
+    public int getNumberOfPerfectPlanet() {
         return perfectPlanet;
     }
 
-    public void setPerfectPlanet(int perfectPlanet) {
+    public void setNumberOfPerfectPlanet(int perfectPlanet) {
         this.perfectPlanet += perfectPlanet;
     }
 
