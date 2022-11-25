@@ -204,41 +204,41 @@ public class Monopoly {
     private DefaultComboBoxModel<String> buyerModel;
     private JTextField sellingPrice;
     private JButton sellPropertyButton;
-    private JLabel buyBuilding;
-    private JComboBox<String> addBuildingTo;
-    private DefaultComboBoxModel<String> addBuildingToModel;
-    private JButton addHouseButton;
-    private JButton addHotelButton;
-    private JLabel buildingLabel0;
-    private JLabel buildingLabel1;
-    private JLabel buildingLabel2;
-    private JLabel buildingLabel3;
-    private JLabel buildingLabel4;
-    private JLabel buildingLabel5;
-    private JLabel buildingLabel6;
-    private JLabel buildingLabel7;
-    private JLabel buildingLabel8;
-    private JLabel buildingLabel9;
-    private JLabel buildingLabel10;
-    private JLabel buildingLabel11;
-    private JLabel buildingLabel12;
-    private JLabel buildingLabel13;
-    private JLabel buildingLabel14;
-    private JLabel buildingLabel15;
-    private JLabel buildingLabel16;
-    private JLabel buildingLabel17;
-    private JLabel buildingLabel18;
-    private JLabel buildingLabel19;
-    private JLabel buildingLabel20;
-    private JLabel buildingLabel21;
-    private ArrayList<JLabel> buildingLabels;
-    private boolean houseOrHotelBought;
+    private JLabel buyPlanet;
+    private JComboBox<String> addPlanetTo;
+    private DefaultComboBoxModel<String> addPlanetToModel;
+    private JButton addUpgradeButton;
+    private JButton addPerfectPlanetButton;
+    private JLabel perfectPlanetLabel0;
+    private JLabel perfectPlanetLabel1;
+    private JLabel perfectPlanetLabel2;
+    private JLabel perfectPlanetLabel3;
+    private JLabel perfectPlanetLabel4;
+    private JLabel perfectPlanetLabel5;
+    private JLabel perfectPlanetLabel6;
+    private JLabel perfectPlanetLabel7;
+    private JLabel perfectPlanetLabel8;
+    private JLabel perfectPlanetLabel9;
+    private JLabel perfectPlanetLabel10;
+    private JLabel perfectPlanetLabel11;
+    private JLabel perfectPlanetLabel12;
+    private JLabel perfectPlanetLabel13;
+    private JLabel perfectPlanetLabel14;
+    private JLabel perfectPlanetLabel15;
+    private JLabel perfectPlanetLabel16;
+    private JLabel perfectPlanetLabel17;
+    private JLabel perfectPlanetLabel18;
+    private JLabel perfectPlanetLabel19;
+    private JLabel perfectPlanetLabel20;
+    private JLabel perfectPlanetLabel21;
+    private ArrayList<JLabel> perfectPlanetLabels;
+    private boolean upgradeOrPerfectPlanetBought;
     private boolean gotDouble;
     private boolean chanceCardPicked;
     private boolean sentByChanceCard;
     private boolean communityCardPicked;
-    private int numberOfHotels;
-    private int numberOfHouses;
+    private int numberOfPerfectPlanets;
+    private int numberOfUpgrades;
     private JLabel deed;
     private boolean rentCalculated;
     private JButton retireFromGame;
@@ -295,10 +295,10 @@ public class Monopoly {
             doubleCounter = 0;
             playersPanes = new ArrayList<JLayeredPane>();
             getOutOfJailLabels = new ArrayList<JLabel>();
-            buildingLabels = new ArrayList<JLabel>();
-            houseOrHotelBought = false;
-            numberOfHotels = 12;
-            numberOfHouses = 32;
+            perfectPlanetLabels = new ArrayList<JLabel>();
+            upgradeOrPerfectPlanetBought = false;
+            numberOfPerfectPlanets = 12;
+            numberOfUpgrades = 32;
             initialize();
         } else {
             showRequiredResolutionWindow();
@@ -1509,96 +1509,96 @@ public class Monopoly {
 
         });
 
-        buildingLabel0 = new JLabel();
-        buildingLabel1 = new JLabel();
-        buildingLabel2 = new JLabel();
-        buildingLabel3 = new JLabel();
-        buildingLabel4 = new JLabel();
-        buildingLabel5 = new JLabel();
-        buildingLabel6 = new JLabel();
-        buildingLabel7 = new JLabel();
-        buildingLabel8 = new JLabel();
-        buildingLabel9 = new JLabel();
-        buildingLabel10 = new JLabel();
-        buildingLabel11 = new JLabel();
-        buildingLabel12 = new JLabel();
-        buildingLabel13 = new JLabel();
-        buildingLabel14 = new JLabel();
-        buildingLabel15 = new JLabel();
-        buildingLabel16 = new JLabel();
-        buildingLabel17 = new JLabel();
-        buildingLabel18 = new JLabel();
-        buildingLabel19 = new JLabel();
-        buildingLabel20 = new JLabel();
-        buildingLabel21 = new JLabel();
+        perfectPlanetLabel0 = new JLabel();
+        perfectPlanetLabel1 = new JLabel();
+        perfectPlanetLabel2 = new JLabel();
+        perfectPlanetLabel3 = new JLabel();
+        perfectPlanetLabel4 = new JLabel();
+        perfectPlanetLabel5 = new JLabel();
+        perfectPlanetLabel6 = new JLabel();
+        perfectPlanetLabel7 = new JLabel();
+        perfectPlanetLabel8 = new JLabel();
+        perfectPlanetLabel9 = new JLabel();
+        perfectPlanetLabel10 = new JLabel();
+        perfectPlanetLabel11 = new JLabel();
+        perfectPlanetLabel12 = new JLabel();
+        perfectPlanetLabel13 = new JLabel();
+        perfectPlanetLabel14 = new JLabel();
+        perfectPlanetLabel15 = new JLabel();
+        perfectPlanetLabel16 = new JLabel();
+        perfectPlanetLabel17 = new JLabel();
+        perfectPlanetLabel18 = new JLabel();
+        perfectPlanetLabel19 = new JLabel();
+        perfectPlanetLabel20 = new JLabel();
+        perfectPlanetLabel21 = new JLabel();
 
-        buildingLabel0.setBounds((int) (frameHeight / 6.5 * 5) + 1,
+        perfectPlanetLabel0.setBounds((int) (frameHeight / 6.5 * 5) + 1,
                 (int) (frameHeight / 6.5 * 5.5) + 1, 50, 25);
-        buildingLabel1.setBounds((int) (frameHeight / 6.5 * 4) + 1,
+        perfectPlanetLabel1.setBounds((int) (frameHeight / 6.5 * 4) + 1,
                 (int) (frameHeight / 6.5 * 5.5) + 1, 50, 25);
-        buildingLabel2.setBounds((int) (frameHeight / 6.5 * 2.5) + 1,
+        perfectPlanetLabel2.setBounds((int) (frameHeight / 6.5 * 2.5) + 1,
                 (int) (frameHeight / 6.5 * 5.5) + 1, 50, 25);
-        buildingLabel3.setBounds((int) (frameHeight / 6.5 * 1.5) + 1,
+        perfectPlanetLabel3.setBounds((int) (frameHeight / 6.5 * 1.5) + 1,
                 (int) (frameHeight / 6.5 * 5.5) + 1, 50, 25);
-        buildingLabel4.setBounds((int) (frameHeight / 6.5) + 1,
+        perfectPlanetLabel4.setBounds((int) (frameHeight / 6.5) + 1,
                 (int) (frameHeight / 6.5 * 5.5) + 1, 50, 25);
-        buildingLabel5.setBounds((int) (frameHeight / 6.5) - 26,
+        perfectPlanetLabel5.setBounds((int) (frameHeight / 6.5) - 26,
                 (int) (frameHeight / 6.5 * 5) + 4, 25, 50);
-        buildingLabel6.setBounds((int) (frameHeight / 6.5) - 26,
+        perfectPlanetLabel6.setBounds((int) (frameHeight / 6.5) - 26,
                 (int) (frameHeight / 6.5 * 4) + 4, 25, 50);
-        buildingLabel7.setBounds((int) (frameHeight / 6.5) - 26,
+        perfectPlanetLabel7.setBounds((int) (frameHeight / 6.5) - 26,
                 (int) (frameHeight / 6.5 * 3.5) + 4, 25, 50);
-        buildingLabel8.setBounds((int) (frameHeight / 6.5) - 26,
+        perfectPlanetLabel8.setBounds((int) (frameHeight / 6.5) - 26,
                 (int) (frameHeight / 6.5 * 2.5) + 4, 25, 50);
-        buildingLabel9.setBounds((int) (frameHeight / 6.5) - 26,
+        perfectPlanetLabel9.setBounds((int) (frameHeight / 6.5) - 26,
                 (int) (frameHeight / 6.5 * 1.5) + 4, 25, 50);
-        buildingLabel10.setBounds((int) (frameHeight / 6.5) - 26,
+        perfectPlanetLabel10.setBounds((int) (frameHeight / 6.5) - 26,
                 (int) (frameHeight / 6.5) + 4, 25, 50);
-        buildingLabel11.setBounds((int) (frameHeight / 6.5) + 1,
+        perfectPlanetLabel11.setBounds((int) (frameHeight / 6.5) + 1,
                 (int) (frameHeight / 6.5) - 26, 50, 25);
-        buildingLabel12.setBounds((int) (frameHeight / 6.5 * 2) + 1,
+        perfectPlanetLabel12.setBounds((int) (frameHeight / 6.5 * 2) + 1,
                 (int) (frameHeight / 6.5) - 26, 50, 25);
-        buildingLabel13.setBounds((int) (frameHeight / 6.5 * 2.5) + 1,
+        perfectPlanetLabel13.setBounds((int) (frameHeight / 6.5 * 2.5) + 1,
                 (int) (frameHeight / 6.5) - 26, 50, 25);
-        buildingLabel14.setBounds((int) (frameHeight / 6.5 * 3.5) + 1,
+        perfectPlanetLabel14.setBounds((int) (frameHeight / 6.5 * 3.5) + 1,
                 (int) (frameHeight / 6.5) - 26, 50, 25);
-        buildingLabel15.setBounds((int) (frameHeight / 6.5 * 4) + 1,
+        perfectPlanetLabel15.setBounds((int) (frameHeight / 6.5 * 4) + 1,
                 (int) (frameHeight / 6.5) - 26, 50, 25);
-        buildingLabel16.setBounds((int) (frameHeight / 6.5 * 5) + 1,
+        perfectPlanetLabel16.setBounds((int) (frameHeight / 6.5 * 5) + 1,
                 (int) (frameHeight / 6.5) - 26, 50, 25);
-        buildingLabel17.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
+        perfectPlanetLabel17.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
                 (int) (frameHeight / 6.5) + 1, 25, 50);
-        buildingLabel18.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
+        perfectPlanetLabel18.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
                 (int) (frameHeight / 6.5 * 1.5) + 1, 25, 50);
-        buildingLabel19.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
+        perfectPlanetLabel19.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
                 (int) (frameHeight / 6.5 * 2.5) + 1, 25, 50);
-        buildingLabel20.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
+        perfectPlanetLabel20.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
                 (int) (frameHeight / 6.5 * 4) + 1, 25, 50);
-        buildingLabel21.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
+        perfectPlanetLabel21.setBounds((int) (frameHeight / 6.5 * 5.5) + 1,
                 (int) (frameHeight / 6.5 * 5) + 1, 25, 50);
 
-        buildingLabels.add(buildingLabel0);
-        buildingLabels.add(buildingLabel1);
-        buildingLabels.add(buildingLabel2);
-        buildingLabels.add(buildingLabel3);
-        buildingLabels.add(buildingLabel4);
-        buildingLabels.add(buildingLabel5);
-        buildingLabels.add(buildingLabel6);
-        buildingLabels.add(buildingLabel7);
-        buildingLabels.add(buildingLabel8);
-        buildingLabels.add(buildingLabel9);
-        buildingLabels.add(buildingLabel10);
-        buildingLabels.add(buildingLabel11);
-        buildingLabels.add(buildingLabel12);
-        buildingLabels.add(buildingLabel13);
-        buildingLabels.add(buildingLabel14);
-        buildingLabels.add(buildingLabel15);
-        buildingLabels.add(buildingLabel16);
-        buildingLabels.add(buildingLabel17);
-        buildingLabels.add(buildingLabel18);
-        buildingLabels.add(buildingLabel19);
-        buildingLabels.add(buildingLabel20);
-        buildingLabels.add(buildingLabel21);
+        perfectPlanetLabels.add(perfectPlanetLabel0);
+        perfectPlanetLabels.add(perfectPlanetLabel1);
+        perfectPlanetLabels.add(perfectPlanetLabel2);
+        perfectPlanetLabels.add(perfectPlanetLabel3);
+        perfectPlanetLabels.add(perfectPlanetLabel4);
+        perfectPlanetLabels.add(perfectPlanetLabel5);
+        perfectPlanetLabels.add(perfectPlanetLabel6);
+        perfectPlanetLabels.add(perfectPlanetLabel7);
+        perfectPlanetLabels.add(perfectPlanetLabel8);
+        perfectPlanetLabels.add(perfectPlanetLabel9);
+        perfectPlanetLabels.add(perfectPlanetLabel10);
+        perfectPlanetLabels.add(perfectPlanetLabel11);
+        perfectPlanetLabels.add(perfectPlanetLabel12);
+        perfectPlanetLabels.add(perfectPlanetLabel13);
+        perfectPlanetLabels.add(perfectPlanetLabel14);
+        perfectPlanetLabels.add(perfectPlanetLabel15);
+        perfectPlanetLabels.add(perfectPlanetLabel16);
+        perfectPlanetLabels.add(perfectPlanetLabel17);
+        perfectPlanetLabels.add(perfectPlanetLabel18);
+        perfectPlanetLabels.add(perfectPlanetLabel19);
+        perfectPlanetLabels.add(perfectPlanetLabel20);
+        perfectPlanetLabels.add(perfectPlanetLabel21);
 
         communityChest = new JButton("?");
 
@@ -2111,22 +2111,22 @@ public class Monopoly {
         ownedPropertyValue.setVisible(false);
         buyOwnedPropertyButton.setVisible(false);
 
-        buyBuilding = new JLabel("Add house or hotel >>");
-        addBuildingTo = new JComboBox<String>();
-        addHouseButton = new JButton("+ house");
-        addHotelButton = new JButton("+ hotel");
-        buyBuilding.setBounds(frameHeight + 50, (int) (frameHeight / 2 + 180),
+        buyPlanet = new JLabel("Add upgrade or perfect planet >>");
+        addPlanetTo = new JComboBox<String>();
+        addUpgradeButton = new JButton("+ upgrade");
+        addPerfectPlanetButton = new JButton("+ perfect planet");
+        buyPlanet.setBounds(frameHeight + 50, (int) (frameHeight / 2 + 180),
                 130, 20);
-        addBuildingTo.setBounds(frameHeight + 185,
+        addPlanetTo.setBounds(frameHeight + 185,
                 (int) (frameHeight / 2 + 180), 200, 20);
-        addHouseButton.setBounds(frameHeight + 390,
+        addUpgradeButton.setBounds(frameHeight + 390,
                 (int) (frameHeight / 2 + 180), 90, 20);
-        addHotelButton.setBounds(frameHeight + 485,
+        addPerfectPlanetButton.setBounds(frameHeight + 485,
                 (int) (frameHeight / 2 + 180), 90, 20);
-        buyBuilding.setVisible(false);
-        addBuildingTo.setVisible(false);
-        addHouseButton.setVisible(false);
-        addHotelButton.setVisible(false);
+        buyPlanet.setVisible(false);
+        addPlanetTo.setVisible(false);
+        addUpgradeButton.setVisible(false);
+        addPerfectPlanetButton.setVisible(false);
 
         sellGetOutOfJailCard = new JLabel("Sell get out of Jail card >>");
         sellGetOutOfJailCard.setBounds(frameHeight + 50,
@@ -3059,37 +3059,37 @@ public class Monopoly {
         frame.getContentPane().add(buyer);
         frame.getContentPane().add(sellingPrice);
         frame.getContentPane().add(sellPropertyButton);
-        frame.getContentPane().add(buyBuilding);
-        frame.getContentPane().add(addBuildingTo);
-        frame.getContentPane().add(addHouseButton);
-        frame.getContentPane().add(addHotelButton);
+        frame.getContentPane().add(buyPlanet);
+        frame.getContentPane().add(addPlanetTo);
+        frame.getContentPane().add(addUpgradeButton);
+        frame.getContentPane().add(addPerfectPlanetButton);
         frame.getContentPane().add(sellGetOutOfJailCard);
         frame.getContentPane().add(cardBuyers);
         frame.getContentPane().add(sellGetOutOfJailCardButton);
         frame.getContentPane().add(cardPrice);
 
-        frame.getContentPane().add(buildingLabel0, 2);
-        frame.getContentPane().add(buildingLabel1, 2);
-        frame.getContentPane().add(buildingLabel2, 2);
-        frame.getContentPane().add(buildingLabel3, 2);
-        frame.getContentPane().add(buildingLabel4, 2);
-        frame.getContentPane().add(buildingLabel5, 2);
-        frame.getContentPane().add(buildingLabel6, 2);
-        frame.getContentPane().add(buildingLabel7, 2);
-        frame.getContentPane().add(buildingLabel8, 2);
-        frame.getContentPane().add(buildingLabel9, 2);
-        frame.getContentPane().add(buildingLabel10, 2);
-        frame.getContentPane().add(buildingLabel11, 2);
-        frame.getContentPane().add(buildingLabel12, 2);
-        frame.getContentPane().add(buildingLabel13, 2);
-        frame.getContentPane().add(buildingLabel14, 2);
-        frame.getContentPane().add(buildingLabel15, 2);
-        frame.getContentPane().add(buildingLabel16, 2);
-        frame.getContentPane().add(buildingLabel17, 2);
-        frame.getContentPane().add(buildingLabel18, 2);
-        frame.getContentPane().add(buildingLabel19, 2);
-        frame.getContentPane().add(buildingLabel20, 2);
-        frame.getContentPane().add(buildingLabel21, 2);
+        frame.getContentPane().add(perfectPlanetLabel0, 2);
+        frame.getContentPane().add(perfectPlanetLabel1, 2);
+        frame.getContentPane().add(perfectPlanetLabel2, 2);
+        frame.getContentPane().add(perfectPlanetLabel3, 2);
+        frame.getContentPane().add(perfectPlanetLabel4, 2);
+        frame.getContentPane().add(perfectPlanetLabel5, 2);
+        frame.getContentPane().add(perfectPlanetLabel6, 2);
+        frame.getContentPane().add(perfectPlanetLabel7, 2);
+        frame.getContentPane().add(perfectPlanetLabel8, 2);
+        frame.getContentPane().add(perfectPlanetLabel9, 2);
+        frame.getContentPane().add(perfectPlanetLabel10, 2);
+        frame.getContentPane().add(perfectPlanetLabel11, 2);
+        frame.getContentPane().add(perfectPlanetLabel12, 2);
+        frame.getContentPane().add(perfectPlanetLabel13, 2);
+        frame.getContentPane().add(perfectPlanetLabel14, 2);
+        frame.getContentPane().add(perfectPlanetLabel15, 2);
+        frame.getContentPane().add(perfectPlanetLabel16, 2);
+        frame.getContentPane().add(perfectPlanetLabel17, 2);
+        frame.getContentPane().add(perfectPlanetLabel18, 2);
+        frame.getContentPane().add(perfectPlanetLabel19, 2);
+        frame.getContentPane().add(perfectPlanetLabel20, 2);
+        frame.getContentPane().add(perfectPlanetLabel21, 2);
         frame.getContentPane().add(showInstruction);
 
     }
@@ -3287,7 +3287,7 @@ public class Monopoly {
                             if (players.get(playerIndex).getTurnsInJail() == 1) {
                                 log = "  /> "
                                         + players.get(playerIndex).getName()
-                                        + " has his/her balance deducted by M50 and got out of Jail"
+                                        + " has his/her balance deducted by 50 Galy and got out of Jail"
                                         + "\n";
                                 logText.append(log);
                                 players.get(playerIndex).setMoneyHeld(-50);
@@ -3325,9 +3325,9 @@ public class Monopoly {
                                             + players.get(playerIndex)
                                             .getMoneyHeld());
                             doubleCounter = 0;
-                            if (getNumberOfHouses() > 0
-                                    || getNumberOfHotels() > 0) {
-                                generateAddBuildingComboBox();
+                            if (getNumberOfUpgrades() > 0
+                                    || getNumberOfPerfectPlanets() > 0) {
+                                generateAddPlanetComboBox();
                             }
                         }
                     } else {
@@ -3420,10 +3420,10 @@ public class Monopoly {
                         "E" + players.get(playerIndex).getMoneyHeld());
 
                 generateMortgageComboBox();
-                if (!houseOrHotelBought
-                        && (getNumberOfHotels() > 0 || getNumberOfHouses() > 0)
+                if (!upgradeOrPerfectPlanetBought
+                        && (getNumberOfPerfectPlanets() > 0 || getNumberOfUpgrades() > 0)
                         && !players.get(playerIndex).isInJail()) {
-                    generateAddBuildingComboBox();
+                    generateAddPlanetComboBox();
                 }
             }
         });
@@ -3506,7 +3506,7 @@ public class Monopoly {
                 balanceLabels.get(ownerIndex).setText(
                         "E" + players.get(ownerIndex).getMoneyHeld());
                 gamePrompt.setText("");
-                System.out.println("number of houses: "
+                System.out.println("number of upgrades: "
                         + entities
                         .getEntities()
                         .get(players.get(playerIndex)
@@ -3528,7 +3528,7 @@ public class Monopoly {
                 players.get(playerIndex).setTurnsInJail(0);
                 pay50toGetOutOfJail.setVisible(false);
                 log = "  /> " + players.get(playerIndex).getName()
-                        + " paid M50 to get out of Jail" + "\n";
+                        + " paid 50 Galy to get out of Jail" + "\n";
                 logText.append(log);
                 gamePrompt.setText("");
                 extraRollNeeded = false;
@@ -3713,11 +3713,11 @@ public class Monopoly {
                         sellingPrice.setVisible(false);
                         sellPropertyButton.setVisible(false);
                     }
-                    if (getNumberOfHouses() > 0 || getNumberOfHotels() > 0
+                    if (getNumberOfUpgrades() > 0 || getNumberOfPerfectPlanets() > 0
                             && !players.get(playerIndex).isInJail()) {
-                        generateAddBuildingComboBox();
+                        generateAddPlanetComboBox();
                     }
-                    houseOrHotelBought = false;
+                    upgradeOrPerfectPlanetBought = false;
                     if (players.get(playerIndex).getNumberOfGetOutOfJailCards() > 0) {
                         generateSellGetOutOfJailCardComboBox();
                     } else {
@@ -4101,10 +4101,10 @@ public class Monopoly {
                     sellPropertyButton.setVisible(false);
                     sellPropertyButton.setEnabled(false);
                 }
-                if (!houseOrHotelBought
-                        && (getNumberOfHouses() > 0 || getNumberOfHotels() > 0)
+                if (!upgradeOrPerfectPlanetBought
+                        && (getNumberOfUpgrades() > 0 || getNumberOfPerfectPlanets() > 0)
                         && !players.get(playerIndex).isInJail()) {
-                    generateAddBuildingComboBox();
+                    generateAddPlanetComboBox();
                 }
                 if (rentCalculated) {
                     if (rentValue > players.get(playerIndex).getMoneyHeld()) {
@@ -4266,10 +4266,10 @@ public class Monopoly {
                 balanceLabels.get(playerIndex).setText(
                         "E" + players.get(playerIndex).getMoneyHeld());
                 generateMortgageComboBox();
-                if (!houseOrHotelBought
-                        && (getNumberOfHouses() > 0 || getNumberOfHotels() > 0)
+                if (!upgradeOrPerfectPlanetBought
+                        && (getNumberOfUpgrades() > 0 || getNumberOfPerfectPlanets() > 0)
                         && !players.get(playerIndex).isInJail()) {
-                    generateAddBuildingComboBox();
+                    generateAddPlanetComboBox();
                 }
                 generateBuyOwnedPropertyComboBox();
             }
@@ -4350,8 +4350,8 @@ public class Monopoly {
                 log = "  /> " + players.get(playerIndex).getName()
                         + " retired from the game. " + "\n";
                 logText.append(log);
-                int numberOfHousesToBeRestored = 0;
-                int numberOfHotelsToBeRestored = 0;
+                int numberOfUpgradesToBeRestored = 0;
+                int numberOfPerfectPlanetsToBeRestored = 0;
                 double balanceToBeTransferred = 0;
                 yesButton.setVisible(false);
                 noButton.setVisible(false);
@@ -4374,10 +4374,10 @@ public class Monopoly {
                 propertyOwner.setVisible(false);
                 ownedPropertyValue.setVisible(false);
                 buyOwnedPropertyButton.setVisible(false);
-                hideAddBuildingComponents();
+                hideAddPlanetComponents();
                 if (paymentDue) {
-                    System.out.println("hotels: " + getNumberOfHotels());
-                    System.out.println("houses: " + getNumberOfHouses());
+                    System.out.println("perfect planets: " + getNumberOfPerfectPlanets());
+                    System.out.println("upgrades: " + getNumberOfUpgrades());
                     paymentDue = false;
                     if (players.get(playerIndex).getOwnedProperties().size() > 0) {
                         for (PlanetProperties entity : entities.getEntities()) {
@@ -4393,22 +4393,22 @@ public class Monopoly {
                         for (PlanetProperties property : players.get(playerIndex)
                                 .getOwnedProperties()) {
                             if (property.getNumberOfPerfectPlanet() == 1) {
-                                numberOfHotelsToBeRestored++;
+                                numberOfPerfectPlanetsToBeRestored++;
                             }
                             if (property.getNumberOfUpgrades() > 0) {
-                                numberOfHousesToBeRestored += property
+                                numberOfUpgradesToBeRestored += property
                                         .getNumberOfUpgrades();
                             }
                             if (property.getUpgradeIndex() != -1) {
-                                buildingLabels.get(property.getUpgradeIndex())
+                                perfectPlanetLabels.get(property.getUpgradeIndex())
                                         .setIcon(null);
                             }
 
                         }
-                        setNumberOfHotels(numberOfHotelsToBeRestored);
-                        setNumberOfHouses(numberOfHousesToBeRestored);
-                        System.out.println("hotels: " + getNumberOfHotels());
-                        System.out.println("houses: " + getNumberOfHouses());
+                        setNumberOfPerfectPlanets(numberOfPerfectPlanetsToBeRestored);
+                        setNumberOfUpgrades(numberOfUpgradesToBeRestored);
+                        System.out.println("perfect planets: " + getNumberOfPerfectPlanets());
+                        System.out.println("upgrades: " + getNumberOfUpgrades());
                         while (players.get(playerIndex)
                                 .getNumberOfGetOutOfJailCards() != 0) {
                             if (players.get(playerIndex).getOutOfJailCards()
@@ -4565,12 +4565,12 @@ public class Monopoly {
                         gamePrompt.setText("");
                     }
                 }
-                addBuildingTo.setSelectedItem(null);
-                if (addHouseButton.isEnabled()) {
-                    addHouseButton.setEnabled(false);
+                addPlanetTo.setSelectedItem(null);
+                if (addUpgradeButton.isEnabled()) {
+                    addUpgradeButton.setEnabled(false);
                 }
-                if (addHotelButton.isEnabled()) {
-                    addHotelButton.setEnabled(false);
+                if (addPerfectPlanetButton.isEnabled()) {
+                    addPerfectPlanetButton.setEnabled(false);
                 }
                 applyOrRemoveMortgagedLabel(position, mortgaged);
             }
@@ -4622,18 +4622,18 @@ public class Monopoly {
 
         });
 
-        addBuildingTo.addActionListener(new ActionListener() {
+        addPlanetTo.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (addBuildingTo.getSelectedItem() != null) {
-                    String entityName = String.valueOf(addBuildingTo
+                if (addPlanetTo.getSelectedItem() != null) {
+                    String entityName = String.valueOf(addPlanetTo
                             .getSelectedItem());
                     String group = "";
                     int entityPosition = 0;
                     int numberOfTheSameGroup = 0;
-                    int totalNumberOfHousesInAGroup = 0;
-                    int totalNumberOfHotelsInAGroup = 0;
+                    int totalnumberOfUpgradesInAGroup = 0;
+                    int totalnumberOfPerfectPlanetsInAGroup = 0;
                     boolean canAfford = false;
 
                     for (PlanetProperties entity : entities.getEntities()) {
@@ -4647,9 +4647,9 @@ public class Monopoly {
                             .getOwnedProperties()) {
                         if (anEntity.getGroup().equals(group)) {
                             numberOfTheSameGroup++;
-                            totalNumberOfHousesInAGroup += anEntity
+                            totalnumberOfUpgradesInAGroup += anEntity
                                     .getNumberOfUpgrades();
-                            totalNumberOfHotelsInAGroup += anEntity
+                            totalnumberOfPerfectPlanetsInAGroup += anEntity
                                     .getNumberOfPerfectPlanet();
                         }
                     }
@@ -4670,13 +4670,13 @@ public class Monopoly {
                             canAfford = true;
                         }
                     }
-                    addHouseButton.setEnabled(false);
+                    addUpgradeButton.setEnabled(false);
                     if (canAfford
                             && !players
                             .get(playerIndex)
                             .getOwnedProperties()
                             .get(getPlayersEntityPosition(String
-                                    .valueOf(addBuildingTo
+                                    .valueOf(addPlanetTo
                                             .getSelectedItem())))
                             .isMortgaged()) {
                         if (numberOfTheSameGroup == 1) {
@@ -4684,141 +4684,141 @@ public class Monopoly {
                                     .get(playerIndex)
                                     .getOwnedProperties()
                                     .get(getPlayersEntityPosition(String
-                                            .valueOf(addBuildingTo
+                                            .valueOf(addPlanetTo
                                                     .getSelectedItem())))
                                     .getNumberOfUpgrades() == 4
-                                    && getNumberOfHotels() > 0) {
-                                addHotelButton.setEnabled(true);
+                                    && getNumberOfPerfectPlanets() > 0) {
+                                addPerfectPlanetButton.setEnabled(true);
                             }
-                            if (getNumberOfHouses() > 0) {
-                                addHouseButton.setEnabled(true);
+                            if (getNumberOfUpgrades() > 0) {
+                                addUpgradeButton.setEnabled(true);
                             }
                         } else if (numberOfTheSameGroup == 2) {
-                            if (totalNumberOfHousesInAGroup != 0) {
+                            if (totalnumberOfUpgradesInAGroup != 0) {
                                 if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 0
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 1
-                                        && totalNumberOfHousesInAGroup >= 2
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && totalnumberOfUpgradesInAGroup >= 2
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 2
-                                        && totalNumberOfHousesInAGroup >= 4
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && totalnumberOfUpgradesInAGroup >= 4
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 3
-                                        && totalNumberOfHousesInAGroup >= 6
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && totalnumberOfUpgradesInAGroup >= 6
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 4
-                                        && (totalNumberOfHousesInAGroup >= 8 || (totalNumberOfHousesInAGroup >= 4 && totalNumberOfHotelsInAGroup == 1))
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
-                                    if (getNumberOfHotels() > 0) {
-                                        addHotelButton.setEnabled(true);
+                                        && (totalnumberOfUpgradesInAGroup >= 8 || (totalnumberOfUpgradesInAGroup >= 4 && totalnumberOfPerfectPlanetsInAGroup == 1))
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
+                                    if (getNumberOfPerfectPlanets() > 0) {
+                                        addPerfectPlanetButton.setEnabled(true);
                                     }
                                 }
                             } else {
-                                if (getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                if (getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 }
                             }
                         } else if (numberOfTheSameGroup == 3) {
-                            if (totalNumberOfHousesInAGroup != 0) {
+                            if (totalnumberOfUpgradesInAGroup != 0) {
                                 if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 0
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 1
-                                        && totalNumberOfHousesInAGroup >= 3
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && totalnumberOfUpgradesInAGroup >= 3
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 2
-                                        && totalNumberOfHousesInAGroup >= 6
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && totalnumberOfUpgradesInAGroup >= 6
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 3
-                                        && totalNumberOfHousesInAGroup >= 9
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                        && totalnumberOfUpgradesInAGroup >= 9
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 } else if (players
                                         .get(playerIndex)
                                         .getOwnedProperties()
                                         .get(getPlayersEntityPosition(String
-                                                .valueOf(addBuildingTo
+                                                .valueOf(addPlanetTo
                                                         .getSelectedItem())))
                                         .getNumberOfUpgrades() == 4
-                                        && (totalNumberOfHousesInAGroup >= 12
-                                        || (totalNumberOfHousesInAGroup >= 8 && totalNumberOfHotelsInAGroup == 1) || (totalNumberOfHousesInAGroup >= 4 && totalNumberOfHotelsInAGroup == 2))
-                                        && getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
-                                    if (getNumberOfHotels() > 0) {
-                                        addHotelButton.setEnabled(true);
+                                        && (totalnumberOfUpgradesInAGroup >= 12
+                                        || (totalnumberOfUpgradesInAGroup >= 8 && totalnumberOfPerfectPlanetsInAGroup == 1) || (totalnumberOfUpgradesInAGroup >= 4 && totalnumberOfPerfectPlanetsInAGroup == 2))
+                                        && getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
+                                    if (getNumberOfPerfectPlanets() > 0) {
+                                        addPerfectPlanetButton.setEnabled(true);
                                     }
                                 }
                             } else {
-                                if (getNumberOfHouses() > 0) {
-                                    addHouseButton.setEnabled(true);
+                                if (getNumberOfUpgrades() > 0) {
+                                    addUpgradeButton.setEnabled(true);
                                 }
                             }
                         }
                     }
 
-                    System.out.println("number of total houses in a group: "
-                            + totalNumberOfHousesInAGroup);
+                    System.out.println("number of total upgrades in a group: "
+                            + totalnumberOfUpgradesInAGroup);
                     System.out.println("number of the same group: "
                             + numberOfTheSameGroup);
                 }
@@ -4826,129 +4826,129 @@ public class Monopoly {
 
         });
 
-        addHouseButton.addActionListener(new ActionListener() {
+        addUpgradeButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                houseOrHotelBought = true;
-                setNumberOfHouses(-1);
-                double houseCost = 0;
+                upgradeOrPerfectPlanetBought = true;
+                setNumberOfUpgrades(-1);
+                double upgradeCost = 0;
                 if (entities
                         .getEntities()
-                        .get(getEntityPosition(String.valueOf(addBuildingTo
+                        .get(getEntityPosition(String.valueOf(addPlanetTo
                                 .getSelectedItem()))).getUpgradeIndex() < 5) {
-                    houseCost = 50;
+                    upgradeCost = 50;
                 } else if (entities
                         .getEntities()
-                        .get(getEntityPosition(String.valueOf(addBuildingTo
+                        .get(getEntityPosition(String.valueOf(addPlanetTo
                                 .getSelectedItem()))).getUpgradeIndex() < 11) {
-                    houseCost = 100;
+                    upgradeCost = 100;
                 } else if (entities
                         .getEntities()
-                        .get(getEntityPosition(String.valueOf(addBuildingTo
+                        .get(getEntityPosition(String.valueOf(addPlanetTo
                                 .getSelectedItem()))).getUpgradeIndex() < 17) {
-                    houseCost = 150;
+                    upgradeCost = 150;
                 } else {
-                    houseCost = 200;
+                    upgradeCost = 200;
                 }
 
                 for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(
-                            String.valueOf(addBuildingTo.getSelectedItem()))) {
+                            String.valueOf(addPlanetTo.getSelectedItem()))) {
                         entity.setNumberOfUpgrades(1);
                         break;
                     }
                 }
-                int numberOfHouses = players
+                int numberOfUpgrades = players
                         .get(playerIndex)
                         .getOwnedProperties()
                         .get(getPlayersEntityPosition(String
-                                .valueOf(addBuildingTo.getSelectedItem())))
+                                .valueOf(addPlanetTo.getSelectedItem())))
                         .getNumberOfUpgrades();
                 log = "  /> "
                         + players.get(playerIndex).getName()
-                        + " has just bought a house at "
+                        + " has just bought a upgrade at "
                         + entities
                         .getEntities()
                         .get(getEntityPosition(String
-                                .valueOf(addBuildingTo
+                                .valueOf(addPlanetTo
                                         .getSelectedItem()))).getName()
                         + "\n";
                 logText.append(log);
-                players.get(playerIndex).setMoneyHeld(-houseCost);
-                hideAddBuildingComponents();
+                players.get(playerIndex).setMoneyHeld(-upgradeCost);
+                hideAddPlanetComponents();
                 balanceLabels.get(playerIndex).setText(
                         "E" + players.get(playerIndex).getMoneyHeld());
-                displayProperBuildingLabel(
+                displayProperPlanetLabel(
                         players.get(playerIndex)
                                 .getOwnedProperties()
                                 .get(getPlayersEntityPosition(String
-                                        .valueOf(addBuildingTo
+                                        .valueOf(addPlanetTo
                                                 .getSelectedItem())))
-                                .getNumberOfUpgrades(), numberOfHouses);
+                                .getNumberOfUpgrades(), numberOfUpgrades);
                 generateMortgageComboBox();
             }
 
         });
 
-        addHotelButton.addActionListener(new ActionListener() {
+        addPerfectPlanetButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                setNumberOfHotels(-1);
-                setNumberOfHouses(4);
-                houseOrHotelBought = true;
-                double hotelCost = 0;
+                setNumberOfPerfectPlanets(-1);
+                setNumberOfUpgrades(4);
+                upgradeOrPerfectPlanetBought = true;
+                double perfectPlanetCost = 0;
                 if (entities
                         .getEntities()
-                        .get(getEntityPosition(String.valueOf(addBuildingTo
+                        .get(getEntityPosition(String.valueOf(addPlanetTo
                                 .getSelectedItem()))).getUpgradeIndex() < 5) {
-                    hotelCost = 50;
+                    perfectPlanetCost = 50;
                 } else if (entities
                         .getEntities()
-                        .get(getEntityPosition(String.valueOf(addBuildingTo
+                        .get(getEntityPosition(String.valueOf(addPlanetTo
                                 .getSelectedItem()))).getUpgradeIndex() < 11) {
-                    hotelCost = 100;
+                    perfectPlanetCost = 100;
                 } else if (entities
                         .getEntities()
-                        .get(getEntityPosition(String.valueOf(addBuildingTo
+                        .get(getEntityPosition(String.valueOf(addPlanetTo
                                 .getSelectedItem()))).getUpgradeIndex() < 17) {
-                    hotelCost = 150;
+                    perfectPlanetCost = 150;
                 } else {
-                    hotelCost = 200;
+                    perfectPlanetCost = 200;
                 }
                 for (PlanetProperties entity : players.get(playerIndex)
                         .getOwnedProperties()) {
                     if (entity.getName().equals(
-                            String.valueOf(addBuildingTo.getSelectedItem()))) {
+                            String.valueOf(addPlanetTo.getSelectedItem()))) {
                         entity.setNumberOfUpgrades(-entity.getNumberOfUpgrades());
                         entity.setNumberOfPerfectPlanet(1);
                         break;
                     }
                 }
-                int numberOfHouses = 0;
+                int numberOfUpgrades = 0;
                 log = "  /> "
                         + players.get(playerIndex).getName()
-                        + " has just bought a hotel at "
+                        + " has just bought a perfect planet at "
                         + entities
                         .getEntities()
                         .get(getEntityPosition(String
-                                .valueOf(addBuildingTo
+                                .valueOf(addPlanetTo
                                         .getSelectedItem()))).getName()
                         + "\n";
                 logText.append(log);
-                players.get(playerIndex).setMoneyHeld(-hotelCost);
-                hideAddBuildingComponents();
+                players.get(playerIndex).setMoneyHeld(-perfectPlanetCost);
+                hideAddPlanetComponents();
                 balanceLabels.get(playerIndex).setText(
                         "E" + players.get(playerIndex).getMoneyHeld());
-                displayProperBuildingLabel(
+                displayProperPlanetLabel(
                         players.get(playerIndex)
                                 .getOwnedProperties()
                                 .get(getPlayersEntityPosition(String
-                                        .valueOf(addBuildingTo
+                                        .valueOf(addPlanetTo
                                                 .getSelectedItem())))
-                                .getUpgradeIndex(), numberOfHouses);
+                                .getUpgradeIndex(), numberOfUpgrades);
             }
         });
 
@@ -5943,16 +5943,16 @@ public class Monopoly {
     }
 
     /**
-     * add building comboBox is generated, when this method is called and
+     * add Planet comboBox is generated, when this method is called and
      * all relevant components are set to be visible, when appropriate
      */
-    private void generateAddBuildingComboBox() {
+    private void generateAddPlanetComboBox() {
         Set<String> entitiesNames = new HashSet<String>();
         for (PlanetProperties entity : players.get(playerIndex).getOwnedProperties()) {
             if (playerHasAll(entity.getGroup(), players.get(playerIndex)
                     .getName())
                     || entity.getNumberOfUpgrades() > 0
-                    || hasBuildings(entity.getGroup())) {
+                    || hasPlanets(entity.getGroup())) {
                 if (entity.getGroup() != "railroads"
                         && entity.getGroup() != "utilities"
                         && entity.getNumberOfUpgrades() < 5
@@ -5963,25 +5963,25 @@ public class Monopoly {
             }
         }
         if (entitiesNames.size() > 0) {
-            if (getNumberOfHouses() == 0) {
-                gamePrompt.setText("There are no houses left to buy...");
-            } else if (getNumberOfHotels() == 0) {
-                gamePrompt.setText("There are no hotels left to buy...");
+            if (getNumberOfUpgrades() == 0) {
+                gamePrompt.setText("There are no upgrades left to buy...");
+            } else if (getNumberOfPerfectPlanets() == 0) {
+                gamePrompt.setText("There are no perfect planets left to buy...");
             }
-            addBuildingToModel = new DefaultComboBoxModel<String>();
-            buyBuilding.setVisible(true);
+            addPlanetToModel = new DefaultComboBoxModel<String>();
+            buyPlanet.setVisible(true);
             for (String name : entitiesNames) {
-                addBuildingToModel.addElement(name);
+                addPlanetToModel.addElement(name);
             }
-            addBuildingTo.setModel(addBuildingToModel);
-            addBuildingTo.setVisible(true);
-            addBuildingTo.setSelectedItem(null);
-            addHouseButton.setVisible(true);
-            addHouseButton.setEnabled(false);
-            addHotelButton.setVisible(true);
-            addHotelButton.setEnabled(false);
+            addPlanetTo.setModel(addPlanetToModel);
+            addPlanetTo.setVisible(true);
+            addPlanetTo.setSelectedItem(null);
+            addUpgradeButton.setVisible(true);
+            addUpgradeButton.setEnabled(false);
+            addPerfectPlanetButton.setVisible(true);
+            addPerfectPlanetButton.setEnabled(false);
         } else {
-            hideAddBuildingComponents();
+            hideAddPlanetComponents();
         }
     }
 
@@ -6009,16 +6009,16 @@ public class Monopoly {
     }
 
     /**
-     * add hotel and house buttons and comboBox are hidden, when this method
+     * add perfect planet and upgrade buttons and comboBox are hidden, when this method
      * is called
      */
-    private void hideAddBuildingComponents() {
-        addHotelButton.setEnabled(false);
-        addHouseButton.setEnabled(false);
-        addHotelButton.setVisible(false);
-        addHouseButton.setVisible(false);
-        addBuildingTo.setVisible(false);
-        buyBuilding.setVisible(false);
+    private void hideAddPlanetComponents() {
+        addPerfectPlanetButton.setEnabled(false);
+        addUpgradeButton.setEnabled(false);
+        addPerfectPlanetButton.setVisible(false);
+        addUpgradeButton.setVisible(false);
+        addPlanetTo.setVisible(false);
+        buyPlanet.setVisible(false);
     }
 
     /**
@@ -7031,10 +7031,10 @@ public class Monopoly {
     /**
      *
      * @param group is passed
-     * @return true, if any property of the specified group has any buildings
+     * @return true, if any property of the specified group has any Planets
      * or false otherwise
      */
-    private boolean hasBuildings(String group) {
+    private boolean hasPlanets(String group) {
         for (Player player : players) {
             for (PlanetProperties entity : player.getOwnedProperties()) {
                 if (entity.getGroup().equals(group)) {
@@ -7094,20 +7094,20 @@ public class Monopoly {
 
     /**
      *
-     * @param buildingIndex is passed to determine a label to deal with
-     * @param numberOfHouses is passed to determine, which label should be
-     * displayed. Label indicating number of houses/hotels on the property
+     * @param PlanetIndex is passed to determine a label to deal with
+     * @param numberOfUpgrades is passed to determine, which label should be
+     * displayed. Label indicating number of upgrades/hotels on the property
      * is updated on the appropriate property panel
      */
-    private void displayProperBuildingLabel(int buildingIndex,
-                                            int numberOfHouses) {
-        if (buildingIndex < 5) {
-            switch (numberOfHouses) {
+    private void displayProperPlanetLabel(int PlanetIndex,
+                                            int numberOfUpgrades) {
+        if (PlanetIndex < 5) {
+            switch (numberOfUpgrades) {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
                                 "resources/hotel.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7115,8 +7115,8 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house1.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade1.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7124,8 +7124,8 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house2.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade2.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7133,8 +7133,8 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house3.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade3.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7142,8 +7142,8 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house4.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade4.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7151,20 +7151,20 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house5.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade5.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
                     break;
             }
-        } else if (buildingIndex < 11) {
-            switch (numberOfHouses) {
+        } else if (PlanetIndex < 11) {
+            switch (numberOfUpgrades) {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
                                 "resources/hotelFlippedRight.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7172,8 +7172,8 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house1FlippedRight.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade1FlippedRight.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7181,8 +7181,8 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house2FlippedRight.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade2FlippedRight.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7190,8 +7190,8 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house3FlippedRight.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade3FlippedRight.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7199,8 +7199,8 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house4FlippedRight.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade4FlippedRight.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7208,20 +7208,20 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house5FlippedRight.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade5FlippedRight.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
                     break;
             }
-        } else if (buildingIndex < 17) {
-            switch (numberOfHouses) {
+        } else if (PlanetIndex < 17) {
+            switch (numberOfUpgrades) {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
                                 "resources/hotelUpsideDown.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7229,8 +7229,8 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house1UpsideDown.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade1UpsideDown.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7238,8 +7238,8 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house2UpsideDown.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade2UpsideDown.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7247,8 +7247,8 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house3UpsideDown.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade3UpsideDown.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7256,8 +7256,8 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house4UpsideDown.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade4UpsideDown.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7265,20 +7265,20 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house5UpsideDown.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade5UpsideDown.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
                     break;
             }
         } else {
-            switch (numberOfHouses) {
+            switch (numberOfUpgrades) {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
                                 "resources/hotelFlippedLeft.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7286,8 +7286,8 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house1FlippedLeft.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade1FlippedLeft.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7295,8 +7295,8 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house2FlippedLeft.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade2FlippedLeft.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7304,8 +7304,8 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house3FlippedLeft.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade3FlippedLeft.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7313,8 +7313,8 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house4FlippedLeft.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade4FlippedLeft.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7322,8 +7322,8 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/house5FlippedLeft.png"));
-                        buildingLabels.get(buildingIndex).setIcon(
+                                "resources/upgrade5FlippedLeft.png"));
+                        perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
                     }
@@ -7341,7 +7341,7 @@ public class Monopoly {
         balanceLabels.get(playerIndex).setText(
                 "E" + players.get(playerIndex).getMoneyHeld());
         log = "  /> " + players.get(playerIndex).getName()
-                + " paid income tax (M200) " + "\n";
+                + " paid income tax (200 Galy) " + "\n";
         logText.append(log);
     }
 
@@ -7354,7 +7354,7 @@ public class Monopoly {
         balanceLabels.get(playerIndex).setText(
                 "E" + players.get(playerIndex).getMoneyHeld());
         log = "  /> " + players.get(playerIndex).getName()
-                + " paid luxury tax (M100) " + "\n";
+                + " paid luxury tax (100 Galy) " + "\n";
         logText.append(log);
     }
 
@@ -7654,7 +7654,7 @@ public class Monopoly {
             balanceLabels.get(playerIndex).setText(
                     "E" + players.get(playerIndex).getMoneyHeld());
             log = "  /> " + players.get(playerIndex).getName()
-                    + " got M200 for passing \"GO\" " + "\n";
+                    + " got 200 Galy for passing \"GO\" " + "\n";
             logText.append(log);
             players.get(playerIndex).setPassedGo(false);
         }
@@ -7663,33 +7663,33 @@ public class Monopoly {
 
     /**
      *
-     * @return number of hotels available in the hotels pool
+     * @return number of hotels available in the perfect planets pool
      */
-    public int getNumberOfHotels() {
-        return numberOfHotels;
+    public int getNumberOfPerfectPlanets() {
+        return numberOfPerfectPlanets;
     }
 
     /**
      *
-     * @param update is added to the current number of hotels
+     * @param update is added to the current number of perfect planets
      */
-    public void setNumberOfHotels(int update) {
-        numberOfHotels += update;
+    public void setNumberOfPerfectPlanets(int update) {
+        numberOfPerfectPlanets += update;
     }
 
     /**
      *
-     * @return number of houses available in the houses pool
+     * @return number of upgrades available in the upgrades pool
      */
-    public int getNumberOfHouses() {
-        return numberOfHouses;
+    public int getNumberOfUpgrades() {
+        return numberOfUpgrades;
     }
 
     /**
      *
-     * @param update is added to the current number of houses
+     * @param update is added to the current number of upgrades
      */
-    public void setNumberOfHouses(int update) {
-        numberOfHouses += update;
+    public void setNumberOfUpgrades(int update) {
+        numberOfUpgrades += update;
     }
 }
