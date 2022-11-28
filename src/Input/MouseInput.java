@@ -3,14 +3,8 @@ package Input;
 import Main.GamePanel;
 import Main.Help;
 
-import javax.imageio.ImageIO;
-import javax.print.attribute.standard.Media;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import static Main.GamePanel.STATE.MENU;
 
@@ -19,7 +13,7 @@ public class MouseInput implements MouseListener {
     public MouseInput(GamePanel gp){
         this.gp = gp;
     }
-    public Help helpscreen = new Help();
+    public Help helpScreen = new Help();
 
     @Override
     public void mouseClicked(MouseEvent e) {}
@@ -51,7 +45,7 @@ public class MouseInput implements MouseListener {
         if(mx >= gp.screenWidth / 2 - 75 && mx <= gp.screenWidth / 2 + (75 + 150)){
             if(my >= 730 && my <= 810 && GamePanel.State == MENU ){
                 // Press Help Button
-                helpscreen.displayHelp();
+                helpScreen.displayHelp();
             }
         }
     }
