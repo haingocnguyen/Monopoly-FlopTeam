@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import Input.MouseInput;
 import tile.TileManager;

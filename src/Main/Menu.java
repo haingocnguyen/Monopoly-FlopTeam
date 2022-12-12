@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import tile.Tile;
 

@@ -1,8 +1,9 @@
+package Main;
+
 import Card.ChanceCard;
 import Card.DeckOfChanceAndFortuneCards;
 import Entities.PlanetProperties;
 import Entities.RentValues;
-import Main.Player;
 
 import java.awt.Color;
 import java.awt.Dimension;

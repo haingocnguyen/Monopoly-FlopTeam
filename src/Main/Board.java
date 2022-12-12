@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
