@@ -6295,7 +6295,7 @@ public class Monopoly {
                 }
 
                 ((Player) this.players.get(this.playerIndex)).positionOnBoard(position);
-                if (((PlanetProperties) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner() != null && ((Entity) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner().getName() != ((Player) this.players.get(this.playerIndex)).getName()) {
+                if (((PlanetProperties) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner() != null && ((PlanetProperties) this.entities.getEntities().get(((Player) this.players.get(this.playerIndex)).getPositionOnGameBoard())).getOwner().getName() != ((Player) this.players.get(this.playerIndex)).getName()) {
                     this.sentByChanceCard = true;
                 }
                 this.adjustPlayerPosition();
