@@ -280,7 +280,18 @@ public class Monopoly {
     /**
      * Launch the application.
      */
-
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    Monopoly window = new Monopoly();
+                    window.frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     /**
      * Create the main frame. All fields required to start the game without
      * crash are initialised in the constructor. When screen resolution is
@@ -324,7 +335,7 @@ public class Monopoly {
         frame.setResizable(false);
         frame.setVisible(true);
         gamePrompt = new JLabel(
-                "The game was designed to be played in 1366:768 resolution. Change the resolution to play the game");
+                "The game was designed to be played in 1920:1080 resolution. Change the resolution to play the game");
         gamePrompt.setForeground(Color.RED);
         gamePrompt.setBounds(0, 0, 580, 80);
         gamePrompt.setHorizontalAlignment(SwingConstants.CENTER);
@@ -343,7 +354,7 @@ public class Monopoly {
         FlowLayout flow = new FlowLayout();
         flow.setHgap(0);
         flow.setVgap(0);
-        frame = new JFrame("Monopoly (C) Hasbro. developed by: Pawel Paszki (pawelpaszki@gmail.com)");
+        frame = new JFrame("Monopoly Flop Team");
         frame.setLayout(flow);
         frame.getContentPane().setBackground(new Color(173, 216, 230));
         frame.setForeground(new Color(173, 216, 230));
@@ -359,8 +370,8 @@ public class Monopoly {
         showInstruction = new JButton();
         showInstruction.setBounds(frameWidth - 45, 10, 40, 40);
         try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/instruction.png"));
+            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource(
+                    "Resources/helper.png")));
             showInstruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -548,7 +559,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_9.jpg"));
+                            "Resources/1deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -583,7 +594,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_7.jpg"));
+                            "Resources/3.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -618,7 +629,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_5.jpg"));
+                            "Resources/5deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -653,7 +664,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_4.jpg"));
+                            "Resources/6deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -688,7 +699,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_2.jpg"));
+                            "Resources/8deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -723,7 +734,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/bottom_1.jpg"));
+                            "Resources/9deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -758,7 +769,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_9.jpg"));
+                            "Resources/11deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -793,7 +804,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_8.jpg"));
+                            "Resources/12deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -828,7 +839,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_7.jpg"));
+                            "Resources/13deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -863,7 +874,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_6.jpg"));
+                            "Resources/14deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -898,7 +909,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_5.jpg"));
+                            "Resources/15deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -933,7 +944,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_4.jpg"));
+                            "Resources/16.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -968,7 +979,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_2.jpg"));
+                            "Resources/19deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1003,7 +1014,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/left_1.jpg"));
+                            "Resources/19deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1038,7 +1049,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_1.jpg"));
+                            "Resources/21deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1073,7 +1084,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_3.jpg"));
+                            "Resources/23deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1108,7 +1119,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_4.jpg"));
+                            "Resources/24deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1143,42 +1154,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_5.jpg"));
-                    deed.setIcon(new ImageIcon(img));
-                    deed.setVisible(true);
-                } catch (IOException ex) {
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                deed.setVisible(false);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-        });
-
-        top_6.addMouseListener(new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent arg0) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_6.jpg"));
+                            "Resources/25deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1213,7 +1189,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_7.jpg"));
+                            "Resources/27deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1248,7 +1224,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_8.jpg"));
+                            "Resources/28deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1283,7 +1259,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/top_9.jpg"));
+                            "Resources/29deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1318,7 +1294,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_1.jpg"));
+                            "Resources/31.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1353,7 +1329,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_2.jpg"));
+                            "Resources/32.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1388,7 +1364,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_4.jpg"));
+                            "Resources/34deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1423,7 +1399,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_5.jpg"));
+                            "resources/35deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1458,7 +1434,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_7.jpg"));
+                            "Resources/37deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1493,7 +1469,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "resources/right_9.jpg"));
+                            "Resources/39deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1655,13 +1631,13 @@ public class Monopoly {
         bottomLeftLabel = new JLabel();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/start.jpg"));
+                    "Resources/0.png"));
             bottomRightLabel.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottomLeft.jpg"));
+                    "Resources/10.png"));
             bottomLeftLabel.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -1679,7 +1655,7 @@ public class Monopoly {
         setBottom2Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom3.jpg"));
+                    "Resources/7.png"));
             bottom3Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -1687,14 +1663,14 @@ public class Monopoly {
         setBottom5Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom6.jpg"));
+                    "Resources/4.png"));
             bottom6Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
         setBottom7Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom8.jpg"));
+                    "Resources/2.png"));
             bottom8Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -1734,10 +1710,15 @@ public class Monopoly {
         left9Label = new JLabel();
 
         setLeft1Clean();
-        setLeft2Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left3.jpg"));
+                    "Resources/18.png"));
+            left2Label.setIcon(new ImageIcon(img));
+        } catch (IOException ex) {
+        }
+        try {
+            Image img = ImageIO.read(getClass().getResource(
+                    "Resources/17.png"));
             left3Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -1802,13 +1783,13 @@ public class Monopoly {
         setTop1Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top2.jpg"));
+                    "Resources/22.png"));
             top2Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/topLeft.jpg"));
+                    "Resources/20.png"));
             topLeftLabel.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -1855,7 +1836,7 @@ public class Monopoly {
         setRight2Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right3.jpg"));
+                    "Resources/33.png"));
             right3Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -1863,21 +1844,21 @@ public class Monopoly {
         setRight5Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right6.jpg"));
+                    "Resources/36.png"));
             right6Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
         setRight7Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right8.jpg"));
+                    "Resources/38.png"));
             right8Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
         setRight9Clean();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/topRight.jpg"));
+                    "Resources/30.png"));
             topRightLabel.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5088,13 +5069,6 @@ public class Monopoly {
                     setLeft4Clean();
                 }
                 break;
-            case 18:
-                if (mortgaged) {
-                    setLeft2Mortgaged();
-                } else {
-                    setLeft2Clean();
-                }
-                break;
             case 19:
                 if (mortgaged) {
                     setLeft1Mortgaged();
@@ -5209,7 +5183,7 @@ public class Monopoly {
     private void setBottom9Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom9.jpg"));
+                    "Resources/1.png"));
             bottom9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5221,7 +5195,7 @@ public class Monopoly {
     private void setBottom9Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom9Mortgaged.jpg"));
+                    "Resources/1.png"));
             bottom9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5233,7 +5207,7 @@ public class Monopoly {
     private void setBottom7Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom7.jpg"));
+                    "Resources/3.png"));
             bottom7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5245,7 +5219,7 @@ public class Monopoly {
     private void setBottom7Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom7Mortgaged.jpg"));
+                    "Resources/3mort.png"));
             bottom7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5257,7 +5231,7 @@ public class Monopoly {
     private void setBottom5Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom5.jpg"));
+                    "Resources/5.png"));
             bottom5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5269,7 +5243,7 @@ public class Monopoly {
     private void setBottom5Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom5Mortgaged.jpg"));
+                    "Resources/5.png"));
             bottom5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5281,7 +5255,7 @@ public class Monopoly {
     private void setBottom4Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom4.jpg"));
+                    "Resources/6.png"));
             bottom4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5293,7 +5267,7 @@ public class Monopoly {
     private void setBottom4Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom4Mortgaged.jpg"));
+                    "Resources/6mort.png"));
             bottom4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5305,7 +5279,7 @@ public class Monopoly {
     private void setBottom2Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom2.jpg"));
+                    "Resources/8.png"));
             bottom2Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5317,7 +5291,7 @@ public class Monopoly {
     private void setBottom2Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom2Mortgaged.jpg"));
+                    "Resources/8mort.png"));
             bottom2Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5329,7 +5303,7 @@ public class Monopoly {
     private void setBottom1Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom1.jpg"));
+                    "Resources/9.png"));
             bottom1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5341,7 +5315,7 @@ public class Monopoly {
     private void setBottom1Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/bottom1Mortgaged.jpg"));
+                    "Resources/9mort.png"));
             bottom1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5353,7 +5327,7 @@ public class Monopoly {
     private void setLeft9Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left9.jpg"));
+                    "Resources/11.png"));
             left9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5365,7 +5339,7 @@ public class Monopoly {
     private void setLeft9Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left9Mortgaged.jpg"));
+                    "Resources/11.png"));
             left9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5377,7 +5351,7 @@ public class Monopoly {
     private void setLeft8Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left8.jpg"));
+                    "Resources/12.png"));
             left8Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5389,7 +5363,7 @@ public class Monopoly {
     private void setLeft8Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left8Mortgaged.jpg"));
+                    "Resources/12mort.png"));
             left8Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5401,7 +5375,7 @@ public class Monopoly {
     private void setLeft7Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left7.jpg"));
+                    "Resources/13.png"));
             left7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5413,7 +5387,7 @@ public class Monopoly {
     private void setLeft7Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left7Mortgaged.jpg"));
+                    "Resources/13mort.png"));
             left7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5425,7 +5399,7 @@ public class Monopoly {
     private void setLeft6Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left6.jpg"));
+                    "Resources/14.png"));
             left6Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5437,7 +5411,7 @@ public class Monopoly {
     private void setLeft6Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left6Mortgaged.jpg"));
+                    "Resources/14mort.png"));
             left6Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5449,7 +5423,7 @@ public class Monopoly {
     private void setLeft5Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left5.jpg"));
+                    "Resources/15.png"));
             left5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5461,7 +5435,7 @@ public class Monopoly {
     private void setLeft5Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left5Mortgaged.jpg"));
+                    "Resources/15.png"));
             left5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5473,7 +5447,7 @@ public class Monopoly {
     private void setLeft4Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left4.jpg"));
+                    "Resources/16.png"));
             left4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5485,23 +5459,12 @@ public class Monopoly {
     private void setLeft4Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left4Mortgaged.jpg"));
+                    "Resources/16mort.png"));
             left4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
     }
 
-    /**
-     * sets specified deed label to clean
-     */
-    private void setLeft2Clean() {
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/left2.jpg"));
-            left2Label.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
-    }
 
     /**
      * sets specified deed label to mortgaged
@@ -5521,7 +5484,7 @@ public class Monopoly {
     private void setLeft1Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left1.jpg"));
+                    "Resources/19.png"));
             left1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5533,7 +5496,7 @@ public class Monopoly {
     private void setLeft1Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/left1Mortgaged.jpg"));
+                    "Resources/19mort.png"));
             left1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5545,7 +5508,7 @@ public class Monopoly {
     private void setTop1Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top1.jpg"));
+                    "Resources/21.png"));
             top1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5557,7 +5520,7 @@ public class Monopoly {
     private void setTop1Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top1Mortgaged.jpg"));
+                    "Resources/21mort.png"));
             top1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5569,7 +5532,7 @@ public class Monopoly {
     private void setTop3Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top3.jpg"));
+                    "Resources/23.png"));
             top3Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5581,7 +5544,7 @@ public class Monopoly {
     private void setTop3Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top3Mortgaged.jpg"));
+                    "Resources/23mort.png"));
             top3Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5593,7 +5556,7 @@ public class Monopoly {
     private void setTop4Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top4.jpg"));
+                    "Resources/24.png"));
             top4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5605,7 +5568,7 @@ public class Monopoly {
     private void setTop4Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top4Mortgaged.jpg"));
+                    "Resources/24.png"));
             top4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5617,7 +5580,7 @@ public class Monopoly {
     private void setTop5Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top5.jpg"));
+                    "Resources/25.png"));
             top5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5629,7 +5592,7 @@ public class Monopoly {
     private void setTop5Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top5Mortgaged.jpg"));
+                    "Resources/25mort.png"));
             top5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5665,7 +5628,7 @@ public class Monopoly {
     private void setTop7Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top7.jpg"));
+                    "Resources/27.png"));
             top7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5677,7 +5640,7 @@ public class Monopoly {
     private void setTop7Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top7Mortgaged.jpg"));
+                    "Resources/27mort.png"));
             top7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5689,7 +5652,7 @@ public class Monopoly {
     private void setTop8Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top8.jpg"));
+                    "Resources/28.png"));
             top8Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5701,7 +5664,7 @@ public class Monopoly {
     private void setTop8Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top8Mortgaged.jpg"));
+                    "Resources/28mort.png"));
             top8Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5713,7 +5676,7 @@ public class Monopoly {
     private void setTop9Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top9.jpg"));
+                    "Resources/29.png"));
             top9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5725,7 +5688,7 @@ public class Monopoly {
     private void setTop9Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/top9Mortgaged.jpg"));
+                    "Resources/29mort.png"));
             top9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5737,7 +5700,7 @@ public class Monopoly {
     private void setRight1Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right1.jpg"));
+                    "Resources/31.png"));
             right1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5749,7 +5712,7 @@ public class Monopoly {
     private void setRight1Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right1Mortgaged.jpg"));
+                    "Resources/31mort.png"));
             right1Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5761,7 +5724,7 @@ public class Monopoly {
     private void setRight2Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right2.jpg"));
+                    "Resources/32.png"));
             right2Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5773,7 +5736,7 @@ public class Monopoly {
     private void setRight2Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right2Mortgaged.jpg"));
+                    "Resources/32mort.png"));
             right2Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5785,7 +5748,7 @@ public class Monopoly {
     private void setRight4Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right4.jpg"));
+                    "Resources/34.png"));
             right4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5797,7 +5760,7 @@ public class Monopoly {
     private void setRight4Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right4Mortgaged.jpg"));
+                    "Resources/34mort.png"));
             right4Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5809,7 +5772,7 @@ public class Monopoly {
     private void setRight5Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right5.jpg"));
+                    "Resources/35.png"));
             right5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5821,7 +5784,7 @@ public class Monopoly {
     private void setRight5Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right5Mortgaged.jpg"));
+                    "Resources/35mort.png"));
             right5Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5833,7 +5796,7 @@ public class Monopoly {
     private void setRight7Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right7.jpg"));
+                    "Resources/37.png"));
             right7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5845,7 +5808,7 @@ public class Monopoly {
     private void setRight7Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right7Mortgaged.jpg"));
+                    "Resources/37mort.png"));
             right7Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5857,7 +5820,7 @@ public class Monopoly {
     private void setRight9Clean() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right9.jpg"));
+                    "Resources/39.png"));
             right9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -5869,7 +5832,7 @@ public class Monopoly {
     private void setRight9Mortgaged() {
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/right9Mortgaged.jpg"));
+                    "Resources/39mort.png"));
             right9Label.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
