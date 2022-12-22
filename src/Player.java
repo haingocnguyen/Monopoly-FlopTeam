@@ -1,7 +1,3 @@
-package Main;
-
-import Card.Card;
-import Entities.PlanetProperties;
 import java.util.ArrayList;
 
 public class Player {

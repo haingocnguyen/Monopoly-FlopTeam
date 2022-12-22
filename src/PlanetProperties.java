@@ -1,6 +1,3 @@
-package Entities;
-
-import Main.Player;
 
 import java.util.ArrayList;
 
