@@ -295,33 +295,29 @@ public class Monopoly {
     /**
      * Create the main frame. All fields required to start the game without
      * crash are initialised in the constructor. When screen resolution is
-     * 1366 x 768 application starts, otherwise wrong resolution info is
+     * 1920 x 1080 application starts, otherwise wrong resolution info is
      * displayed
      */
     public Monopoly() {
         double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-        if (((int) width) == 1920 && ((int) height) == 1080) {
-            deck = new DeckOfChanceAndFortuneCards();
-            players = new ArrayList<Player>();
-            entities = new RentValues();
-            random = new Random();
-            boardPanels = new ArrayList<JLayeredPane>();
-            playerIndicators = new ArrayList<JLabel>();
-            balanceLabels = new ArrayList<JLabel>();
-            energyLabels = new ArrayList<JLabel>();
-            playerIndex = 0;
-            doubleCounter = 0;
-            playersPanes = new ArrayList<JLayeredPane>();
-            getOutOfJailLabels = new ArrayList<JLabel>();
-            perfectPlanetLabels = new ArrayList<JLabel>();
-            upgradeOrPerfectPlanetBought = false;
-            numberOfPerfectPlanets = 12;
-            numberOfUpgrades = 32;
-            initialize();
-        } else {
-            showRequiredResolutionWindow();
-        }
+        deck = new DeckOfChanceAndFortuneCards();
+        players = new ArrayList<Player>();
+        entities = new RentValues();
+        random = new Random();
+        boardPanels = new ArrayList<JLayeredPane>();
+        playerIndicators = new ArrayList<JLabel>();
+        balanceLabels = new ArrayList<JLabel>();
+        energyLabels = new ArrayList<JLabel>();
+        playerIndex = 0;
+        doubleCounter = 0;
+        playersPanes = new ArrayList<JLayeredPane>();
+        getOutOfJailLabels = new ArrayList<JLabel>();
+        perfectPlanetLabels = new ArrayList<JLabel>();
+        upgradeOrPerfectPlanetBought = false;
+        numberOfPerfectPlanets = 12;
+        numberOfUpgrades = 32;
+        initialize();
     }
 
     /**
@@ -389,12 +385,7 @@ public class Monopoly {
         });
         hideInstruction = new JButton();
         hideInstruction.setBounds(frameWidth - 65, 10, 40, 40);
-        try {
-            Image img = ImageIO.read(getClass().getResource(
-                    "resources/hideInstruction.png"));
-            hideInstruction.setIcon(new ImageIcon(img));
-        } catch (IOException ex) {
-        }
+
         hideInstruction.setVisible(false);
         hideInstruction.addActionListener(new ActionListener() {
             @Override
@@ -594,7 +585,7 @@ public class Monopoly {
             public void mouseEntered(MouseEvent arg0) {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
-                            "Resources/3.png"));
+                            "Resources/3deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -1995,7 +1986,7 @@ public class Monopoly {
         instruction = new JLabel();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "resources/instruction.jpg"));
+                    "resources/helper.png"));
             instruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
