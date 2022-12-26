@@ -7,17 +7,17 @@ public class Player {
     private boolean passedGo;
     private int positionOnGameBoard;
     private boolean inJail;
-    private ArrayList<Card> outOfJailCards;
+    private final ArrayList<Card> outOfJailCards;
     private int turnsInJail;
     private ArrayList<PlanetProperties> ownedProperties;
     private boolean isBankrupt;
     
     public Player(String name){
-        // Default galy and mana values
+        // Default Galy and Mana values
         this.moneyHeld = 1000;
         this.manaHeld = 200;
         this.name = name;
-        ownedProperties = new ArrayList<PlanetProperties>();
+        ownedProperties = new ArrayList<>();
         outOfJailCards = new ArrayList<>();
     }
     public double getMoneyHeld(){
@@ -88,5 +88,4 @@ public class Player {
     public void setOwnedProperties(ArrayList<PlanetProperties> ownedProperties) {
         this.ownedProperties = ownedProperties;
     }
-
 }

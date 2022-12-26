@@ -1,15 +1,14 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Random;
 
 public class DeckOfChanceAndFortuneCards {
-    private ArrayList<ChanceCard> chanceCards = new ArrayList();
-    private ArrayList<ChanceCard> dealtChanceCards = new ArrayList();
+    private ArrayList<ChanceCard> chanceCards = new ArrayList<>();
+    private ArrayList<ChanceCard> dealtChanceCards = new ArrayList<>();
     private ChanceCard getOutOfJailChance;
-    private ArrayList<FortuneCard> fortuneCards = new ArrayList();
-    private ArrayList<FortuneCard> dealtFortuneCards = new ArrayList();
+    private ArrayList<FortuneCard> fortuneCards = new ArrayList<>();
+    private ArrayList<FortuneCard> dealtFortuneCards = new ArrayList<>();
     private FortuneCard getOutOfJailCommunity;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public DeckOfChanceAndFortuneCards() {
         this.chanceCards.add(new ChanceCard(1));
@@ -58,15 +57,15 @@ public class DeckOfChanceAndFortuneCards {
     public int dealChanceCard() {
         if (this.chanceCards.size() == 0) {
             this.chanceCards = this.dealtChanceCards;
-            this.dealtChanceCards = new ArrayList();
+            this.dealtChanceCards = new ArrayList<>();
         }
 
         int position = this.random.nextInt(this.chanceCards.size());
-        int id = ((ChanceCard)this.chanceCards.get(position)).getId();
+        int id = this.chanceCards.get(position).getId();
         if (id == 7) {
-            this.setGetOutOfJailChance((ChanceCard)this.chanceCards.get(position));
+            this.setGetOutOfJailChance(this.chanceCards.get(position));
         } else {
-            this.dealtChanceCards.add((ChanceCard)this.chanceCards.get(position));
+            this.dealtChanceCards.add(this.chanceCards.get(position));
         }
 
         this.chanceCards.remove(position);
@@ -76,15 +75,15 @@ public class DeckOfChanceAndFortuneCards {
     public int dealFortuneCard() {
         if (this.fortuneCards.size() == 0) {
             this.fortuneCards = this.dealtFortuneCards;
-            this.dealtFortuneCards = new ArrayList();
+            this.dealtFortuneCards = new ArrayList<>();
         }
 
         int position = this.random.nextInt(this.fortuneCards.size());
-        int id = ((FortuneCard)this.fortuneCards.get(position)).getId();
+        int id = this.fortuneCards.get(position).getId();
         if (id ==14) {
-            this.setGetOutOfJailCommunity((FortuneCard)this.fortuneCards.get(position));
+            this.setGetOutOfJailCommunity(this.fortuneCards.get(position));
         } else {
-            this.dealtFortuneCards.add((FortuneCard)this.fortuneCards.get(position));
+            this.dealtFortuneCards.add(this.fortuneCards.get(position));
         }
 
         this.fortuneCards.remove(position);
@@ -93,7 +92,7 @@ public class DeckOfChanceAndFortuneCards {
 
     public void returnOutOfJailCardChance() {
         this.dealtChanceCards.add(this.getOutOfJailChance);
-        this.setGetOutOfJailChance((ChanceCard)null);
+        this.setGetOutOfJailChance(null);
     }
 
     public ChanceCard getGetOutOfJailChance() {
@@ -105,10 +104,8 @@ public class DeckOfChanceAndFortuneCards {
     }
 
     public ChanceCard getChanceCard(int id) {
-        Iterator var3 = this.chanceCards.iterator();
 
-        while(var3.hasNext()) {
-            ChanceCard card = (ChanceCard)var3.next();
+        for (ChanceCard card : this.chanceCards) {
             if (card.getId() == id) {
                 return card;
             }
@@ -119,7 +116,7 @@ public class DeckOfChanceAndFortuneCards {
 
     public void returnOutOfJailCardCommunity() {
         this.dealtFortuneCards.add(this.getOutOfJailCommunity);
-        this.setGetOutOfJailCommunity((FortuneCard)null);
+        this.setGetOutOfJailCommunity(null);
     }
 
     public FortuneCard getGetOutOfJailCommunity() {
@@ -131,10 +128,8 @@ public class DeckOfChanceAndFortuneCards {
     }
 
     public FortuneCard getFortuneCard(int id) {
-        Iterator var3 = this.fortuneCards.iterator();
 
-        while(var3.hasNext()) {
-            FortuneCard card = (FortuneCard)var3.next();
+        for (FortuneCard card : this.fortuneCards) {
             if (card.getId() == id) {
                 return card;
             }

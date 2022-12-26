@@ -2,15 +2,13 @@ import java.util.ArrayList;
 
 public class RentValues {
 
-    private ArrayList <PlanetProperties> entities;
-    private ArrayList <Double> rentValues;
-    private ArrayList <Double> noRent;
+    private final ArrayList <PlanetProperties> entities;
 
     public RentValues() {
-        entities = new ArrayList<PlanetProperties>();
-        noRent = new ArrayList<Double>();
+        entities = new ArrayList<>();
+        ArrayList<Double> noRent = new ArrayList<>();
         noRent.add(0.0);
-        rentValues = new ArrayList<Double>();
+        ArrayList<Double> rentValues = new ArrayList<>();
         rentValues.add(2.0);
         rentValues.add(10.0);
         rentValues.add(30.0);
@@ -20,7 +18,7 @@ public class RentValues {
         entities.add(new PlanetProperties("Starting", null, 0, noRent, 0, false, -1));
         entities.add(new PlanetProperties("The Moon", "brown", 60, rentValues, 1, true, 0));
         entities.add(new PlanetProperties("Fortune", null, 0, noRent, 2, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(4.0);
         rentValues.add(20.0);
         rentValues.add(60.0);
@@ -29,10 +27,10 @@ public class RentValues {
         rentValues.add(450.0);
         entities.add(new PlanetProperties("Epsilon Eridani B", "brown", 60, rentValues, 3, true, 1));
         entities.add(new PlanetProperties("Losing Connection", null, 150, noRent, 4, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(25.0);
         entities.add(new PlanetProperties("Ophiuchus Constellation", "constellation", 200, rentValues, 5, true, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(6.0);
         rentValues.add(30.0);
         rentValues.add(90.0);
@@ -42,7 +40,7 @@ public class RentValues {
         entities.add(new PlanetProperties("55 Cancri E", "lightblue", 100, rentValues, 6,true, 2));
         entities.add(new PlanetProperties("Opportunity", null, 0, noRent, 7, false, -1));
         entities.add(new PlanetProperties("GJ 1214B", "lightblue", 100, rentValues, 8,true, 3));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(8.0);
         rentValues.add(40.0);
         rentValues.add(100.0);
@@ -50,7 +48,7 @@ public class RentValues {
         rentValues.add(450.0);
         rentValues.add(600.0);
         entities.add(new PlanetProperties("GJ-504B", "lightblue", 120, rentValues, 9, true, 4));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(10.0);
         rentValues.add(50.0);
         rentValues.add(150.0);
@@ -61,7 +59,7 @@ public class RentValues {
         entities.add(new PlanetProperties("HD 189733B", "purple", 140, rentValues, 11, true, 5));
         entities.add(new PlanetProperties("Altar Star", "stars", 120, rentValues, 12, true, -1));
         entities.add(new PlanetProperties("GJ 3090B", "purple", 140, rentValues, 13, true, 6));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(12.0);
         rentValues.add(60.0);
         rentValues.add(180.0);
@@ -69,10 +67,10 @@ public class RentValues {
         rentValues.add(700.0);
         rentValues.add(900.0);
         entities.add(new PlanetProperties("HD 114762 B", "purple", 160, rentValues, 14, true, 7));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(25.0);
         entities.add(new PlanetProperties("Aquila Constellation", "constellation", 200, rentValues, 15, true, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(14.0);
         rentValues.add(70.0);
         rentValues.add(200.0);
@@ -82,7 +80,7 @@ public class RentValues {
         entities.add(new PlanetProperties("Kepler-37B", "orange", 180, rentValues, 16, true, 8));
         entities.add(new PlanetProperties("Fortune (2)", null, 0, noRent, 17, false, -1));
         entities.add(new PlanetProperties("Refuelling Rockets", null, 0, noRent, 18, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(16.0);
         rentValues.add(80.0);
         rentValues.add(220.0);
@@ -91,7 +89,7 @@ public class RentValues {
         rentValues.add(1000.0);
         entities.add(new PlanetProperties("HD 100546B", "orange", 200, rentValues, 19, true, 9));
         entities.add(new PlanetProperties("Voyager 1", null, 0, noRent, 20, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(18.0);
         rentValues.add(90.0);
         rentValues.add(250.0);
@@ -101,7 +99,7 @@ public class RentValues {
         entities.add(new PlanetProperties("Kepler-78B", "red", 220, rentValues, 21, true, 10));
         entities.add(new PlanetProperties("Opportunity (2)", null, 0, noRent, 22, false, -1));
         entities.add(new PlanetProperties("Kepler-10C", "red", 220, rentValues, 23, true, 11));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(20.0);
         rentValues.add(100.0);
         rentValues.add(300.0);
@@ -109,11 +107,11 @@ public class RentValues {
         rentValues.add(925.0);
         rentValues.add(1100.0);
         entities.add(new PlanetProperties("Kepler-22B", "red", 240, rentValues, 24, true, 12));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(25.0);
         entities.add(new PlanetProperties("Orion Constellation", "constellation", 200, rentValues, 25, true, -1));
         entities.add(new PlanetProperties("Solar Power", null, 0, noRent, 26, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(22.0);
         rentValues.add(110.0);
         rentValues.add(330.0);
@@ -122,7 +120,7 @@ public class RentValues {
         rentValues.add(1150.0);
         entities.add(new PlanetProperties("Kelt-9B", "yellow", 260, rentValues, 27, true, 13));
         entities.add(new PlanetProperties("Vega Star", "utilities", 120, rentValues, 28, true, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(24.0);
         rentValues.add(120.0);
         rentValues.add(360.0);
@@ -131,7 +129,7 @@ public class RentValues {
         rentValues.add(1200.0);
         entities.add(new PlanetProperties("TreS-2B", "yellow", 280, rentValues, 29, true, 14));
         entities.add(new PlanetProperties("Collide High-Velocity Stars", null, 0, noRent, 30, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(26.0);
         rentValues.add(130.0);
         rentValues.add(390.0);
@@ -141,7 +139,7 @@ public class RentValues {
         entities.add(new PlanetProperties("Hat-P-7B", "green", 300, rentValues, 31, true, 15));
         entities.add(new PlanetProperties("Wasp-12B", "green", 300, rentValues, 32, true, 16));
         entities.add(new PlanetProperties("Fortune (3)", null, 0, noRent, 33, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(28.0);
         rentValues.add(150.0);
         rentValues.add(450.0);
@@ -149,11 +147,11 @@ public class RentValues {
         rentValues.add(1200.0);
         rentValues.add(1400.0);
         entities.add(new PlanetProperties("PSR-B1620-26B", "green", 320, rentValues, 34, true, 17));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(25.0);
         entities.add(new PlanetProperties("Lyra Constellation", "constellation", 200, rentValues, 35, true, -1));
         entities.add(new PlanetProperties("Opportunity (3)", null, 0, noRent, 36, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(35.0);
         rentValues.add(175.0);
         rentValues.add(500.0);
@@ -162,7 +160,7 @@ public class RentValues {
         rentValues.add(1500.0);
         entities.add(new PlanetProperties("OGLE-2005-BLG-390Lb", "blue", 350, rentValues, 37, true, 18));
         entities.add(new PlanetProperties("Alpha Jump", null, 75, noRent, 38, false, -1));
-        rentValues = new ArrayList<Double>();
+        rentValues = new ArrayList<>();
         rentValues.add(50.0);
         rentValues.add(200.0);
         rentValues.add(600.0);
