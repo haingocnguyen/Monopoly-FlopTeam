@@ -295,48 +295,23 @@ public class Monopoly {
     public Monopoly() {
         double width = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
         double height = Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-        if (((int) width) == 1920 && ((int) height) == 1080) {
-            deck = new DeckOfChanceAndFortuneCards();
-            players = new ArrayList<Player>();
-            entities = new RentValues();
-            random = new Random();
-            boardPanels = new ArrayList<JLayeredPane>();
-            playerIndicators = new ArrayList<JLabel>();
-            balanceLabels = new ArrayList<JLabel>();
-            energyLabels = new ArrayList<JLabel>();
-            playerIndex = 0;
-            doubleCounter = 0;
-            playersPanes = new ArrayList<JLayeredPane>();
-            getOutOfJailLabels = new ArrayList<JLabel>();
-            perfectPlanetLabels = new ArrayList<JLabel>();
-            upgradeOrPerfectPlanetBought = false;
-            numberOfPerfectPlanets = 12;
-            numberOfUpgrades = 32;
-            initialize();
-        } else {
-            showRequiredResolutionWindow();
-        }
-    }
-
-    /**
-     * this method is run, if screen resolution is other than 1366 x 768
-     */
-    private void showRequiredResolutionWindow() {
-        frame = new JFrame("info");
-        frame.setForeground(new Color(173, 216, 230));
-        frame.setBackground(new Color(173, 216, 230));
-        frame.setSize(600, 100);
-        frame.setResizable(false);
-        frame.setVisible(true);
-        gamePrompt = new JLabel(
-                "The game was designed to be played in 1920:1080 resolution. Change the resolution to play the game");
-        gamePrompt.setForeground(Color.RED);
-        gamePrompt.setBounds(0, 0, 580, 80);
-        gamePrompt.setHorizontalAlignment(SwingConstants.CENTER);
-        gamePrompt.setVerticalAlignment(SwingConstants.CENTER);
-        frame.getContentPane().add(gamePrompt);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
+        deck = new DeckOfChanceAndFortuneCards();
+        players = new ArrayList<Player>();
+        entities = new RentValues();
+        random = new Random();
+        boardPanels = new ArrayList<JLayeredPane>();
+        playerIndicators = new ArrayList<JLabel>();
+        balanceLabels = new ArrayList<JLabel>();
+        energyLabels = new ArrayList<JLabel>();
+        playerIndex = 0;
+        doubleCounter = 0;
+        playersPanes = new ArrayList<JLayeredPane>();
+        getOutOfJailLabels = new ArrayList<JLabel>();
+        perfectPlanetLabels = new ArrayList<JLabel>();
+        upgradeOrPerfectPlanetBought = false;
+        numberOfPerfectPlanets = 12;
+        numberOfUpgrades = 32;
+        initialize();
     }
 
     /**
