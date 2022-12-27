@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/haingocnguyen/Monopoly-FlopTeam">
-    <img src="Resources/cover.png" alt="Cover" width="80" height="80">
+    <img src="Resources/cover.png" alt="Cover" width="1920" height="1080">
   </a>
 
 <h3 align="center">MONOPOLY UNIVERSE</h3>
@@ -22,40 +22,47 @@
 
 </div>
 
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about">ABOUT</a>
+      <a href="#About">ABOUT</a>
         <ul>
         <li><a href="#team">Team</a></li>
         <li><a href="#project">Project</a></li>
       </ul>
     </li>
     <li>
-      <a href="#"></a>
+      <a href="#Reason">REASON</a>
       <ul>
         <li><a href="#idea">Idea</a></li>
-        <li><a href="#code">Installation</a></li>
+        <li><a href="#tools">Productive Tools</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>
+      <a href="#Methodology">METHODOLOGY</a></li>
+      <ul>
+        <li><a href="#rule">Rules</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#uml">UML Diagram</a></li>
+      </ul>
+    <li><a href="#Result">DEMO RESULT</a></li>
+    <li><a href="#Installation">INSTALLATION</a></li>
+    <li><a href="#license">LICENSE</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+    <li><a href="#acknowledgments">ACKNOWLEDGMENTS</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## ABOUT
+### The team behind it
+### The project we are working on
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]]()
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following:
 
