@@ -1957,7 +1957,7 @@ public class Monopoly {
         payArrears.setVisible(false);
         logText = new JTextArea();
         logText.setFont(new Font("Arial", Font.BOLD, 12));
-        log = "  /> the Game has started! May the best player wins the game.\n";
+        log = "  /> The Game has started! May the best player wins the game.\n";
         logText.append(log);
         instruction = new JLabel();
         try {
@@ -1980,10 +1980,10 @@ public class Monopoly {
         gameLog.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         Border lined = BorderFactory.createLineBorder(Color.black, 1);
         Border innerGameLog1 = BorderFactory.createTitledBorder(lined,
-                "Game info:", 2, 2, new Font("Arial", Font.ITALIC, 12),
+                "HISTORY LOGGING", 2, 2, new Font("Arial", Font.ITALIC, 12),
                 Color.black);
         Border innerGameConsole1 = BorderFactory.createTitledBorder(lined,
-                "Game console:", 2, 2, new Font("Arial", Font.ITALIC, 12),
+                "MANAGEMENT BOARD", 2, 2, new Font("Arial", Font.ITALIC, 12),
                 Color.black);
         Border outerBorder = BorderFactory.createEmptyBorder(2, 0, 2, 0);
         gameLog.setBorder(BorderFactory.createCompoundBorder(outerBorder,
@@ -2240,6 +2240,7 @@ public class Monopoly {
                 player1mana.setFont(new Font("Arial", Font.BOLD, 14));
                 frame.getContentPane().add(player1nameLabel);
                 frame.getContentPane().add(player1balance);
+                frame.getContentPane().add(player1mana);
                 System.out.println(players.get(0).getName());
                 player1name.setVisible(false);
                 addPlayer1Name.setVisible(false);
@@ -2409,6 +2410,7 @@ public class Monopoly {
                 player2mana.setFont(new Font("Arial", Font.BOLD, 14));
                 frame.getContentPane().add(player2nameLabel);
                 frame.getContentPane().add(player2balance);
+                frame.getContentPane().add(player2mana);
                 System.out.println(players.get(1).getName());
                 player2name.setVisible(false);
                 addPlayer2Name.setVisible(false);
@@ -2585,6 +2587,7 @@ public class Monopoly {
                 player3mana.setFont(new Font("Arial", Font.BOLD, 14));
                 frame.getContentPane().add(player3nameLabel);
                 frame.getContentPane().add(player3balance);
+                frame.getContentPane().add(player3mana);
                 System.out.println(players.get(2).getName());
                 player3name.setVisible(false);
                 addPlayer3Name.setVisible(false);
@@ -2760,6 +2763,7 @@ public class Monopoly {
                 player4mana.setFont(new Font("Arial", Font.BOLD, 14));
                 frame.getContentPane().add(player4nameLabel);
                 frame.getContentPane().add(player4balance);
+                frame.getContentPane().add(player4mana);
                 System.out.println(players.get(3).getName());
                 player4name.setVisible(false);
                 addPlayer4Name.setVisible(false);
@@ -3376,7 +3380,7 @@ public class Monopoly {
                         .getEntities()
                         .get(players.get(playerIndex)
                                 .getPositionOnGameBoard()).getName()
-                        + "(worth Galy"
+                        + " (worth Galy "
                         + entities
                         .getEntities()
                         .get(players.get(playerIndex)
@@ -4214,7 +4218,7 @@ public class Monopoly {
                         + " has just bought "
                         + entities.getEntities().get(entityPosition).getName()
                         + " from " + players.get(ownerIndex).getName()
-                        + " (for Galy" + valueOfOwnedProperty + ")\n";
+                        + " (for Galy " + valueOfOwnedProperty + ")\n";
                 logText.append(log);
                 if (isMortgaged) {
                     players.get(ownerIndex)
@@ -4573,16 +4577,16 @@ public class Monopoly {
                         payManaTax();
                         break;
                     case 105:
-                        followCommunityCard5();
+                        followFortuneCard5();
                         break;
                     case 106:
-                        followCommunityCard6();
+                        followFortuneCard6();
                         break;
                     case 108:
-                        followCommunityCard8();
+                        followFortuneCard8();
                         break;
                     case 120:
-                        followCommunityCard20();
+                        followFortuneCard20();
                         break;
                 }
 
@@ -5970,7 +5974,7 @@ public class Monopoly {
                 } catch (IOException var19) {
                 }
                 ((Player) this.players.get(this.playerIndex)).setMoneyHeld(50.0);
-                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Mana: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 50 Galy for meeting a gold meteorite" + "\n";
                 this.logText.append(this.log);
                 break;
@@ -6069,8 +6073,8 @@ public class Monopoly {
                     this.rollTheDice.setEnabled(false);
                     this.finishTurn.setEnabled(false);
                     ((Player) this.players.get(this.playerIndex)).setManaHeld(500.0);
-                    ((JLabel) this.energyLabels.get(this.playerIndex)).setText("E" + ((Player) this.players.get(this.playerIndex)).getManaHeld());
-                    this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
+                    ((JLabel) this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player) this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has gained 500 Mana from ISS gift" + "\n";
                     this.logText.append(this.log);
                 }
                 break;
@@ -6082,7 +6086,7 @@ public class Monopoly {
                 }
 
                 ((Player) this.players.get(this.playerIndex)).setMoneyHeld(150.0);
-                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Mana: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 150 Galy from meeting peer-to-peer spacecraft" + "\n";
                 this.logText.append(this.log);
                 break;
@@ -6222,7 +6226,7 @@ public class Monopoly {
                 } catch (IOException var3) {
                 }
                 ((Player) this.players.get(this.playerIndex)).setMoneyHeld(200.0);
-                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Mana: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 200 Galy from new matter founding" + "\n";
                 this.logText.append(this.log);
                 break;
@@ -6247,7 +6251,7 @@ public class Monopoly {
                 } catch (IOException var1) {
                 }
                 ((Player) this.players.get(this.playerIndex)).setMoneyHeld(100.0);
-                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Mana: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel) this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player) this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player) this.players.get(this.playerIndex)).getName() + " has received 100 Galy from new batteries" + "\n";
                 this.logText.append(this.log);
                 break;
@@ -6259,11 +6263,11 @@ public class Monopoly {
         for(int i = 0; i < this.players.size(); ++i) {
             if (i != this.playerIndex && !((Player)this.players.get(i)).isBankrupt()) {
                 ((Player)this.players.get(i)).setMoneyHeld(50.0);
-                ((JLabel)this.balanceLabels.get(i)).setText("Mana: " + ((Player)this.players.get(i)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(i)).setText("Galy: " + ((Player)this.players.get(i)).getMoneyHeld());
             }
         }
         ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
-        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " paid each of other players 50 Galy on success on Alpha-leap" + "\n";
         this.logText.append(this.log);
     }
@@ -6275,20 +6279,20 @@ public class Monopoly {
     }
     private void followChanceCard6() {
         ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
-        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has spent Galy" + this.paymentDueAmount + " on general repairs on his properties \n";
         this.logText.append(this.log);
     }
 
     private void followChanceCard16() {
         ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
-        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 150 Mana due to black hole edge" + "\n";
         this.logText.append(this.log);
     }
     private void followChanceCard19() {
         ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
-        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 50 Mana due to gamma ray burst" + "\n";
         this.logText.append(this.log);
     }
@@ -6297,37 +6301,37 @@ public class Monopoly {
      * when player has sufficient funds, action is taken according to the
      * dealt card
      */
-    private void followCommunityCard1() {
+    private void followFortuneCard1() {
         ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
-        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
-        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has spent M" + this.paymentDueAmount + " on street repairs \n";
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has spent Galy" + this.paymentDueAmount + " on street repairs \n";
         this.logText.append(this.log);
     }
 
-        private void followCommunityCard5() {
+        private void followFortuneCard5() {
         ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
-        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has paid 50 Galy for maintenance fee" + "\n";
         this.logText.append(this.log);
     }
-    private void followCommunityCard6() {
+    private void followFortuneCard6() {
         ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
-        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+        ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has paid 50 Galy for space garage fee" + "\n";
         this.logText.append(this.log);
     }
 
-    private void followCommunityCard8() {
+    private void followFortuneCard8() {
         ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
-        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 150 mana due to letting the sub-spacecraft to explore" + "\n";
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 150 Mana due to letting the sub-spacecraft to explore" + "\n";
         this.logText.append(this.log);
     }
 
-        private void followCommunityCard20() {
+        private void followFortuneCard20() {
         ((Player)this.players.get(this.playerIndex)).setManaHeld(-this.manaDueAmount);
-        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 100 mana due to losing connection" + "\n";
+        ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+        this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost 100 Mana due to losing connection" + "\n";
         this.logText.append(this.log);
     }
     private void FortuneCardActive() {
@@ -6338,7 +6342,7 @@ public class Monopoly {
         switch (this.deck.dealFortuneCard()) {
             case 1:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune1.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k1.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var20) {
                 }
@@ -6356,7 +6360,7 @@ public class Monopoly {
                 }
                 if (this.paymentDueAmount > 0.0) {
                     if (this.paymentDueAmount <= ((Player)this.players.get(this.playerIndex)).getMoneyHeld()) {
-                        this.followCommunityCard1();
+                        this.followFortuneCard1();
                     } else {
                         this.paymentDue = true;
                         this.arrearsIndex = 112;
@@ -6365,49 +6369,49 @@ public class Monopoly {
                 break;
             case 2:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune2.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k2.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var19) {
                 }
 
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(10.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 10 Galy for being a Miss Universe 2023" + "\n";
                 this.logText.append(this.log);
                 break;
             case 3:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune3.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k3.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var18) {
                 }
 
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 200 Galy for meeting a diamond meteorite\n";
                 this.logText.append(this.log);
                 break;
             case 4:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune4.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k4.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var17) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Galy from the bank" + "\n";
                 this.logText.append(this.log);
                 break;
             case 5:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune5.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k5.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var16) {
                 }
 
                 this.paymentDueAmount = 50.0;
                 if (((Player)this.players.get(this.playerIndex)).getMoneyHeld() >= this.paymentDueAmount) {
-                    this.followCommunityCard5();
+                    this.followFortuneCard5();
                 } else {
                     this.paymentDue = true;
                     this.arrearsIndex = 109;
@@ -6415,14 +6419,14 @@ public class Monopoly {
                 break;
             case 6:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune6.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k6.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var15) {
                 }
 
                 this.paymentDueAmount = 100.0;
                 if (((Player)this.players.get(this.playerIndex)).getMoneyHeld() >= this.paymentDueAmount) {
-                    this.followCommunityCard6();
+                    this.followFortuneCard6();
                 } else {
                     this.paymentDue = true;
                     this.arrearsIndex = 109;
@@ -6430,25 +6434,25 @@ public class Monopoly {
                 break;
             case 7:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune7.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k7.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var14) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Galy from the alien gift" + "\n";
                 this.logText.append(this.log);
                 break;
             case 8:         // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune8.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k8.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var13) {
                 }
 
                 this.manaDueAmount = 150.0;
                 if (((Player)this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
-                    this.followCommunityCard8();
+                    this.followFortuneCard8();
                 } else {
                     this.manaDue = true;
                     this.arrearsIndex = 109;
@@ -6456,31 +6460,31 @@ public class Monopoly {
                 break;
             case 9:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune9.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k9.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var12) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(25.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 25 Galy from Alien's spacecraft" + "\n";
                 this.logText.append(this.log);
                 break;
             case 10:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune10.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k10.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var11) {
                 }
                 ((Player)this.players.get(this.playerIndex)).positionOnBoard(40 - ((Player)this.players.get(this.playerIndex)).getPositionOnGameBoard());
                 this.adjustPlayerPosition();
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 200 Galy from the government" + "\n";
                 this.logText.append(this.log);
                 break;
             case 11:       // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune11.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k11.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var10) {
                 }
@@ -6490,43 +6494,43 @@ public class Monopoly {
                     if (i != this.playerIndex) {
                         ((Player)this.players.get(i)).setMoneyHeld(-50.0);
                         ++counter;
-                        ((JLabel)this.balanceLabels.get(i)).setText("E" + ((Player)this.players.get(i)).getMoneyHeld());
+                        ((JLabel)this.balanceLabels.get(i)).setText("Galy: " + ((Player)this.players.get(i)).getMoneyHeld());
                     }
                 }
 
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld((double)(counter * 50));
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received from each of other players 50 Galy" + "\n";
                 this.logText.append(this.log);
                 break;
             case 12:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune12.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k12.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var9) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(200.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 200 Galy for awarding the Universe Oldie Pension" + "\n";
                 this.logText.append(this.log);
                 break;
             case 13:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune13.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k13.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var8) {
                 }
 
                 ((Player)this.players.get(this.playerIndex)).addGetOutOfJailCard(this.deck.getFortuneCard(3));
-                ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setText("get out of jail cards : " + ((Player)this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards());
+                ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setText("GET OUT OF JAIL CARD remain: " + ((Player)this.players.get(this.playerIndex)).getNumberOfGetOutOfJailCards());
                 ((JLabel)this.getOutOfJailLabels.get(this.playerIndex)).setVisible(true);
                 this.generateSellGetOutOfJailCardComboBox();
-                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received get out of Jail card \n";
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received GET OUT OF JAIL CARD \n";
                 this.logText.append(this.log);
                 break;
             case 14:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune14.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k14.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var7) {
                 }
@@ -6542,85 +6546,85 @@ public class Monopoly {
                     this.logText.append(this.log);
                     this.adjustPlayerPosition();
                     ((Player)this.players.get(this.playerIndex)).setManaHeld(-5000);
-                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the mana due to colliding high-velocity stars" + "\n";
+                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has lost all the Mana due to colliding high-velocity stars" + "\n";
                     this.logText.append(this.log);
                 } else {
-                    this.gamePrompt.setText("Do you want to use your get out of jail card?");
+                    this.gamePrompt.setText("Do you want to use your GET OUT OF JAIL CARD?");
                     this.useGetOutOfJailCard.setVisible(true);
                     this.dontUseGetOutOfJailCard.setVisible(true);
                     this.rollTheDice.setEnabled(false);
                     this.finishTurn.setEnabled(false);
                     ((Player)this.players.get(this.playerIndex)).setManaHeld(+500.0);
-                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 mana from ISS gift" + "\n";
+                    ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                    this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has gained 500 Mana from ISS gift" + "\n";
                     this.logText.append(this.log);
                 }
                 break;
             case 15:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune15.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k15.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var6) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(50.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 50 Galy from lucky money" + "\n";
                 this.logText.append(this.log);
                 break;
             case 16:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune16.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k16.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var5) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(20.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 20 Galy for doing overtime discovery" + "\n";
                 this.logText.append(this.log);
                 break;
             case 17:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune17.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k17.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var4) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
-                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from solar energy charging" + "\n";
+                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Mana from solar energy charging" + "\n";
                 this.logText.append(this.log);
                 break;
             case 18:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune18.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k18.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var3) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
-                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from radioisotope thermoelectric generators" + "\n";
+                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Mana from radioisotope thermoelectric generators" + "\n";
                 this.logText.append(this.log);
                 break;
             case 19:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune19.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k19.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var2) {
                 }
                 ((Player)this.players.get(this.playerIndex)).setManaHeld(100.0);
-                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getManaHeld());
-                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 mana from fuel cells" + "\n";
+                ((JLabel)this.energyLabels.get(this.playerIndex)).setText("Mana: " + ((Player)this.players.get(this.playerIndex)).getManaHeld());
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Mana from fuel cells" + "\n";
                 this.logText.append(this.log);
                 break;
             case 20:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune20.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k20.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var1) {
                 }
                 this.manaDueAmount = 100.0;
                 if (((Player)this.players.get(this.playerIndex)).getManaHeld() >= this.manaDueAmount) {
-                    this.followCommunityCard20();
+                    this.followFortuneCard20();
                 } else {
                     this.manaDue = true;
                     this.arrearsIndex = 109;
@@ -6752,7 +6756,7 @@ public class Monopoly {
                 }
             } else {
                 gamePrompt
-                        .setText("you need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
+                        .setText("You need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
                 rollTheDice.setEnabled(false);
                 declareBankruptcyFromGame.setVisible(true);
             }
@@ -6770,7 +6774,7 @@ public class Monopoly {
 
         if (entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
-                .getGroup().equals("utilities")) {
+                .getGroup().equals("stars")) {
             gamePrompt.setText("Roll the dice to estimate the amount of rent");
             extraRollNeeded = true;
             rollTheDice.setEnabled(true);
@@ -6785,10 +6789,10 @@ public class Monopoly {
                 .getNumberOfPerfectPlanet() == 0
                 && !entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
-                .getGroup().equals("utilities")
+                .getGroup().equals("stars")
                 && !entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
-                .getGroup().equals("railroads")) {
+                .getGroup().equals("constellation")) {
             rentValue = entities
                     .getEntities()
                     .get(players.get(playerIndex).getPositionOnGameBoard())
@@ -6824,7 +6828,7 @@ public class Monopoly {
                     .getRentValues().get(5);
         } else if (entities.getEntities()
                 .get(players.get(playerIndex).getPositionOnGameBoard())
-                .getGroup().equals("railroads")) {
+                .getGroup().equals("constellation")) {
 
             rentValue = getRailRoadRent(players.get(ownerIndex).getName());
             if (sentByChanceCard) {
@@ -6886,7 +6890,7 @@ public class Monopoly {
         double rentValue = 0;
         for (PlanetProperties entity : entities.getEntities()) {
             if (entity.getGroup() != null
-                    && entity.getGroup().equals("railroads")) {
+                    && entity.getGroup().equals("constellation")) {
                 if (entity.getOwner() != null
                         && entity.getOwner().getName().equals(name)) {
                     counter++;
@@ -7031,7 +7035,7 @@ public class Monopoly {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/hotel.png"));
+                                "hotel.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7040,7 +7044,7 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade1.png"));
+                                "house1.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7049,7 +7053,7 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade2.png"));
+                                "house2.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7058,7 +7062,7 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade3.png"));
+                                "house3.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7067,16 +7071,7 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade4.png"));
-                        perfectPlanetLabels.get(PlanetIndex).setIcon(
-                                new ImageIcon(img));
-                    } catch (IOException ex) {
-                    }
-                    break;
-                case 5:
-                    try {
-                        Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade5.png"));
+                                "house4.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7088,7 +7083,7 @@ public class Monopoly {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/hotelFlippedRight.png"));
+                                "hotelFlippedRight.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7097,7 +7092,7 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade1FlippedRight.png"));
+                                "upgrade1FlippedRight.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7106,7 +7101,7 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade2FlippedRight.png"));
+                                "upgrade2FlippedRight.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7115,7 +7110,7 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade3FlippedRight.png"));
+                                "upgrade3FlippedRight.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7124,7 +7119,7 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade4FlippedRight.png"));
+                                "upgrade4FlippedRight.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7133,7 +7128,7 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade5FlippedRight.png"));
+                                "upgrade5FlippedRight.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7145,7 +7140,7 @@ public class Monopoly {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/hotelUpsideDown.png"));
+                                "hotelUpsideDown.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7154,7 +7149,7 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade1UpsideDown.png"));
+                                "upgrade1UpsideDown.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7163,7 +7158,7 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade2UpsideDown.png"));
+                                "upgrade2UpsideDown.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7172,7 +7167,7 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade3UpsideDown.png"));
+                                "upgrade3UpsideDown.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7181,7 +7176,7 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade4UpsideDown.png"));
+                                "upgrade4UpsideDown.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7190,7 +7185,7 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade5UpsideDown.png"));
+                                "upgrade5UpsideDown.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7202,7 +7197,7 @@ public class Monopoly {
                 case 0:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/hotelFlippedLeft.png"));
+                                "hotelFlippedLeft.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7211,7 +7206,7 @@ public class Monopoly {
                 case 1:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade1FlippedLeft.png"));
+                                "upgrade1FlippedLeft.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7220,7 +7215,7 @@ public class Monopoly {
                 case 2:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade2FlippedLeft.png"));
+                                "upgrade2FlippedLeft.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7229,7 +7224,7 @@ public class Monopoly {
                 case 3:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade3FlippedLeft.png"));
+                                "upgrade3FlippedLeft.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7238,7 +7233,7 @@ public class Monopoly {
                 case 4:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade4FlippedLeft.png"));
+                                "upgrade4FlippedLeft.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7247,7 +7242,7 @@ public class Monopoly {
                 case 5:
                     try {
                         Image img = ImageIO.read(getClass().getResource(
-                                "resources/upgrade5FlippedLeft.png"));
+                                "upgrade5FlippedLeft.png"));
                         perfectPlanetLabels.get(PlanetIndex).setIcon(
                                 new ImageIcon(img));
                     } catch (IOException ex) {
@@ -7264,9 +7259,9 @@ public class Monopoly {
     private void payIncomeTax() {
         players.get(playerIndex).setMoneyHeld(-manaDueAmount);
         energyLabels.get(playerIndex).setText(
-                "E" + players.get(playerIndex).getManaHeld());
+                "Mana: " + players.get(playerIndex).getManaHeld());
         log = "  /> " + players.get(playerIndex).getName()
-                + " losing 200 mana due to losing connection (200 mana) " + "\n";
+                + " losing 200 Mana due to losing connection " + "\n";
         logText.append(log);
     }
 
@@ -7279,7 +7274,7 @@ public class Monopoly {
         energyLabels.get(playerIndex).setText(
                 "Mana: " + players.get(playerIndex).getManaHeld());
         log = "  /> " + players.get(playerIndex).getName()
-                + " losing 100 MANA due to alpha jump " + "\n";
+                + " losing 100 Mana due to alpha jump " + "\n";
         logText.append(log);
     }
 
@@ -7340,7 +7335,7 @@ public class Monopoly {
                 manaDueAmount = 200;
                 if (manaDueAmount > players.get(playerIndex).getManaHeld()) {
                     gamePrompt
-                            .setText("you need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
+                            .setText("You need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
                     rollTheDice.setEnabled(false);
                     declareBankruptcyFromGame.setVisible(true);
                     manaDue = true;
@@ -7552,7 +7547,7 @@ public class Monopoly {
                 manaDueAmount = 100;
                 if (manaDueAmount > players.get(playerIndex).getManaHeld()) {
                     gamePrompt
-                            .setText("you need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
+                            .setText("You need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
                     rollTheDice.setEnabled(false);
                     declareBankruptcyFromGame.setVisible(true);
                     manaDue = true;
@@ -7577,7 +7572,7 @@ public class Monopoly {
         }
         if (players.get(playerIndex).didPassGo()) {
             balanceLabels.get(playerIndex).setText(
-                    "E" + players.get(playerIndex).getMoneyHeld());
+                    "Galy: " + players.get(playerIndex).getMoneyHeld());
             log = "  /> " + players.get(playerIndex).getName()
                     + " got 200 Galy for passing \"GO\" " + "\n";
             logText.append(log);
