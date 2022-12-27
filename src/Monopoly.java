@@ -271,6 +271,7 @@ public class Monopoly {
     private JButton showInstruction;
     private JButton hideInstruction;
     private int frameWidth;
+    private Sound sound;
 
     // Launch the application.
     public static void main(String[] args) {
@@ -304,6 +305,7 @@ public class Monopoly {
         upgradeOrPerfectPlanetBought = false;
         numberOfPerfectPlanets = 12;
         numberOfUpgrades = 32;
+        sound = new Sound();
         initialize();
     }
 
@@ -326,6 +328,7 @@ public class Monopoly {
         frame.getContentPane().setLayout(null);
         frameHeight = frame.getHeight() - 40;
         frameWidth = frame.getWidth();
+        this.playMusic(1);
         showInstruction = new JButton();
         showInstruction.setBounds(frameWidth - 45, 10, 40, 40);
         try {
@@ -349,7 +352,7 @@ public class Monopoly {
         hideInstruction.setBounds(frameWidth - 65, 10, 40, 40);
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "/hideInstruction.png"));
+                    "hideInstruction.png"));
             hideInstruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -3481,7 +3484,7 @@ public class Monopoly {
                 gamePrompt.setText("");
                 extraRollNeeded = false;
                 balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
+                        "Galy: " + players.get(playerIndex).getMoneyHeld());
             }
 
         });
@@ -4433,7 +4436,7 @@ public class Monopoly {
                             + "'s properties" + "\n";
                     logText.append(log);
                     balanceLabels.get(ownerIndex).setText(
-                            "E" + players.get(ownerIndex).getMoneyHeld());
+                            "Galy: " + players.get(ownerIndex).getMoneyHeld());
                 }
                 players.get(playerIndex).setBankrupt(true);
                 balanceLabels.get(playerIndex).setText("declare BANKRUPTED from game");
@@ -4470,7 +4473,7 @@ public class Monopoly {
                                 + " is now mortgaged" + "\n";
                         logText.append(log);
                         balanceLabels.get(playerIndex).setText(
-                                "E" + players.get(playerIndex).getMoneyHeld());
+                                "Galy: " + players.get(playerIndex).getMoneyHeld());
                         mortgageComboBox.setSelectedItem(null);
                         payLoan.setEnabled(false);
                         takeLoan.setEnabled(false);
@@ -4833,7 +4836,7 @@ public class Monopoly {
                 players.get(playerIndex).setMoneyHeld(-upgradeCost);
                 hideAddPlanetComponents();
                 balanceLabels.get(playerIndex).setText(
-                        "E" + players.get(playerIndex).getMoneyHeld());
+                        "Galy: " + players.get(playerIndex).getMoneyHeld());
                 displayProperPlanetLabel(
                         players.get(playerIndex)
                                 .getOwnedProperties()
@@ -6319,7 +6322,7 @@ public class Monopoly {
         switch (this.deck.dealFortuneCard()) {
             case 1:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune1.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k1.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var20) {
                 }
@@ -6346,19 +6349,19 @@ public class Monopoly {
                 break;
             case 2:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune2.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k2.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var19) {
                 }
 
                 ((Player)this.players.get(this.playerIndex)).setMoneyHeld(10.0);
-                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
+                ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
                 this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 10 Galy for being a Miss Universe 2023" + "\n";
                 this.logText.append(this.log);
                 break;
             case 3:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune3.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k3.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var18) {
                 }
@@ -6370,7 +6373,7 @@ public class Monopoly {
                 break;
             case 4:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune4.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k4.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var17) {
                 }
@@ -6381,7 +6384,7 @@ public class Monopoly {
                 break;
             case 5:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune5.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k5.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var16) {
                 }
@@ -6396,7 +6399,7 @@ public class Monopoly {
                 break;
             case 6:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune6.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k6.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var15) {
                 }
@@ -6411,7 +6414,7 @@ public class Monopoly {
                 break;
             case 7:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune7.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k7.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var14) {
                 }
@@ -6422,7 +6425,7 @@ public class Monopoly {
                 break;
             case 8:         // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune8.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k8.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var13) {
                 }
@@ -6437,7 +6440,7 @@ public class Monopoly {
                 break;
             case 9:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune9.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k9.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var12) {
                 }
@@ -6448,7 +6451,7 @@ public class Monopoly {
                 break;
             case 10:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune10.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k10.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var11) {
                 }
@@ -6461,7 +6464,7 @@ public class Monopoly {
                 break;
             case 11:       // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune11.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k11.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var10) {
                 }
@@ -6482,7 +6485,7 @@ public class Monopoly {
                 break;
             case 12:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune12.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k12.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var9) {
                 }
@@ -6493,7 +6496,7 @@ public class Monopoly {
                 break;
             case 13:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune13.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k13.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var8) {
                 }
@@ -6507,7 +6510,7 @@ public class Monopoly {
                 break;
             case 14:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune14.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k14.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var7) {
                 }
@@ -6540,7 +6543,7 @@ public class Monopoly {
                 break;
             case 15:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune15.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k15.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var6) {
                 }
@@ -6551,7 +6554,7 @@ public class Monopoly {
                 break;
             case 16:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune16.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k16.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var5) {
                 }
@@ -6562,7 +6565,7 @@ public class Monopoly {
                 break;
             case 17:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune17.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k17.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var4) {
                 }
@@ -6573,7 +6576,7 @@ public class Monopoly {
                 break;
             case 18:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune18.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k18.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var3) {
                 }
@@ -6584,7 +6587,7 @@ public class Monopoly {
                 break;
             case 19:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune19.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k19.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var2) {
                 }
@@ -6595,7 +6598,7 @@ public class Monopoly {
                 break;
             case 20:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune20.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("k20.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var1) {
                 }
@@ -6807,7 +6810,7 @@ public class Monopoly {
                 .get(players.get(playerIndex).getPositionOnGameBoard())
                 .getGroup().equals("constellation")) {
 
-            rentValue = getRailRoadRent(players.get(ownerIndex).getName());
+            rentValue = getConstellationRent(players.get(ownerIndex).getName());
             if (sentByChanceCard) {
                 rentValue *= 2;
             }
@@ -6855,14 +6858,8 @@ public class Monopoly {
         return false;
     }
 
-    /**
-     *
-     * @param name of the player is passed to determine number of railroad
-     * properties held
-     * @return amount of rent to be paid by other player, which has landed
-     * on the player specified by the passed name parameter
-     */
-    private double getRailRoadRent(String name) {
+
+    private double getConstellationRent(String name) {
         int counter = 0;
         double rentValue = 0;
         for (PlanetProperties entity : entities.getEntities()) {
@@ -7588,5 +7585,20 @@ public class Monopoly {
      */
     public void setNumberOfUpgrades(int update) {
         numberOfUpgrades += update;
+    }
+
+    public void playMusic(int i){
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+    }
+
+    public void stopMusic(){
+        sound.stop();
+    }
+
+    public void playSE(int i){
+        sound.setFile(i);
+        sound.play();
     }
 }
