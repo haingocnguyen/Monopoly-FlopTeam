@@ -33,6 +33,8 @@ import javax.swing.event.DocumentListener;
 
 public class Monopoly {
 
+    public final static int cornerCardSize = 120;
+    public final static int normalCardSize = 85;
     private DeckOfChanceAndFortuneCards deck;
     private JFrame frame;
     private JLayeredPane center;
@@ -347,7 +349,7 @@ public class Monopoly {
         hideInstruction.setBounds(frameWidth - 65, 10, 40, 40);
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "hideInstruction.png"));
+                    "/hideInstruction.png"));
             hideInstruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
@@ -365,148 +367,125 @@ public class Monopoly {
 //        center = new JLayeredPane();
 //        center.setBounds(7,7,(int) (frameHeight - frameHeight / 13 ),(int) (frameHeight - frameHeight / 13));
         topLeft = new JLayeredPane();
-        topLeft.setBounds(0, 0, (int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5));
+        topLeft.setBounds(0, 75, cornerCardSize,cornerCardSize);
         left_1 = new JLayeredPane();
-        left_1.setBounds(0, (int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_1.setBounds(0, 195,
+                cornerCardSize,normalCardSize);
         left_2 = new JLayeredPane();
-        left_2.setBounds(0, (int) (frameHeight / 6.5 * 1.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_2.setBounds(0, 280,
+                cornerCardSize,normalCardSize);
         left_3 = new JLayeredPane();
-        left_3.setBounds(0, (int) (frameHeight / 6.5 * 2),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_3.setBounds(0, 365,
+                cornerCardSize,normalCardSize);
         left_4 = new JLayeredPane();
-        left_4.setBounds(0, (int) (frameHeight / 6.5 * 2.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_4.setBounds(0, 450,
+                cornerCardSize,normalCardSize);
         left_5 = new JLayeredPane();
-        left_5.setBounds(0, (int) (frameHeight / 6.5 * 3),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_5.setBounds(0, 535,
+                cornerCardSize,normalCardSize);
         left_6 = new JLayeredPane();
-        left_6.setBounds(0, (int) (frameHeight / 6.5 * 3.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_6.setBounds(0, 620,
+                cornerCardSize,normalCardSize);
         left_7 = new JLayeredPane();
-        left_7.setBounds(0, (int) (frameHeight / 6.5 * 4),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_7.setBounds(0, 705,
+                cornerCardSize,normalCardSize);
         left_8 = new JLayeredPane();
-        left_8.setBounds(0, (int) (frameHeight / 6.5 * 4.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_8.setBounds(0, 790,
+                cornerCardSize,normalCardSize);
         left_9 = new JLayeredPane();
-        left_9.setBounds(0, (int) (frameHeight / 6.5 * 5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 13));
+        left_9.setBounds(0, 875,
+                cornerCardSize,normalCardSize);
         bottomLeft = new JLayeredPane();
-        bottomLeft.setBounds(0, (int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 6.5));
+        bottomLeft.setBounds(0, 960,
+                cornerCardSize,cornerCardSize);
         top_1 = new JLayeredPane();
-        top_1.setBounds((int) (frameHeight / 6.5), 0, (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        top_1.setBounds(120,75,
+                normalCardSize,cornerCardSize);
         top_2 = new JLayeredPane();
-        top_2.setBounds((int) (frameHeight / 6.5 * 1.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_2.setBounds(205,75,
+                normalCardSize,cornerCardSize);
         top_3 = new JLayeredPane();
-        top_3.setBounds((int) (frameHeight / 6.5 * 2), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_3.setBounds(290,75,
+                normalCardSize,cornerCardSize);
         top_4 = new JLayeredPane();
-        top_4.setBounds((int) (frameHeight / 6.5 * 2.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_4.setBounds(375,75,
+                normalCardSize,cornerCardSize);
         top_5 = new JLayeredPane();
-        top_5.setBounds((int) (frameHeight / 6.5 * 3), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_5.setBounds(460,75,
+                normalCardSize,cornerCardSize);
         top_6 = new JLayeredPane();
-        top_6.setBounds((int) (frameHeight / 6.5 * 3.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_6.setBounds(545,75,
+                normalCardSize,cornerCardSize);
         top_7 = new JLayeredPane();
-        top_7.setBounds((int) (frameHeight / 6.5 * 4), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_7.setBounds(630,75,
+                normalCardSize,cornerCardSize);
         top_8 = new JLayeredPane();
-        top_8.setBounds((int) (frameHeight / 6.5 * 4.5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_8.setBounds(715,75  ,
+                normalCardSize,cornerCardSize);
         top_9 = new JLayeredPane();
-        top_9.setBounds((int) (frameHeight / 6.5 * 5), 0,
-                (int) (frameHeight / 13), (int) (frameHeight / 6.5));
+        top_9.setBounds(800,75,
+                normalCardSize,cornerCardSize);
         topRight = new JLayeredPane();
-        topRight.setBounds((int) (frameHeight / 6.5 * 5.5), 0,
-                (int) (frameHeight / 6.5), (int) (frameHeight / 6.5));
+        topRight.setBounds(885,75,
+                cornerCardSize,cornerCardSize);
         right_1 = new JLayeredPane();
-        right_1.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_1.setBounds(885,195, cornerCardSize,normalCardSize);
         right_2 = new JLayeredPane();
-        right_2.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 1.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_2.setBounds(885,280
+                , cornerCardSize,normalCardSize);
         right_3 = new JLayeredPane();
-        right_3.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 2), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_3.setBounds(885,365
+                , cornerCardSize,normalCardSize);
         right_4 = new JLayeredPane();
-        right_4.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 2.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_4.setBounds(885,
+                450, cornerCardSize,normalCardSize);
         right_5 = new JLayeredPane();
-        right_5.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 3), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_5.setBounds(885,
+                535, cornerCardSize,normalCardSize);
         right_6 = new JLayeredPane();
-        right_6.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 3.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_6.setBounds(885,
+                620, cornerCardSize,normalCardSize);
         right_7 = new JLayeredPane();
-        right_7.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 4), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_7.setBounds(885,
+                705, cornerCardSize,normalCardSize);
         right_8 = new JLayeredPane();
-        right_8.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 4.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_8.setBounds(885,
+                790, cornerCardSize,normalCardSize);
         right_9 = new JLayeredPane();
-        right_9.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 13));
+        right_9.setBounds(885,
+                875, cornerCardSize,normalCardSize);
         bottom_1 = new JLayeredPane();
-        bottom_1.setBounds((int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_1.setBounds(120,
+                960, normalCardSize,cornerCardSize);
         bottom_2 = new JLayeredPane();
-        bottom_2.setBounds((int) (frameHeight / 6.5 * 1.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_2.setBounds(205,
+                960, normalCardSize,cornerCardSize);
         bottom_3 = new JLayeredPane();
-        bottom_3.setBounds((int) (frameHeight / 6.5 * 2),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_3.setBounds(290,
+                960, normalCardSize,cornerCardSize);
         bottom_4 = new JLayeredPane();
-        bottom_4.setBounds((int) (frameHeight / 6.5 * 2.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_4.setBounds(375,
+                960, normalCardSize,cornerCardSize);
         bottom_5 = new JLayeredPane();
-        bottom_5.setBounds((int) (frameHeight / 6.5 * 3),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_5.setBounds(460,
+                960, normalCardSize,cornerCardSize);
         bottom_6 = new JLayeredPane();
-        bottom_6.setBounds((int) (frameHeight / 6.5 * 3.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_6.setBounds(545,
+                960, normalCardSize,cornerCardSize);
         bottom_7 = new JLayeredPane();
-        bottom_7.setBounds((int) (frameHeight / 6.5 * 4),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_7.setBounds(630,
+                960, normalCardSize,cornerCardSize);
         bottom_8 = new JLayeredPane();
-        bottom_8.setBounds((int) (frameHeight / 6.5 * 4.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_8.setBounds(715,
+                960, normalCardSize,cornerCardSize);
         bottom_9 = new JLayeredPane();
-        bottom_9.setBounds((int) (frameHeight / 6.5 * 5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 13),
-                (int) (frameHeight / 6.5));
+        bottom_9.setBounds(800,
+                960, normalCardSize,cornerCardSize);
         bottomRight = new JLayeredPane();
-        bottomRight.setBounds((int) (frameHeight / 6.5 * 5.5),
-                (int) (frameHeight / 6.5 * 5.5), (int) (frameHeight / 6.5),
-                (int) (frameHeight / 6.5));
+        bottomRight.setBounds(885,
+                960, cornerCardSize,cornerCardSize);
         deed = new JLabel();
-        deed.setBounds((int) (frameHeight / 6.5 * 1.95),
-                (int) (frameHeight / 6.5 * 1.6), (int) (frameHeight * 0.4),
-                (int) (frameHeight * 0.5));
+        deed.setBounds(375,397, 255,361);
         deed.setVisible(true);
         bottom_9.addMouseListener(new MouseListener() {
 
@@ -1837,17 +1816,15 @@ public class Monopoly {
             fortuneButton.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
-        fortuneButton.setBounds((int) (frameHeight / 6.5 * 1.125),
-                (int) (frameHeight / 6.5 * 1.125), (int) (frameHeight / 3.33),
-                (int) (frameHeight / 5));
+        fortuneButton.setBounds(158,
+                322, 180,
+                120);
         fortuneButton.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         fortuneButton.setBorderPainted(false);
         fortuneButton.setContentAreaFilled(false);
         // fortuneButton.setEnabled(false);
         chanceButton = new JButton();
-        chanceButton.setBounds((int) (frameHeight / 6.5 * 3.5),
-                (int) (frameHeight / 6.5 * 4), (int) (frameHeight / 3.33),
-                (int) (frameHeight / 5));
+        chanceButton.setBounds(663,730,180,120);
         try {
             Image img = ImageIO.read(getClass().getResource(
                     "chance.png"));
@@ -3618,7 +3595,7 @@ public class Monopoly {
                     if (chanceCardPicked) {
                         try {
                             Image img = ImageIO.read(getClass().getResource(
-                                    "chance.jpg"));
+                                    "chance.png"));
                             chanceButton.setIcon(new ImageIcon(img));
                         } catch (IOException ex) {
                         }
@@ -3627,7 +3604,7 @@ public class Monopoly {
                     if (fortuneCardPicked) {
                         try {
                             Image img = ImageIO.read(getClass().getResource(
-                                    "fortune.jpg"));
+                                    "fortune.png"));
                             fortuneButton.setIcon(new ImageIcon(img));
                         } catch (IOException ex) {
                         }
@@ -6338,7 +6315,7 @@ public class Monopoly {
         switch (this.deck.dealFortuneCard()) {
             case 1:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune1.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k1.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var20) {
                 }
@@ -6365,19 +6342,19 @@ public class Monopoly {
                 break;
             case 2:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune2.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k2.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var19) {
                 }
 
-                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(10.0);
+                ((Player)this.players.get(this.playerIndex)).setMoneyHeld(100.0);
                 ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("E" + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
-                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 10 Galy for being a Miss Universe 2023" + "\n";
+                this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has received 100 Galy for being a Miss Universe 2023" + "\n";
                 this.logText.append(this.log);
                 break;
             case 3:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune3.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k3.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var18) {
                 }
@@ -6389,7 +6366,7 @@ public class Monopoly {
                 break;
             case 4:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune4.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k4.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var17) {
                 }
@@ -6400,7 +6377,7 @@ public class Monopoly {
                 break;
             case 5:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune5.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k5.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var16) {
                 }
@@ -6415,7 +6392,7 @@ public class Monopoly {
                 break;
             case 6:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune6.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k6.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var15) {
                 }
@@ -6430,7 +6407,7 @@ public class Monopoly {
                 break;
             case 7:     // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune7.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k7.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var14) {
                 }
@@ -6441,7 +6418,7 @@ public class Monopoly {
                 break;
             case 8:         // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune8.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k8.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var13) {
                 }
@@ -6456,7 +6433,7 @@ public class Monopoly {
                 break;
             case 9:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune9.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k9.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var12) {
                 }
@@ -6467,7 +6444,7 @@ public class Monopoly {
                 break;
             case 10:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune10.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k10.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var11) {
                 }
@@ -6480,7 +6457,7 @@ public class Monopoly {
                 break;
             case 11:       // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune11.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k11.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var10) {
                 }
@@ -6501,7 +6478,7 @@ public class Monopoly {
                 break;
             case 12:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune12.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k12.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var9) {
                 }
@@ -6512,7 +6489,7 @@ public class Monopoly {
                 break;
             case 13:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune13.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k13.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var8) {
                 }
@@ -6526,7 +6503,7 @@ public class Monopoly {
                 break;
             case 14:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune14.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k14.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var7) {
                 }
@@ -6559,7 +6536,7 @@ public class Monopoly {
                 break;
             case 15:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune15.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k15.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var6) {
                 }
@@ -6570,7 +6547,7 @@ public class Monopoly {
                 break;
             case 16:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune16.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k16.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var5) {
                 }
@@ -6581,7 +6558,7 @@ public class Monopoly {
                 break;
             case 17:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune17.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k17.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var4) {
                 }
@@ -6592,7 +6569,7 @@ public class Monopoly {
                 break;
             case 18:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune18.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k18.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var3) {
                 }
@@ -6603,7 +6580,7 @@ public class Monopoly {
                 break;
             case 19:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune19.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k19.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var2) {
                 }
@@ -6614,7 +6591,7 @@ public class Monopoly {
                 break;
             case 20:        // DONE
                 try {
-                    img = ImageIO.read(this.getClass().getResource("resources/fortune20.jpg"));
+                    img = ImageIO.read(this.getClass().getResource("/k20.png"));
                     this.fortuneButton.setIcon(new ImageIcon(img));
                 } catch (IOException var1) {
                 }
