@@ -370,125 +370,125 @@ public class Monopoly {
 //        center = new JLayeredPane();
 //        center.setBounds(7,7,(int) (frameHeight - frameHeight / 13 ),(int) (frameHeight - frameHeight / 13));
         topLeft = new JLayeredPane();
-        topLeft.setBounds(0, 75, cornerCardSize,cornerCardSize);
+        topLeft.setBounds(0, 0, cornerCardSize,cornerCardSize);
         left_1 = new JLayeredPane();
-        left_1.setBounds(0, 195,
+        left_1.setBounds(0, 120,
                 cornerCardSize,normalCardSize);
         left_2 = new JLayeredPane();
-        left_2.setBounds(0, 280,
+        left_2.setBounds(0, 205,
                 cornerCardSize,normalCardSize);
         left_3 = new JLayeredPane();
-        left_3.setBounds(0, 365,
+        left_3.setBounds(0, 290,
                 cornerCardSize,normalCardSize);
         left_4 = new JLayeredPane();
-        left_4.setBounds(0, 450,
+        left_4.setBounds(0, 375,
                 cornerCardSize,normalCardSize);
         left_5 = new JLayeredPane();
-        left_5.setBounds(0, 535,
+        left_5.setBounds(0, 460,
                 cornerCardSize,normalCardSize);
         left_6 = new JLayeredPane();
-        left_6.setBounds(0, 620,
+        left_6.setBounds(0, 545,
                 cornerCardSize,normalCardSize);
         left_7 = new JLayeredPane();
-        left_7.setBounds(0, 705,
+        left_7.setBounds(0, 630,
                 cornerCardSize,normalCardSize);
         left_8 = new JLayeredPane();
-        left_8.setBounds(0, 790,
+        left_8.setBounds(0, 715,
                 cornerCardSize,normalCardSize);
         left_9 = new JLayeredPane();
-        left_9.setBounds(0, 875,
+        left_9.setBounds(0, 800,
                 cornerCardSize,normalCardSize);
         bottomLeft = new JLayeredPane();
-        bottomLeft.setBounds(0, 960,
+        bottomLeft.setBounds(0, 885,
                 cornerCardSize,cornerCardSize);
         top_1 = new JLayeredPane();
-        top_1.setBounds(120,75,
+        top_1.setBounds(120,0,
                 normalCardSize,cornerCardSize);
         top_2 = new JLayeredPane();
-        top_2.setBounds(205,75,
+        top_2.setBounds(205,0,
                 normalCardSize,cornerCardSize);
         top_3 = new JLayeredPane();
-        top_3.setBounds(290,75,
+        top_3.setBounds(290,0,
                 normalCardSize,cornerCardSize);
         top_4 = new JLayeredPane();
-        top_4.setBounds(375,75,
+        top_4.setBounds(375,0,
                 normalCardSize,cornerCardSize);
         top_5 = new JLayeredPane();
-        top_5.setBounds(460,75,
+        top_5.setBounds(460,0,
                 normalCardSize,cornerCardSize);
         top_6 = new JLayeredPane();
-        top_6.setBounds(545,75,
+        top_6.setBounds(545,0,
                 normalCardSize,cornerCardSize);
         top_7 = new JLayeredPane();
-        top_7.setBounds(630,75,
+        top_7.setBounds(630,0,
                 normalCardSize,cornerCardSize);
         top_8 = new JLayeredPane();
-        top_8.setBounds(715,75  ,
+        top_8.setBounds(715,0  ,
                 normalCardSize,cornerCardSize);
         top_9 = new JLayeredPane();
-        top_9.setBounds(800,75,
+        top_9.setBounds(800,0,
                 normalCardSize,cornerCardSize);
         topRight = new JLayeredPane();
-        topRight.setBounds(885,75,
+        topRight.setBounds(885,0,
                 cornerCardSize,cornerCardSize);
         right_1 = new JLayeredPane();
-        right_1.setBounds(885,195, cornerCardSize,normalCardSize);
+        right_1.setBounds(885,120, cornerCardSize,normalCardSize);
         right_2 = new JLayeredPane();
-        right_2.setBounds(885,280
+        right_2.setBounds(885,205
                 , cornerCardSize,normalCardSize);
         right_3 = new JLayeredPane();
-        right_3.setBounds(885,365
+        right_3.setBounds(885,290
                 , cornerCardSize,normalCardSize);
         right_4 = new JLayeredPane();
         right_4.setBounds(885,
-                450, cornerCardSize,normalCardSize);
+                375, cornerCardSize,normalCardSize);
         right_5 = new JLayeredPane();
         right_5.setBounds(885,
-                535, cornerCardSize,normalCardSize);
+                460, cornerCardSize,normalCardSize);
         right_6 = new JLayeredPane();
         right_6.setBounds(885,
-                620, cornerCardSize,normalCardSize);
+                545, cornerCardSize,normalCardSize);
         right_7 = new JLayeredPane();
         right_7.setBounds(885,
-                705, cornerCardSize,normalCardSize);
+                630, cornerCardSize,normalCardSize);
         right_8 = new JLayeredPane();
         right_8.setBounds(885,
-                790, cornerCardSize,normalCardSize);
+                715, cornerCardSize,normalCardSize);
         right_9 = new JLayeredPane();
         right_9.setBounds(885,
-                875, cornerCardSize,normalCardSize);
+                800, cornerCardSize,normalCardSize);
         bottom_1 = new JLayeredPane();
         bottom_1.setBounds(120,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_2 = new JLayeredPane();
         bottom_2.setBounds(205,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_3 = new JLayeredPane();
         bottom_3.setBounds(290,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_4 = new JLayeredPane();
         bottom_4.setBounds(375,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_5 = new JLayeredPane();
         bottom_5.setBounds(460,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_6 = new JLayeredPane();
         bottom_6.setBounds(545,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_7 = new JLayeredPane();
         bottom_7.setBounds(630,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_8 = new JLayeredPane();
         bottom_8.setBounds(715,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottom_9 = new JLayeredPane();
         bottom_9.setBounds(800,
-                960, normalCardSize,cornerCardSize);
+                885, normalCardSize,cornerCardSize);
         bottomRight = new JLayeredPane();
         bottomRight.setBounds(885,
-                960, cornerCardSize,cornerCardSize);
+                885, cornerCardSize,cornerCardSize);
         deed = new JLabel();
-        deed.setBounds(375,397, 255,361);
+        deed.setBounds(375,322, 255,361);
         deed.setVisible(true);
         bottom_9.addMouseListener(new MouseListener() {
 
@@ -887,41 +887,6 @@ public class Monopoly {
                 try {
                     Image img = ImageIO.read(getClass().getResource(
                             "16deed.png"));
-                    deed.setIcon(new ImageIcon(img));
-                    deed.setVisible(true);
-                } catch (IOException ex) {
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                deed.setVisible(false);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-        });
-
-        left_2.addMouseListener(new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent arg0) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                try {
-                    Image img = ImageIO.read(getClass().getResource(
-                            "19deed.png"));
                     deed.setIcon(new ImageIcon(img));
                     deed.setVisible(true);
                 } catch (IOException ex) {
@@ -6288,7 +6253,7 @@ public class Monopoly {
         this.logText.append(this.log);
     }
 
-        private void followFortuneCard5() {
+    private void followFortuneCard5() {
         ((Player)this.players.get(this.playerIndex)).setMoneyHeld(-this.paymentDueAmount);
         ((JLabel)this.balanceLabels.get(this.playerIndex)).setText("Galy: " + ((Player)this.players.get(this.playerIndex)).getMoneyHeld());
         this.log = "  /> " + ((Player)this.players.get(this.playerIndex)).getName() + " has paid 50 Galy for maintenance fee" + "\n";
