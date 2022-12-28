@@ -95,32 +95,13 @@ public class DeckOfChanceAndFortuneCards {
         this.setGetOutOfJailChance(null);
     }
 
-    public ChanceCard getGetOutOfJailChance() {
-        return this.getOutOfJailChance;
-    }
-
     public void setGetOutOfJailChance(ChanceCard getOutOfJailChance) {
         this.getOutOfJailChance = getOutOfJailChance;
-    }
-
-    public ChanceCard getChanceCard(int id) {
-
-        for (ChanceCard card : this.chanceCards) {
-            if (card.getId() == id) {
-                return card;
-            }
-        }
-
-        return null;
     }
 
     public void returnOutOfJailCardCommunity() {
         this.dealtFortuneCards.add(this.getOutOfJailCommunity);
         this.setGetOutOfJailCommunity(null);
-    }
-
-    public FortuneCard getGetOutOfJailCommunity() {
-        return this.getOutOfJailCommunity;
     }
 
     public void setGetOutOfJailCommunity(FortuneCard getOutOfJailCommunity) {
