@@ -1,20 +1,17 @@
+<div id="top" align="center">
+<img src="Resources/cover.png" alt="Banner">
+</div>
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <a href="https://github.com/haingocnguyen/Monopoly-FlopTeam">
-    <img src="Resources/ncover.png" alt="Cover" width="1200" height="675">
-  </a>
-
-<h3 align="center">MONOPOLY UNIVERSE</h3>
-
-  <p align="center">
+<h1 align="center">MONOPOLY UNIVERSE</h1>
+  <h6 align="center">
     Classic MONOPOLY. Remastered for OOP Course at International University - VNU
     <br />
     <br />
     <a href="https://github.com/haingocnguyen/Monopoly-FlopTeam/issues">Report Bug</a>
     ·
     <a href="https://github.com/haingocnguyen/Monopoly-FlopTeam/issues">Request Feature</a>
-  </p>
+  </h6>
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -35,9 +32,9 @@
     </li>
     <li>
       <a href="#Reason">REASON</a>
-      <ul>
+        <ul>
         <li><a href="#idea">Idea</a></li>
-        <li><a href="#tools">Productive Tools</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
       </ul>
     </li>
     <li>
@@ -47,93 +44,100 @@
         <li><a href="#design">Design</a></li>
         <li><a href="#uml">UML Diagram</a></li>
       </ul>
-    <li><a href="#Result">DEMO RESULT</a></li>
+    <li><a href="#Result">DEMO - RESULT</a></li>
     <li><a href="#Installation">INSTALLATION</a></li>
-    <li><a href="#license">LICENSE</a></li>
+    <li><a href="#Contributing">CONTRIBUTING</a></li>
+    <li><a href="#License">LICENSE</a></li>
     <li><a href="#contact">CONTACT</a></li>
     <li><a href="#acknowledgments">ACKNOWLEDGMENTS</a></li>
   </ol>
 </details>
 
+<!-- About -->
+# 1. ABOUT
+## a. The team behind it (FLOP TEAM Members)
 
-
-<!-- ABOUT THE PROJECT -->
-## ABOUT
-### The team behind it
-### The project we are working on
-
-[![Product Name Screen Shot][product-screenshot]]()
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following:
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+| No.|       Full Name       |Student's ID |            Email                 |              Roles              |        Contribution    |
+|:--:| :-------------------: | :---------: | :------------------------------: | :-----------------------------: | :--------------------: |
+|  1 | Nguyen Tran Trung Quan| ITITUN21003 | ITITUN21003@student.hcmiu.edu.vn |           TEAM LEADER           |           30%          |
+|  2 |  Nguyen Hoang Anh Tu  | ITDSIU20090 | ITDSIU20090@student.hcmiu.edu.vn | CARD AND BOARD CONTENT CREATOR  |           25%          |
+|  3 |   Nguyen Quang Dieu   | ITDSIU20031 | ITDSIU20031@student.hcmiu.edu.vn | RULES AND PROPERTIES MANAGEMENT |           15%          |
+|  4 |    Hoang Tuan Kiet    | ITDSIU21059 | ITDSIU21059@student.hcmiu.edu.vn |         RENTING AND REPORT      |           15%          |
+|  5 |    Nguyen Hai Ngoc    | ITDSIU21057 | ITDSIU21057@student.hcmiu.edu.vn |         DESIGN AND SLIDE        |           15%          |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## b. The project we are working on
 
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/haingocnguyen/Monopoly-FlopTeam.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+[![Product Name Screen Shot][product-screenshot]]("Resources/screenshot.png")
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+<!-- REASON -->
+# 2. REASON
+## a. Idea
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
+## b. Roadmap
+- [X] Feature 1
 - [ ] Feature 2
 - [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Nested Feature
 
 See the [open issues](https://github.com/haingocnguyen/Monopoly-FlopTeam/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- METHODOLOGY -->
+# 3. METHODOLOGY
+## a. Rules
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## b. Design
+### The UI/UX
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### The game logic
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## c. UML Diagram
+
+[![UML DIagram][uml-diagram]]("Resources/UML.png")
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- RESULT -->
+# 4. DEMO - RESULT
+
+[![Demo1][demo1]]("Resources/demo1.png")
+
+[![Demo2][demo2]]("Resources/demo2.png")
+
+[![Demo3][demo3]]("Resources/demo3.png")
+
+[![Demo4][demo4]]("Resources/demo4.png")
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- INSTALLATION -->
+# 5. INSTALLATION
+This is an example of how to list things you need to use the software and how to install them.
+* Java Development Kit (i.e. OpenJDK) [CLICK TO DOWNLOAD]()
+* Any Java IDE (i.e. JetBrains Intellij IDEA) [CLICK TO DOWNLOAD]()
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/haingocnguyen/Monopoly-FlopTeam.git
+   ```
+2. Open in a Java IDE
+3. Choose Monopoly.java and click RUN to play the game
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Contributing
+# 6. CONTRIBUTING
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -148,38 +152,29 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
-## License
+# 7. LICENSE
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
-## Contact
+# 8. CONTACT
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Nguyen Tran Trung Quan by  **[Email HERE](ITITUN21003@student.hcmiu.edu.vn)**
 
 Project Link: [https://github.com/haingocnguyen/Monopoly-FlopTeam](https://github.com/haingocnguyen/Monopoly-FlopTeam)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+# 9. ACKNOWLEDGEMENTS
 
-* []()
-* []()
-* []()
+* []() Prof. Nguyen Thanh Tung an Pham Quoc Son Lam 
+* []() Original game code was adapted from
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/haingocnguyen/Monopoly-FlopTeam.svg?style=for-the-badge
@@ -189,4 +184,9 @@ Project Link: [https://github.com/haingocnguyen/Monopoly-FlopTeam](https://githu
 [issues-shield]: https://img.shields.io/github/issues/haingocnguyen/Monopoly-FlopTeam.svg?style=for-the-badge
 [issues-url]: https://github.com/haingocnguyen/Monopoly-FlopTeam/issues
 [product-screenshot]: Resources/screenshot.png
+[uml-diagram]: Resources/UML.png
+[demo1]: Resources/demo1.png
+[demo2]: Resources/demo2.png
+[demo3]: Resources/demo3.png
+[demo4]: Resources/demo4.png
 
