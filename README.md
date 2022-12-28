@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/haingocnguyen/Monopoly-FlopTeam">
-    <img src="Resources/cover.png" alt="Cover" width="1920" height="1080">
+    <img src="Resources/ncover.png" alt="Cover" width="1200" height="675">
   </a>
 
 <h3 align="center">MONOPOLY UNIVERSE</h3>
@@ -24,7 +24,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>TABLE OF CONTENTS</summary>
   <ol>
     <li>
       <a href="#About">ABOUT</a>

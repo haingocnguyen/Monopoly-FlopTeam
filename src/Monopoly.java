@@ -317,9 +317,9 @@ public class Monopoly {
         flow.setVgap(0);
         frame = new JFrame("Monopoly Flop Team");
         frame.setLayout(flow);
-        frame.getContentPane().setBackground(new Color(173, 216, 230));
-        frame.setForeground(new Color(173, 216, 230));
-        frame.setBackground(new Color(173, 216, 230));
+        frame.getContentPane().setBackground(new Color(137, 135, 162));
+        frame.setForeground(new Color(137, 135, 162));
+        frame.setBackground(new Color(69, 75, 110));
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setSize(screenSize);
         frame.setResizable(false);
@@ -1942,7 +1942,7 @@ public class Monopoly {
         instruction = new JLabel();
         try {
             Image img = ImageIO.read(getClass().getResource(
-                    "help.png"));
+                    "newcover.png"));
             instruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
         }
