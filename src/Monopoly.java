@@ -346,7 +346,7 @@ public class Monopoly {
         hideInstruction = new JButton();
         hideInstruction.setBounds(frameWidth - 65, 10, 40, 40);
         try {
-            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("hideInstruction.png")));
+            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("closeHelp.png")));
             hideInstruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -1898,7 +1898,7 @@ public class Monopoly {
         logText.append(log);
         instruction = new JLabel();
         try {
-            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("newcover.png")));
+            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("help.png")));
             instruction.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -2005,16 +2005,16 @@ public class Monopoly {
 
         buyPlanet = new JLabel("Upgrade planet >>");
         addPlanetTo = new JComboBox<>();
-        addUpgradeButton = new JButton("+ Upgrade");
-        addPerfectPlanetButton = new JButton("+ Perfect Planet");
+        addUpgradeButton = new JButton("Upgrade Planet");
+        addPerfectPlanetButton = new JButton("Perfect Planet");
         buyPlanet.setBounds(frameHeight + 50, frameHeight / 2 + 180,
                 130, 20);
         addPlanetTo.setBounds(frameHeight + 185,
                 frameHeight / 2 + 180, 200, 20);
         addUpgradeButton.setBounds(frameHeight + 390,
-                frameHeight / 2 + 180, 90, 20);
+                frameHeight / 2 + 180, 130, 20);
         addPerfectPlanetButton.setBounds(frameHeight + 485,
-                frameHeight / 2 + 180, 90, 20);
+                frameHeight / 2 + 180, 130, 20);
         buyPlanet.setVisible(false);
         addPlanetTo.setVisible(false);
         addUpgradeButton.setVisible(false);
@@ -2110,10 +2110,11 @@ public class Monopoly {
         energyLabels.add(player1mana);
         player1nameLabel.setBounds(frameHeight + 60, 5, 140, 40);
         player1balance.setBounds(frameHeight + 60, 20, 140, 40);
-        addPlayer1.setBounds(frameHeight + 60, 35, 140, 40);
+        player1mana.setBounds(frameHeight + 60, 35, 140, 40);
+        addPlayer1.setBounds(frameHeight + 60, 50, 140, 40);
         try {
             Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource(
-                    "addplayer.jpg")));
+                    "addPlayer.jpg")));
             addPlayer1.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -2262,7 +2263,7 @@ public class Monopoly {
 
         });
         addPlayer2 = new JButton();
-        addPlayer2.setBounds(frameHeight + 60 + (frameHeight / 4), 35,
+        addPlayer2.setBounds(frameHeight + 60 + (frameHeight / 4), 50,
                 140, 40);
         player2nameLabel = new JLabel();
         player2balance = new JLabel();
@@ -2272,11 +2273,13 @@ public class Monopoly {
         energyLabels.add(player2mana);
         player2balance.setBounds(frameHeight + 62 + (frameHeight / 4),
                 20, 140, 40);
+        player2mana.setBounds(frameHeight + 62 + (frameHeight / 4),
+                35, 140, 40);
         player2nameLabel.setBounds(frameHeight + 62 + (frameHeight / 4),
                 5, 140, 40);
         try {
             Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource(
-                    "addplayer.jpg")));
+                    "addPlayer.jpg")));
             addPlayer2.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -2336,9 +2339,7 @@ public class Monopoly {
                 player2name.setVisible(false);
                 addPlayer2Name.setVisible(false);
                 addPlayer3.setEnabled(true);
-                startGame.setEnabled(true); // after creating two players, the
-                // game can be started
-
+                startGame.setEnabled(true); // after creating two players, the game can be started
                 player2getOutOfJailLabel.setText("GET OUT OF JAIL CARD remain: "
                         + players.get(1).getNumberOfGetOutOfJailCards());
                 player2getOutOfJailLabel.setBounds(frameHeight + 62
@@ -2440,11 +2441,13 @@ public class Monopoly {
                 20, 140, 40);
         player3nameLabel.setBounds(frameHeight + 64 + (frameHeight / 2),
                 5, 140, 40);
-        addPlayer3.setBounds(frameHeight + 60 + (frameHeight / 2), 35,
+        player3mana.setBounds(frameHeight + 64 + (frameHeight / 2),
+                35, 140, 40);
+        addPlayer3.setBounds(frameHeight + 60 + (frameHeight / 2), 50,
                 140, 40);
         try {
             Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource(
-                    "addplayer.jpg")));
+                    "addPlayer.jpg")));
             addPlayer3.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -2507,7 +2510,6 @@ public class Monopoly {
                 player3name.setVisible(false);
                 addPlayer3Name.setVisible(false);
                 addPlayer4.setEnabled(true);
-
                 player3getOutOfJailLabel.setText("GET OUT OF JAIL CARD remain: "
                         + players.get(2).getNumberOfGetOutOfJailCards());
                 player3getOutOfJailLabel.setBounds(frameHeight + 64
@@ -2606,14 +2608,16 @@ public class Monopoly {
         balanceLabels.add(player4balance);
         energyLabels.add(player4mana);
         player4balance.setBounds(frameHeight + 60,
-                (int) (frameHeight / 6.5) + 22, 140, 40);
+                (int) (frameHeight / 6.5) + 25, 140, 40);
+        player4mana.setBounds(frameHeight + 60,
+                (int) (frameHeight / 6.5) + 40, 140, 40);
         player4nameLabel.setBounds(frameHeight + 60,
-                (int) (frameHeight / 6.5) + 7, 140, 40);
-        addPlayer4.setBounds(frameHeight + 60, (int) (frameHeight / 6.5) + 35,
+                (int) (frameHeight / 6.5) + 10, 140, 40);
+        addPlayer4.setBounds(frameHeight + 60, (int) (frameHeight / 6.5) + 52,
                 140, 40);
         try {
             Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource(
-                    "addplayer.jpg")));
+                    "addPlayer.jpg")));
             addPlayer4.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -2676,7 +2680,6 @@ public class Monopoly {
                 System.out.println(players.get(3).getName());
                 player4name.setVisible(false);
                 addPlayer4Name.setVisible(false);
-
                 player4getOutOfJailLabel.setText("GET OUT OF JAIl CARD remain: "
                         + players.get(3).getNumberOfGetOutOfJailCards());
                 player4getOutOfJailLabel.setBounds(frameHeight + 60,
@@ -2779,13 +2782,13 @@ public class Monopoly {
                 frameHeight - 70, 140, 20);
         restartGame.setVisible(false);
         try {
-            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("startthegame.jpg")));
+            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("startTheGame.jpg")));
             startGame.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         try {
-            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("finishturn.jpg")));
+            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("finishTurn.jpg")));
             finishTurn.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -2891,7 +2894,7 @@ public class Monopoly {
         rollTheDice.setBounds(frameHeight / 2 - 70, frameHeight / 2 + 40, 140,
                 40);
         try {
-            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("rollthedice.jpg")));
+            Image img = ImageIO.read(Objects.requireNonNull(getClass().getResource("rollTheDice.jpg")));
             rollTheDice.setIcon(new ImageIcon(img));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -3932,7 +3935,7 @@ public class Monopoly {
                 if (paymentDueAmount > players.get(playerIndex)
                         .getMoneyHeld()) {
                     gamePrompt
-                            .setText("you need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
+                            .setText("You need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
                 } else {
                     payArrears.setVisible(true);
                     declareBankruptcyFromGame.setVisible(false);
@@ -4122,7 +4125,7 @@ public class Monopoly {
             declareBankruptcyFromGame.setVisible(true);
             if (paymentDue) {
                 gamePrompt
-                        .setText("you need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
+                        .setText("You need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
             } else if (rentCalculated) {
                 gamePrompt
                         .setText("You need money to pay the rent. Sell property, take loan or declare BANKRUPTCY from game");
@@ -4271,7 +4274,7 @@ public class Monopoly {
                         "Galy: " + players.get(ownerIndex).getMoneyHeld());
             }
             players.get(playerIndex).setBankrupt(true);
-            balanceLabels.get(playerIndex).setText("declare BANKRUPTED from game");
+            balanceLabels.get(playerIndex).setText("DECLARE BANKRUPTED FROM GAME");
             getOutOfJailLabels.get(playerIndex).setVisible(false);
             finishTurn.setEnabled(true);
             gamePrompt.setText("");
@@ -4336,7 +4339,7 @@ public class Monopoly {
                 if (paymentDueAmount > players.get(playerIndex)
                         .getMoneyHeld()) {
                     gamePrompt
-                            .setText("you need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
+                            .setText("You need to pay arrears. Sell or mortgage property or declare BANKRUPTCY from game");
                 } else {
                     payArrears.setVisible(true);
                     declareBankruptcyFromGame.setVisible(false);
