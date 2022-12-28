@@ -20,7 +20,9 @@ public class Sound {
             clip = AudioSystem.getClip();
             clip.open(ais);
 
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -32,9 +34,5 @@ public class Sound {
     public void loop(){
 
         clip.loop(Clip.LOOP_CONTINUOUSLY);
-    }
-
-    public void stop(){
-        clip.stop();
     }
 }
