@@ -28,8 +28,8 @@
 |  1 | Nguyen Tran Trung Quan| ITITUN21003 | ITITUN21003@student.hcmiu.edu.vn |           TEAM LEADER           |           30%          |
 |  2 |  Nguyen Hoang Anh Tu  | ITDSIU20090 | ITDSIU20090@student.hcmiu.edu.vn | CARD AND BOARD CONTENT CREATOR  |           25%          |
 |  3 |   Nguyen Quang Dieu   | ITDSIU20031 | ITDSIU20031@student.hcmiu.edu.vn | RULES AND PROPERTIES MANAGEMENT |           15%          |
-|  4 |    Hoang Tuan Kiet    | ITDSIU21059 | ITDSIU21059@student.hcmiu.edu.vn |         RENTING AND REPORT      |           15%          |
-|  5 |    Nguyen Hai Ngoc    | ITDSIU21057 | ITDSIU21057@student.hcmiu.edu.vn |         DESIGN AND SLIDE        |           15%          |
+|  4 |    Hoang Tuan Kiet    | ITDSIU21055 | ITDSIU21059@student.hcmiu.edu.vn |         DESIGN AND SLIDE        |           15%          |
+|  5 |    Nguyen Hai Ngoc    | ITDSIU21057 | ITDSIU21057@student.hcmiu.edu.vn |        RENTING AND REPORT       |           15%          |
 
 
 ## 2. The project we are working on
