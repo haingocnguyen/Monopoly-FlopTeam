@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class DeckOfChanceAndFortuneCards {
+    private final Random random = new Random();
     private ArrayList<ChanceCard> chanceCards = new ArrayList<>();
     private ArrayList<ChanceCard> dealtChanceCards = new ArrayList<>();
     private ChanceCard getOutOfJailChance;
     private ArrayList<FortuneCard> fortuneCards = new ArrayList<>();
     private ArrayList<FortuneCard> dealtFortuneCards = new ArrayList<>();
     private FortuneCard getOutOfJailCommunity;
-    private final Random random = new Random();
 
     public DeckOfChanceAndFortuneCards() {
         this.chanceCards.add(new ChanceCard(1));
@@ -80,7 +80,7 @@ public class DeckOfChanceAndFortuneCards {
 
         int position = this.random.nextInt(this.fortuneCards.size());
         int id = this.fortuneCards.get(position).getId();
-        if (id ==14) {
+        if (id == 14) {
             this.setGetOutOfJailCommunity(this.fortuneCards.get(position));
         } else {
             this.dealtFortuneCards.add(this.fortuneCards.get(position));

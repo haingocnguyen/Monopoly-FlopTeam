@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class RentValues {
 
-    private final ArrayList <PlanetProperties> entities;
+    private final ArrayList<PlanetProperties> entities;
 
     public RentValues() {
         entities = new ArrayList<>();
@@ -37,9 +37,9 @@ public class RentValues {
         rentValues.add(270.0);
         rentValues.add(400.0);
         rentValues.add(550.0);
-        entities.add(new PlanetProperties("55 Cancri E", "lightblue", 100, rentValues, 6,true, 2));
+        entities.add(new PlanetProperties("55 Cancri E", "lightblue", 100, rentValues, 6, true, 2));
         entities.add(new PlanetProperties("Opportunity", null, 0, noRent, 7, false, -1));
-        entities.add(new PlanetProperties("GJ 1214B", "lightblue", 100, rentValues, 8,true, 3));
+        entities.add(new PlanetProperties("GJ 1214B", "lightblue", 100, rentValues, 8, true, 3));
         rentValues = new ArrayList<>();
         rentValues.add(8.0);
         rentValues.add(40.0);

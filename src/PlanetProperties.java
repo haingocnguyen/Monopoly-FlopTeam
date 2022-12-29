@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class PlanetProperties {
@@ -7,13 +6,12 @@ public class PlanetProperties {
     private final int cost;
     private final ArrayList<Double> rentValues;
     private final int position;
+    private final boolean canBePurchased;
+    private final int upgradeIndex;
     private boolean mortgaged;
     private Player owner;
-    private final boolean canBePurchased;
     private int numberOfUpgrades;
     private int perfectPlanet;
-    private boolean upgradePurchasedInCurrentTurn;
-    private final int upgradeIndex;
 
     public PlanetProperties(String name, String group, int cost,
                             ArrayList<Double> rentValues, int position, boolean canBePurchased,
@@ -56,9 +54,9 @@ public class PlanetProperties {
     }
 
     public String toString() {
-        String rent = "\nRentValues: ";
+        StringBuilder rent = new StringBuilder("\nRentValues: ");
         for (Double rentValue : rentValues) {
-            rent += rentValue + " ";
+            rent.append(rentValue).append(" ");
         }
         return "\nName: " + name + "\nGroup: " + group + "\nCost: " + cost
                 + "\nPosition: " + position + "\nMortgaged: " + mortgaged

@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 public class Player {
+    private final String name;
+    private final ArrayList<Card> outOfJailCards;
+    private final ArrayList<PlanetProperties> ownedProperties;
     private double moneyHeld;
     private double manaHeld;
-    private String name;
     private boolean passedGo;
     private int positionOnGameBoard;
     private boolean inJail;
-    private final ArrayList<Card> outOfJailCards;
     private int turnsInJail;
-    private ArrayList<PlanetProperties> ownedProperties;
     private boolean isBankrupt;
-    
-    public Player(String name){
+
+    public Player(String name) {
         // Default Galy and Mana values
         this.moneyHeld = 1500;
         this.manaHeld = 200;
@@ -20,34 +20,40 @@ public class Player {
         ownedProperties = new ArrayList<>();
         outOfJailCards = new ArrayList<>();
     }
-    public double getMoneyHeld(){
+
+    public double getMoneyHeld() {
         return moneyHeld;
     }
-    public void setMoneyHeld(double update){
+
+    public void setMoneyHeld(double update) {
         this.moneyHeld += update;
     }
-    public double getManaHeld(){
+
+    public double getManaHeld() {
         return manaHeld;
     }
-    public void setManaHeld(double update){
+
+    public void setManaHeld(double update) {
         this.manaHeld += update;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public void setName(String name){
-        this.name = name;
-    }
-    public boolean didPassGo(){
+
+    public boolean didPassGo() {
         return passedGo;
     }
-    public void setPassedGo(boolean passedGo){
+
+    public void setPassedGo(boolean passedGo) {
         this.passedGo = passedGo;
     }
+
     public int getPositionOnGameBoard() {
         return this.positionOnGameBoard;
     }
-    public void positionOnBoard(int positionOnGameBoard){
+
+    public void positionOnBoard(int positionOnGameBoard) {
         this.positionOnGameBoard += positionOnGameBoard;
         if (this.positionOnGameBoard >= 40) {
             setMoneyHeld(200);
@@ -55,37 +61,44 @@ public class Player {
             this.positionOnGameBoard = this.positionOnGameBoard % 40;
         }
     }
-    public boolean isInJail(){
+
+    public boolean isInJail() {
         return inJail;
     }
-    public void setInJail(boolean inJail){
+
+    public void setInJail(boolean inJail) {
         this.inJail = inJail;
     }
-    public int getNumberOfGetOutOfJailCards(){
+
+    public int getNumberOfGetOutOfJailCards() {
         return outOfJailCards.size();
     }
-    public void addGetOutOfJailCard(Card card){
+
+    public void addGetOutOfJailCard(Card card) {
         outOfJailCards.add(card);
     }
-    public int getTurnsInJail(){
+
+    public int getTurnsInJail() {
         return turnsInJail;
     }
-    public void setTurnsInJail(int turnsInJail){
+
+    public void setTurnsInJail(int turnsInJail) {
         this.turnsInJail = turnsInJail;
     }
+
     public ArrayList<Card> getOutOfJailCards() {
         return outOfJailCards;
     }
-    public boolean isBankrupt(){
+
+    public boolean isBankrupt() {
         return isBankrupt;
     }
-    public void setBankrupt(boolean isBankrupt){
+
+    public void setBankrupt(boolean isBankrupt) {
         this.isBankrupt = isBankrupt;
     }
+
     public ArrayList<PlanetProperties> getOwnedProperties() {
         return ownedProperties;
-    }
-    public void setOwnedProperties(ArrayList<PlanetProperties> ownedProperties) {
-        this.ownedProperties = ownedProperties;
     }
 }
