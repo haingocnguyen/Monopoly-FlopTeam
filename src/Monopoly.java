@@ -5480,7 +5480,7 @@ public class Monopoly {
     private void followFortuneCard8() {
         this.players.get(this.playerIndex).setManaHeld(-this.manaDueAmount);
         this.energyLabels.get(this.playerIndex).setText("Mana: " + this.players.get(this.playerIndex).getManaHeld());
-        this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost 150 Mana due to letting the sub-spacecraft to explore" + "\n";
+        this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost 100 Mana due to letting the sub-spacecraft to explore" + "\n";
         this.logText.append(this.log);
     }
 
@@ -5529,9 +5529,9 @@ public class Monopoly {
                 } catch (IOException var19) {
                     var19.printStackTrace();
                 }
-                this.players.get(this.playerIndex).setMoneyHeld(10.0);
+                this.players.get(this.playerIndex).setMoneyHeld(100.0);
                 this.balanceLabels.get(this.playerIndex).setText("Galy: " + this.players.get(this.playerIndex).getMoneyHeld());
-                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received 10 Galy for being a Miss Universe 2023" + "\n";
+                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received 100 Galy for being a Miss Universe 2023" + "\n";
                 this.logText.append(this.log);
             }
             case 3 -> {     // DONE
@@ -5607,7 +5607,7 @@ public class Monopoly {
                 } catch (IOException var13) {
                     var13.printStackTrace();
                 }
-                this.manaDueAmount = 150.0;
+                this.manaDueAmount = 100.0;
                 if (this.players.get(this.playerIndex).getManaHeld() >= this.manaDueAmount) {
                     this.followFortuneCard8();
                 } else {
@@ -5700,10 +5700,10 @@ public class Monopoly {
                     this.finishTurn.setEnabled(true);
                     this.rollTheDice.setEnabled(false);
                     this.players.get(this.playerIndex).setInJail(true);
-                    this.log = "  /> " + this.players.get(this.playerIndex).getName() + " went to Jail" + "\n";
+                    this.log = "  /> " + this.players.get(this.playerIndex).getName() + " went to the ISS to fix" + "\n";
                     this.logText.append(this.log);
                     this.adjustPlayerPosition();
-                    this.players.get(this.playerIndex).setManaHeld(-5000);
+                    this.players.get(this.playerIndex).setManaHeld(-this.players.get(-this.playerIndex).getManaHeld());
                     this.energyLabels.get(this.playerIndex).setText("Mana: " + this.players.get(this.playerIndex).getManaHeld());
                     this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost all the Mana due to colliding high-velocity stars" + "\n";
                     this.logText.append(this.log);
@@ -6386,9 +6386,6 @@ public class Monopoly {
             case 0 -> playerIndicators.get(playerIndex).setBounds(
                     (int)(frameHeight * 49 / 54) + playerIndex * 3,
                     (int) frameHeight * 49 / 54 + playerIndex * 4, 60 ,60);
-//                    (int) (frameHeight / 6.5 * 5.5) + 50 + playerIndex * 3,
-//                    (int) (frameHeight / 6.5 * 5.5) + 60 + playerIndex * 4, 60,
-//                    60);
             case 1 -> playerIndicators.get(playerIndex).setBounds(
                     (int)(frameHeight * 49 / 54) + playerIndex * 3 - 90,
                     (int) frameHeight * 49 / 54 + playerIndex * 4, 60,
@@ -6472,9 +6469,17 @@ public class Monopoly {
                             20 + playerIndex * 3,
                             (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 6,
                             60, 60);
-            case 18 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 7, 60,
+            case 18 -> {
+                players.get(playerIndex).setMoneyHeld(500-this.players.get(playerIndex).getManaHeld());
+                energyLabels.get(playerIndex).setText(
+                        "Mana: " + players.get(playerIndex).getManaHeld());
+                log = "  /> " + players.get(playerIndex).getName()
+                        + " refueled to full mana " + "\n";
+                logText.append(log);
+                playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
+                        (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 7, 60,
                     60);
+            }
             case 19 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
                     (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 8, 60, 60);
             case 20 -> playerIndicators.get(playerIndex).setBounds(playerIndex * 3 + 20,
@@ -6494,9 +6499,26 @@ public class Monopoly {
             case 25 -> playerIndicators.get(playerIndex).setBounds(
                     (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 4,
                     playerIndex * 4 + 20, 60, 60);
-            case 26 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 5,
-                    playerIndex * 4 + 20, 60, 60);
+            case 26 -> {
+                manaDueAmount = 150;
+                if (manaDueAmount > players.get(playerIndex).getManaHeld()) {
+                    gamePrompt
+                            .setText("You need to PAY ARREARS. Sell or mortgage property or DECLARE BANKRUPTCY FROM GAME");
+                    rollTheDice.setEnabled(false);
+                    declareBankruptcyFromGame.setVisible(true);
+                    arrearsIndex = 38;
+                } else {
+                    players.get(playerIndex).setMoneyHeld(-manaDueAmount);
+                    energyLabels.get(playerIndex).setText(
+                            "Mana: " + players.get(playerIndex).getManaHeld());
+                    log = "  /> " + players.get(playerIndex).getName()
+                            + " lose 150 due to Solar Power " + "\n";
+                    logText.append(log);
+                }
+                playerIndicators.get(playerIndex).setBounds(
+                        (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 5,
+                        playerIndex * 4 + 20, 60, 60);
+            }
             case 27 -> playerIndicators.get(playerIndex).setBounds(
                     (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 6,
                     playerIndex * 4 + 20, 60, 60);
