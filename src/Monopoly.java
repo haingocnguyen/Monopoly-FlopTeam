@@ -5480,7 +5480,7 @@ public class Monopoly {
     private void followFortuneCard8() {
         this.players.get(this.playerIndex).setManaHeld(-this.manaDueAmount);
         this.energyLabels.get(this.playerIndex).setText("Mana: " + this.players.get(this.playerIndex).getManaHeld());
-        this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost 150 Mana due to letting the sub-spacecraft to explore" + "\n";
+        this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost 100 Mana due to letting the sub-spacecraft to explore" + "\n";
         this.logText.append(this.log);
     }
 
@@ -5529,9 +5529,9 @@ public class Monopoly {
                 } catch (IOException var19) {
                     var19.printStackTrace();
                 }
-                this.players.get(this.playerIndex).setMoneyHeld(10.0);
+                this.players.get(this.playerIndex).setMoneyHeld(100.0);
                 this.balanceLabels.get(this.playerIndex).setText("Galy: " + this.players.get(this.playerIndex).getMoneyHeld());
-                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received 10 Galy for being a Miss Universe 2023" + "\n";
+                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received 100 Galy for being a Miss Universe 2023" + "\n";
                 this.logText.append(this.log);
             }
             case 3 -> {     // DONE
@@ -5607,7 +5607,7 @@ public class Monopoly {
                 } catch (IOException var13) {
                     var13.printStackTrace();
                 }
-                this.manaDueAmount = 150.0;
+                this.manaDueAmount = 100.0;
                 if (this.players.get(this.playerIndex).getManaHeld() >= this.manaDueAmount) {
                     this.followFortuneCard8();
                 } else {
@@ -5700,10 +5700,10 @@ public class Monopoly {
                     this.finishTurn.setEnabled(true);
                     this.rollTheDice.setEnabled(false);
                     this.players.get(this.playerIndex).setInJail(true);
-                    this.log = "  /> " + this.players.get(this.playerIndex).getName() + " went to Jail" + "\n";
+                    this.log = "  /> " + this.players.get(this.playerIndex).getName() + " went to the ISS to fix" + "\n";
                     this.logText.append(this.log);
                     this.adjustPlayerPosition();
-                    this.players.get(this.playerIndex).setManaHeld(-5000);
+                    this.players.get(this.playerIndex).setManaHeld(-this.players.get(-this.playerIndex).getManaHeld());
                     this.energyLabels.get(this.playerIndex).setText("Mana: " + this.players.get(this.playerIndex).getManaHeld());
                     this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost all the Mana due to colliding high-velocity stars" + "\n";
                     this.logText.append(this.log);
@@ -6384,22 +6384,19 @@ public class Monopoly {
 
         switch (players.get(playerIndex).getPositionOnGameBoard()) {
             case 0 -> playerIndicators.get(playerIndex).setBounds(
-                    (int)(frameHeight * 49 / 54) + playerIndex * 3,
-                    (int) frameHeight * 49 / 54 + playerIndex * 4, 60 ,60);
-//                    (int) (frameHeight / 6.5 * 5.5) + 50 + playerIndex * 3,
-//                    (int) (frameHeight / 6.5 * 5.5) + 60 + playerIndex * 4, 60,
-//                    60);
+                    (frameHeight * 49 / 54) + playerIndex * 3,
+                     frameHeight * 49 / 54 + playerIndex * 4, 60 ,60);
             case 1 -> playerIndicators.get(playerIndex).setBounds(
-                    (int)(frameHeight * 49 / 54) + playerIndex * 3 - 90,
-                    (int) frameHeight * 49 / 54 + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90,
+                     frameHeight * 49 / 54 + playerIndex * 4, 60,
                     60);
             case 2 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 2,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 2,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 3 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 3,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 4 -> {
                 manaDueAmount = 200;
@@ -6412,135 +6409,160 @@ public class Monopoly {
                     payIncomeTax();
                 }
                 playerIndicators.get(playerIndex).setBounds(
-                        (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 4,
-                        (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                        (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 4,
+                        (frameHeight * 49 / 54) + playerIndex * 4, 60,
                         60);
             }
             case 5 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 5,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 5,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 6 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 6,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 6,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 7 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 7,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 7,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 8 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 8,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 8,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 9 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 9,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 90 * 9,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     35);
             case 10 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 4, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 4, 60,
                     60);
             case 11 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
                             20 + playerIndex * 3,
-                            (int)(frameHeight * 49 / 54) + playerIndex * 3 - 110,
+                            (frameHeight * 49 / 54) + playerIndex * 3 - 110,
                             60, 60);
             case 12 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90, 60,
                     60);
             case 13 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
                             20 + playerIndex * 3,
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 2,
+                            (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 2,
                             60, 60);
             case 14 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 3, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 3, 60,
                     60);
             case 15 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
                             20 + playerIndex * 3,
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 4,
+                            (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 4,
                             60, 60);
             case 16 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 5, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 5, 60,
                     60);
             case 17 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
                             20 + playerIndex * 3,
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 6,
+                            (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 6,
                             60, 60);
-            case 18 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 7, 60,
+            case 18 -> {
+                players.get(playerIndex).setMoneyHeld(500-this.players.get(playerIndex).getManaHeld());
+                energyLabels.get(playerIndex).setText(
+                        "Mana: " + players.get(playerIndex).getManaHeld());
+                log = "  /> " + players.get(playerIndex).getName()
+                        + " refueled to full mana " + "\n";
+                logText.append(log);
+                playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
+                        (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 7, 60,
                     60);
+            }
             case 19 -> playerIndicators.get(playerIndex).setBounds(20 + playerIndex * 3,
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 8, 60, 60);
+                    (frameHeight * 49 / 54) + playerIndex * 3 - 110 - 90 * 8, 60, 60);
             case 20 -> playerIndicators.get(playerIndex).setBounds(playerIndex * 3 + 20,
                     playerIndex * 4 + 20, 60, 60);
             case 21 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130,
+                    (frameHeight / 54) + playerIndex * 3 + 130,
                     playerIndex * 4 + 20, 60, 60);
             case 22 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90,
                     playerIndex * 4 + 20, 60, 60);
             case 23 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 2,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 2,
                     playerIndex * 4 + 20, 60, 60);
             case 24 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 3,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 3,
                     playerIndex * 4 + 20, 60, 60);
             case 25 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 4,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 4,
                     playerIndex * 4 + 20, 60, 60);
-            case 26 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 5,
-                    playerIndex * 4 + 20, 60, 60);
+            case 26 -> {
+                manaDueAmount = 150;
+                if (manaDueAmount > players.get(playerIndex).getManaHeld()) {
+                    gamePrompt
+                            .setText("You need to PAY ARREARS. Sell or mortgage property or DECLARE BANKRUPTCY FROM GAME");
+                    rollTheDice.setEnabled(false);
+                    declareBankruptcyFromGame.setVisible(true);
+                    arrearsIndex = 38;
+                } else {
+                    players.get(playerIndex).setMoneyHeld(-manaDueAmount);
+                    energyLabels.get(playerIndex).setText(
+                            "Mana: " + players.get(playerIndex).getManaHeld());
+                    log = "  /> " + players.get(playerIndex).getName()
+                            + " lose 150 due to Solar Power " + "\n";
+                    logText.append(log);
+                }
+                playerIndicators.get(playerIndex).setBounds(
+                        (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 5,
+                        playerIndex * 4 + 20, 60, 60);
+            }
             case 27 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 6,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 6,
                     playerIndex * 4 + 20, 60, 60);
             case 28 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 7,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 7,
                     playerIndex * 4 + 20, 60, 60);
             case 29 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 8,
+                    (frameHeight / 54) + playerIndex * 3 + 130 + 90 * 8,
                     playerIndex * 4 + 20, 60, 60);
             case 30 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3,
+                    (frameHeight * 49 / 54) + playerIndex * 3,
                     playerIndex * 4 + 20, 60, 60);
             case 31 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                    (int) (frameHeight / 54) + 150 + playerIndex * 3, 60, 60);
+                    (frameHeight * 49 / 54) + playerIndex * 3,
+                    (frameHeight / 54) + 150 + playerIndex * 3, 60, 60);
             case 32 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                    (int) (frameHeight /54) + 150 + 90 + playerIndex * 3, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3,
+                    (frameHeight /54) + 150 + 90 + playerIndex * 3, 60,
                     60);
             case 33 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                            (int) (frameHeight /54) + 150 + 90 * 2 + playerIndex * 3,
+                            (frameHeight * 49 / 54) + playerIndex * 3,
+                            (frameHeight /54) + 150 + 90 * 2 + playerIndex * 3,
                             60, 60);
             case 34 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight / 6.5 * 5.5) + 60 + playerIndex * 3,
-                    (int) (frameHeight / 54) + 130 + 90 * 3 + playerIndex * 3, 60,
+                    (frameHeight * 49 / 54) + 60 + playerIndex * 3,
+                    (frameHeight / 54) + 130 + 90 * 3 + playerIndex * 3, 60,
                     60);
             case 35 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                            (int) (frameHeight / 54) + 130 + 90 * 4 + playerIndex * 3,
+                            (frameHeight * 49 / 54) + playerIndex * 3,
+                            (frameHeight / 54) + 130 + 90 * 4 + playerIndex * 3,
                             60, 60);
             case 36 -> playerIndicators.get(playerIndex).setBounds(
-                    (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                    (int) (frameHeight / 54) + 130 + 90 * 5 + playerIndex * 3, 60,
+                    (frameHeight * 49 / 54) + playerIndex * 3,
+                    (frameHeight / 54) + 130 + 90 * 5 + playerIndex * 3, 60,
                     60);
             case 37 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                            (int) (frameHeight / 54) + 130 + 90 * 6 + playerIndex * 3,
+                            (frameHeight * 49 / 54) + playerIndex * 3,
+                            (frameHeight / 54) + 130 + 90 * 6 + playerIndex * 3,
                             60, 60);
             case 38 -> {
                 manaDueAmount = 100;
@@ -6554,15 +6576,15 @@ public class Monopoly {
                     payManaTax();
                 }
                 playerIndicators.get(playerIndex).setBounds(
-                        (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                        (int) (frameHeight / 54) + 130 + 90 * 7 + playerIndex * 3, 60,
+                        (frameHeight * 49 / 54) + playerIndex * 3,
+                        (frameHeight / 54) + 130 + 90 * 7 + playerIndex * 3, 60,
                         60);
             }
             case 39 -> playerIndicators
                     .get(playerIndex)
                     .setBounds(
-                            (int) (frameHeight * 49 / 54) + playerIndex * 3,
-                            (int) (frameHeight / 54) + 130 + 90 * 8 + playerIndex * 3,
+                            (frameHeight * 49 / 54) + playerIndex * 3,
+                            (frameHeight / 54) + 130 + 90 * 8 + playerIndex * 3,
                             60, 60);
         }
         if (players.get(playerIndex).didPassGo()) {
