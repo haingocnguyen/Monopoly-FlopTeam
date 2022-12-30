@@ -116,6 +116,7 @@ In specific, each component we have redesigned includes the following:
 * []()	Game's Welcome screen
 * []()	Player' token
 * []()	Dice
+
 Putting them together with some parts taken online:
 * []()	Sound 
 * []()	Buttons
@@ -125,13 +126,14 @@ The results look like this:
 <img src="Resources/mainscreen.png" alt="Mainscreen">
 
 In addition, the UX of the game was also our big concern since we have little knowledge about it, but we managed to do it for user actions like:
-    Only playable at 1920x1080 resolution
+* []()  Only playable at 1920x1080 resolution
 * []()	Menu and Help screen
 * []()	Buying properties
 * []()	Paying rent
 * []()	Buy/Sell/Mortgage
 * []()	Roll the dice
 * []()	The ability to show which planet that player owned using color bars
+
 As we have tried our best, some game functions are not running smoothly as we expected them to, but we will be doing more research to better provide the UI/UX of this game in the future.
 
 ### b. The game logic
@@ -186,8 +188,8 @@ Better view of UML for whole project
 
 ### Required software
 
-* Java Development Kit (i.e. OpenJDK) [CLICK TO DOWNLOAD]()
-* Any Java IDE (i.e. JetBrains Intellij IDEA) [CLICK TO DOWNLOAD]()
+* Java Development Kit (i.e. OpenJDK) [CLICK TO DOWNLOAD](https://openjdk.org/)
+* Any Java IDE (i.e. JetBrains Intellij IDEA) [CLICK TO DOWNLOAD](https://www.jetbrains.com/idea/download/)
 
 ### Steps
 

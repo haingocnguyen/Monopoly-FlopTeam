@@ -1589,7 +1589,7 @@ public class Monopoly {
         priceOfUnwantedProperty.setBounds(frameHeight + 300, frameHeight / 2 + 35, 45, 20);
         priceOfUnwantedProperty.setVisible(false);
         gameLog.setVisible(false);
-        mortgageManagement = new JLabel("MORTGAGE MANAGEMENT");
+        mortgageManagement = new JLabel("MORTGAGE >>");
         mortgageManagement.setBounds(frameHeight + 50, frameHeight / 2 + 90, 150, 20);
         mortgageComboBox = new JComboBox<>();
         mortgageComboBox.setBounds(frameHeight + 205, frameHeight / 2 + 90, 160, 20);
@@ -1601,7 +1601,7 @@ public class Monopoly {
         mortgageComboBox.setVisible(false);
         takeLoan.setVisible(false);
         payLoan.setVisible(false);
-        sellProperty = new JLabel("SELL PROPERTY >>");
+        sellProperty = new JLabel("SELL >>");
         sellProperty.setBounds(frameHeight + 50, frameHeight / 2 + 120, 90, 20);
         sellProperty.setVisible(true);
         sellPropertyComboBox = new JComboBox<>();
@@ -1617,7 +1617,7 @@ public class Monopoly {
         buyer.setVisible(false);
         sellingPrice.setVisible(false);
         sellPropertyButton.setVisible(false);
-        buyOwnedProperty = new JLabel("BUY PROPERTY >>");
+        buyOwnedProperty = new JLabel("BUY >>");
         ownedProperties = new JComboBox<>();
         propertyOwner = new JTextField();
         ownedPropertyValue = new JTextField();
@@ -1634,7 +1634,7 @@ public class Monopoly {
         propertyOwner.setVisible(false);
         ownedPropertyValue.setVisible(false);
         buyOwnedPropertyButton.setVisible(false);
-        buyPlanet = new JLabel("UPGRADE PLANET >>");
+        buyPlanet = new JLabel("UPGRADE >>");
         addPlanetTo = new JComboBox<>();
         addUpgradeButton = new JButton("NEXT UPGRADE");
         addPerfectPlanetButton = new JButton("PERFECT PLANET");
@@ -1646,7 +1646,7 @@ public class Monopoly {
         addPlanetTo.setVisible(false);
         addUpgradeButton.setVisible(false);
         addPerfectPlanetButton.setVisible(false);
-        sellGetOutOfJailCard = new JLabel("SELL RESTORING SPACECRAFT CARD >>");
+        sellGetOutOfJailCard = new JLabel("SELL CARD >>");
         sellGetOutOfJailCard.setBounds(frameHeight + 50, frameHeight / 2 + 210, 150, 20);
         cardBuyers = new JComboBox<>();
         cardBuyers.setBounds(frameHeight + 205, frameHeight / 2 + 210, 140, 20);

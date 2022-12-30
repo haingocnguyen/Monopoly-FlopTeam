@@ -15,7 +15,7 @@ public class Player {
     public Player(String name) {
         // Default Galy and Mana values
         this.moneyHeld = 1500;
-        this.manaHeld = 200;
+        this.manaHeld = 100;
         this.name = name;
         ownedProperties = new ArrayList<>();
         outOfJailCards = new ArrayList<>();
