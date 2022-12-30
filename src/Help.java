@@ -23,9 +23,10 @@ public class Help extends JFrame {
         this.setVisible(true);
     }
 
-    public static void getInstance() {
+    public static Help getInstance() {
         if (singleInstance == null)
             singleInstance = new Help();
+        return singleInstance;
     }
 
     public void paint(Graphics g) {
