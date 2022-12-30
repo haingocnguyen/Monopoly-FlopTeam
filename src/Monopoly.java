@@ -1520,7 +1520,7 @@ public class Monopoly {
         JLayeredPane gameConsole = new JLayeredPane();
         gamePrompt = new JLabel();
         gamePrompt.setBounds(frameHeight + 50, frameHeight / 2 + 15, (frameHeight / 4) * 3 - 20, 15);
-        pay50toGetOutOfJail = new JButton("Pay 50 Galy to get out of Jail");
+        pay50toGetOutOfJail = new JButton("Pay 50 Galy to RESTORING SPACECRAFT");
         pay50toGetOutOfJail.setBounds(frameHeight + 200, frameHeight / 2 + 60, 230, 20);
         pay50toGetOutOfJail.setVisible(false);
         gamePrompt.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1646,7 +1646,7 @@ public class Monopoly {
         addPlanetTo.setVisible(false);
         addUpgradeButton.setVisible(false);
         addPerfectPlanetButton.setVisible(false);
-        sellGetOutOfJailCard = new JLabel("SELL GET OUT OF JAIL CARD >>");
+        sellGetOutOfJailCard = new JLabel("SELL RESTORING SPACECRAFT CARD >>");
         sellGetOutOfJailCard.setBounds(frameHeight + 50, frameHeight / 2 + 210, 150, 20);
         cardBuyers = new JComboBox<>();
         cardBuyers.setBounds(frameHeight + 205, frameHeight / 2 + 210, 140, 20);
@@ -1779,7 +1779,7 @@ public class Monopoly {
                 player1name.setVisible(false);
                 addPlayer1Name.setVisible(false);
                 addPlayer2.setEnabled(true);
-                player1getOutOfJailLabel.setText("GET OUT OF JAIL CARD remain: " + players.get(0).getNumberOfGetOutOfJailCards());
+                player1getOutOfJailLabel.setText("RESTORING SPACECRAFT CARD remain: " + players.get(0).getNumberOfGetOutOfJailCards());
                 player1getOutOfJailLabel.setBounds(frameHeight + 60, 50, 140, 15);
                 player1getOutOfJailLabel.setFont(new Font("Arial", Font.ITALIC, 12));
                 player1getOutOfJailLabel.setVisible(false);
@@ -1931,7 +1931,7 @@ public class Monopoly {
                 startGame.setEnabled(true); // after creating two players, the
                 // game can be started
 
-                player2getOutOfJailLabel.setText("GET OUT OF JAIL CARD remain: " + players.get(1).getNumberOfGetOutOfJailCards());
+                player2getOutOfJailLabel.setText("RESTORING SPACECRAFT CARD remain: " + players.get(1).getNumberOfGetOutOfJailCards());
                 player2getOutOfJailLabel.setBounds(frameHeight + 62 + (frameHeight / 4), 50, 140, 15);
                 player2getOutOfJailLabel.setFont(new Font("Arial", Font.ITALIC, 12));
                 player2getOutOfJailLabel.setVisible(false);
@@ -2083,7 +2083,7 @@ public class Monopoly {
                 player3name.setVisible(false);
                 addPlayer3Name.setVisible(false);
                 addPlayer4.setEnabled(true);
-                player3getOutOfJailLabel.setText("GET OUT OF JAIL CARD remain: " + players.get(2).getNumberOfGetOutOfJailCards());
+                player3getOutOfJailLabel.setText("RESTORING SPACECRAFT CARD remain: " + players.get(2).getNumberOfGetOutOfJailCards());
                 player3getOutOfJailLabel.setBounds(frameHeight + 64 + (frameHeight / 2), 50, 140, 15);
                 player3getOutOfJailLabel.setFont(new Font("Arial", Font.ITALIC, 12));
                 player3getOutOfJailLabel.setVisible(false);
@@ -2236,7 +2236,7 @@ public class Monopoly {
                 System.out.println(players.get(3).getName());
                 player4name.setVisible(false);
                 addPlayer4Name.setVisible(false);
-                player4getOutOfJailLabel.setText("GET OUT OF JAIL CARD remain: " + players.get(3).getNumberOfGetOutOfJailCards());
+                player4getOutOfJailLabel.setText("RESTORING SPACECRAFT CARD remain: " + players.get(3).getNumberOfGetOutOfJailCards());
                 player4getOutOfJailLabel.setBounds(frameHeight + 60, (int) (frameHeight / 6.5) + 52, 140, 15);
                 player4getOutOfJailLabel.setFont(new Font("Arial", Font.ITALIC, 12));
                 player4getOutOfJailLabel.setVisible(false);
@@ -2657,7 +2657,7 @@ public class Monopoly {
                     // Go to jail after 3 doubles in a row
                     if (doubleCounter == 3
                             || players.get(playerIndex).getPositionOnGameBoard() == 30) {
-                        // no GET OUT OF JAIL CARD
+                        // no RESTORING SPACECRAFT CARD
                         if (players.get(playerIndex)
                                 .getNumberOfGetOutOfJailCards() == 0) {
                             finishTurn.setEnabled(true);
@@ -2689,7 +2689,7 @@ public class Monopoly {
                             doubleCounter = 0;
                         } else {
                             gamePrompt
-                                    .setText("Do you want to use your GET OUT OF JAIL CARD?");
+                                    .setText("Do you want to use your RESTORING SPACECRAFT CARD?");
                             useGetOutOfJailCard.setVisible(true);
                             dontUseGetOutOfJailCard.setVisible(true);
                             rollTheDice.setEnabled(false);
@@ -2708,7 +2708,7 @@ public class Monopoly {
                             if (players.get(playerIndex).getTurnsInJail() == 1) {
                                 log = "  /> "
                                         + players.get(playerIndex).getName()
-                                        + " has his/her balance deducted by 50 Galy and got out of Jail"
+                                        + " has his/her balance deducted by 50 Galy and got spaceships restored"
                                         + "\n";
                                 logText.append(log);
                                 players.get(playerIndex).setMoneyHeld(-50);
@@ -2922,7 +2922,7 @@ public class Monopoly {
             players.get(playerIndex).setTurnsInJail(0);
             pay50toGetOutOfJail.setVisible(false);
             log = "  /> " + players.get(playerIndex).getName()
-                    + " paid 50 Galy to get out of Jail" + "\n";
+                    + " paid 50 Galy to RESTORING SPACECRAFT" + "\n";
             logText.append(log);
             gamePrompt.setText("");
             extraRollNeeded = false;
@@ -2939,7 +2939,7 @@ public class Monopoly {
                         finishTurn.setEnabled(true);
                         log = "  /> "
                                 + players.get(playerIndex).getName()
-                                + " used his/her GET OUT OF JAIL CARD to avoid going to Jail"
+                                + " used his/her RESTORING SPACECRAFT CARD to avoid going to Jail"
                                 + "\n";
                         logText.append(log);
                         adjustPlayerPosition();
@@ -2956,7 +2956,7 @@ public class Monopoly {
                     adjustPlayerPosition();
                     log = "  /> "
                             + players.get(playerIndex).getName()
-                            + " used his/her GET OUT OF JAIL CARD to avoid going to Jail"
+                            + " used his/her RESTORING SPACECRAFT CARD to avoid going to Jail"
                             + "\n";
                     logText.append(log);
                 } else {
@@ -2966,7 +2966,7 @@ public class Monopoly {
                     pay50toGetOutOfJail.setVisible(false);
                     log = "  /> "
                             + players.get(playerIndex).getName()
-                            + " used his/her GET OUT OF JAIL CARD to get out of Jail"
+                            + " used his/her RESTORING SPACECRAFT CARD to RESTORING SPACECRAFT"
                             + "\n";
                     logText.append(log);
                     extraRollNeeded = false;
@@ -2975,7 +2975,7 @@ public class Monopoly {
             } else {
                 log = "  /> "
                         + players.get(playerIndex).getName()
-                        + " used his/her GET OUT OF JAIL CARD to avoid going to Jail"
+                        + " used his/her RESTORING SPACECRAFT CARD to avoid going to Jail"
                         + "\n";
                 logText.append(log);
                 sentByChanceCard = false;
@@ -2997,7 +2997,7 @@ public class Monopoly {
 
             gamePrompt.setText("");
             getOutOfJailLabels.get(playerIndex).setText(
-                    "GET OUT OF JAIL CARD remain: "
+                    "RESTORING SPACECRAFT CARD remain: "
                             + players.get(playerIndex)
                             .getNumberOfGetOutOfJailCards());
             if (players.get(playerIndex).getNumberOfGetOutOfJailCards() == 0) {
@@ -3065,14 +3065,14 @@ public class Monopoly {
                             && players.get(playerIndex)
                             .getNumberOfGetOutOfJailCards() > 0) {
                         gamePrompt
-                                .setText("USE CARD, pay 50 Galy or roll the dice to get out of Jail");
+                                .setText("USE CARD, pay 50 Galy or roll the dice to RESTORING SPACECRAFT");
                         useGetOutOfJailCard.setVisible(true);
                         pay50toGetOutOfJail.setVisible(true);
                         rollTheDice.setEnabled(true);
                         extraRollNeeded = true;
                     } else if (players.get(playerIndex).isInJail()) {
                         gamePrompt
-                                .setText("You need to pay 50 Galy or roll double to get out of Jail");
+                                .setText("You need to pay 50 Galy or roll double to RESTORING SPACECRAFT");
                         extraRollNeeded = true;
                         rollTheDice.setEnabled(true);
                         pay50toGetOutOfJail.setVisible(true);
@@ -3355,7 +3355,7 @@ public class Monopoly {
             players.get(playerIndex).setMoneyHeld(valueOfSoldCard);
             players.get(ownerIndex).setMoneyHeld(-valueOfSoldCard);
             getOutOfJailLabels.get(ownerIndex).setText(
-                    "GET OUT OF JAIL CARD remain: "
+                    "RESTORING SPACECRAFT CARD remain: "
                             + players.get(ownerIndex)
                             .getNumberOfGetOutOfJailCards());
             getOutOfJailLabels.get(ownerIndex).setVisible(true);
@@ -3368,7 +3368,7 @@ public class Monopoly {
             } else {
                 generateSellGetOutOfJailCardComboBox();
                 getOutOfJailLabels.get(playerIndex).setText(
-                        "GET OUT OF JAIL CARD remain: "
+                        "RESTORING SPACECRAFT CARD remain: "
                                 + players.get(playerIndex)
                                 .getNumberOfGetOutOfJailCards());
             }
@@ -3790,7 +3790,7 @@ public class Monopoly {
                     getOutOfJailLabels
                             .get(ownerIndex)
                             .setText(
-                                    "GET OUT OF JAIL CARD remain: "
+                                    "RESTORING SPACECRAFT CARD remain: "
                                             + players
                                             .get(ownerIndex)
                                             .getNumberOfGetOutOfJailCards());
@@ -5223,7 +5223,7 @@ public class Monopoly {
                     this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost all the Mana due to colliding high-velocity stars" + "\n";
                     this.logText.append(this.log);
                 } else {
-                    this.gamePrompt.setText("Do you want to use your GET OUT OF JAIL CARD?");
+                    this.gamePrompt.setText("Do you want to use your RESTORING SPACECRAFT CARD?");
                     this.useGetOutOfJailCard.setVisible(true);
                     this.dontUseGetOutOfJailCard.setVisible(true);
                     this.rollTheDice.setEnabled(false);
@@ -5254,10 +5254,10 @@ public class Monopoly {
                     var12.printStackTrace();
                 }
                 this.players.get(this.playerIndex).addGetOutOfJailCard(this.deck.getFortuneCard(3));
-                this.getOutOfJailLabels.get(this.playerIndex).setText("GET OUT OF JAIL CARD remain: " + this.players.get(this.playerIndex).getNumberOfGetOutOfJailCards());
+                this.getOutOfJailLabels.get(this.playerIndex).setText("RESTORING SPACECRAFT CARD remain: " + this.players.get(this.playerIndex).getNumberOfGetOutOfJailCards());
                 this.getOutOfJailLabels.get(this.playerIndex).setVisible(true);
                 this.generateSellGetOutOfJailCardComboBox();
-                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received GET OUT OF JAIL CARD \n";
+                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received RESTORING SPACECRAFT CARD \n";
                 this.logText.append(this.log);
             }
             case 10 -> {        // DONE
@@ -5680,10 +5680,10 @@ public class Monopoly {
                     var8.printStackTrace();
                 }
                 this.players.get(this.playerIndex).addGetOutOfJailCard(this.deck.getFortuneCard(3));
-                this.getOutOfJailLabels.get(this.playerIndex).setText("GET OUT OF JAIL CARD remain: " + this.players.get(this.playerIndex).getNumberOfGetOutOfJailCards());
+                this.getOutOfJailLabels.get(this.playerIndex).setText("RESTORING SPACECRAFT CARD remain: " + this.players.get(this.playerIndex).getNumberOfGetOutOfJailCards());
                 this.getOutOfJailLabels.get(this.playerIndex).setVisible(true);
                 this.generateSellGetOutOfJailCardComboBox();
-                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received GET OUT OF JAIL CARD \n";
+                this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has received RESTORING SPACECRAFT CARD \n";
                 this.logText.append(this.log);
             }
             case 14 -> {        // DONE
@@ -5708,7 +5708,7 @@ public class Monopoly {
                     this.log = "  /> " + this.players.get(this.playerIndex).getName() + " has lost all the Mana due to colliding high-velocity stars" + "\n";
                     this.logText.append(this.log);
                 } else {
-                    this.gamePrompt.setText("Do you want to use your GET OUT OF JAIL CARD?");
+                    this.gamePrompt.setText("Do you want to use your RESTORING SPACECRAFT CARD?");
                     this.useGetOutOfJailCard.setVisible(true);
                     this.dontUseGetOutOfJailCard.setVisible(true);
                     this.rollTheDice.setEnabled(false);
